@@ -2,8 +2,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -77,7 +75,7 @@ const StrategicPartners = () => {
           <Carousel 
             plugins={[
               Autoplay({
-                delay: 3000,
+                delay: 2000,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true,
               }),
@@ -115,8 +113,6 @@ const StrategicPartners = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-background/80 backdrop-blur-sm border-border hover:bg-card" />
-            <CarouselNext className="hidden md:flex -right-12 bg-background/80 backdrop-blur-sm border-border hover:bg-card" />
           </Carousel>
         </div>
 
