@@ -128,7 +128,7 @@ const SectorsCovered = () => {
 
   return (
     <ScrollXCarousel className="h-[200vh] bg-muted/20">
-      <ScrollXCarouselContainer className="h-screen">
+      <ScrollXCarouselContainer className="h-[75vh]">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto pt-20 pb-12 px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
