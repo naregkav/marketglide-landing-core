@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Interactive Globe Background */}
       <div className="absolute inset-0 flex items-end justify-center pb-8">
         <Globe className="scale-90 md:scale-100" />
-        <div className="absolute top-0 left-0 right-0 h-2/3 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
+        <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
       </div>
 
       {/* Content */}
