@@ -6,8 +6,8 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[calc(100vh-5rem)] pt-20 flex items-center justify-center overflow-hidden">
       {/* Interactive Globe Background */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <Globe className="scale-110 md:scale-125" />
+      <div className="absolute inset-0 flex items-end justify-center pb-8">
+        <Globe className="scale-90 md:scale-100" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
       </div>
 
