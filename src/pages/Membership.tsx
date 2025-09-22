@@ -207,7 +207,7 @@ const Membership = () => {
               customVariants={revealVariants}
             >
               <Card
-                className={`relative border-border h-[600px] flex flex-col ${
+                className={`relative border-border min-h-[600px] flex flex-col ${
                   plan.popular ? "ring-2 ring-accent bg-accent/5" : "bg-card"
                 }`}
               >
