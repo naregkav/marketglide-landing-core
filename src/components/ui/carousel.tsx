@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -145,7 +143,7 @@ const Carousel = React.forwardRef<
           {children}
         </div>
       </CarouselContext.Provider>
-    );
+    )
   },
 )
 Carousel.displayName = "Carousel"
