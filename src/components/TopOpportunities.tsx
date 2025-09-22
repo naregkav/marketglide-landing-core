@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { GlowCard } from "@/components/ui/glow-card";
 import { MapPin, TrendingUp, Clock } from "lucide-react";
 
 const TopOpportunities = () => {
@@ -11,16 +12,18 @@ const TopOpportunities = () => {
       category: "Real Estate",
       region: "UK & IRELAND",
       returnRate: "Fixed 17%",
-      timeline: "36 months"
+      timeline: "36 months",
+      glowColor: "blue" as const
     },
     {
       title: "World Trade Center Yerevan",
       description: "To develop an iconic, grade A, net-zero mixed-use infrastructure in the center of Yerevan.",
       image: "/api/placeholder/400/250", 
-      category: "Real Estate",
+      category: "Infrastructure",
       region: "SOUTHEAST EUROPE",
       returnRate: "IRR 22%",
-      timeline: "48 months"
+      timeline: "48 months",
+      glowColor: "teal" as const
     },
     {
       title: "Treelogy LLC",
@@ -29,7 +32,8 @@ const TopOpportunities = () => {
       category: "Agriculture", 
       region: "MENA",
       returnRate: "ROI 25%",
-      timeline: "60 months"
+      timeline: "60 months",
+      glowColor: "green" as const
     }
   ];
 
@@ -49,13 +53,15 @@ const TopOpportunities = () => {
         {/* Opportunities Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {opportunities.map((opportunity, index) => (
-            <div
+            <GlowCard
               key={opportunity.title}
-              className="card-premium overflow-hidden hover-lift group"
+              glowColor={opportunity.glowColor}
+              customSize={true}
+              className="overflow-hidden hover-lift group fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden rounded-t-2xl">
                 <div className="w-full h-full bg-muted/30 flex items-center justify-center">
                   <div className="text-muted-foreground text-sm">Investment Image</div>
                 </div>
@@ -67,7 +73,7 @@ const TopOpportunities = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex-1 flex flex-col">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
                     {opportunity.title}
@@ -78,7 +84,7 @@ const TopOpportunities = () => {
                   </div>
                 </div>
 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 flex-1">
                   {opportunity.description}
                 </p>
 
@@ -99,7 +105,7 @@ const TopOpportunities = () => {
                   View Details
                 </Button>
               </div>
-            </div>
+            </GlowCard>
           ))}
         </div>
 
