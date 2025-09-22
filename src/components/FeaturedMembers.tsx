@@ -1,8 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, ExternalLink } from "lucide-react";
 import { CircularGallery, GalleryItem } from "@/components/ui/circular-gallery";
+import { useRef } from 'react';
 
 const FeaturedMembers = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const members = [
     {
       name: "Renato Chiodaro",
@@ -51,24 +53,25 @@ const FeaturedMembers = () => {
   }));
 
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-background via-muted/20 to-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-6">
             Featured Members
           </h2>
-          <p className="text-subtitle">
-            Meet and connect with elite investors, top-tier fund managers, and renowned dealmakers, gaining exclusive insights from them as they shape the future of private markets.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Meet our distinguished network of investment professionals, entrepreneurs, and industry leaders 
+            who are shaping the future of global business.
           </p>
         </div>
 
-        {/* Circular Gallery */}
-        <div className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
-          <CircularGallery 
+        {/* 3D Circular Gallery */}
+        <div className="relative h-[600px] mb-16">
+          <CircularGallery
             items={galleryItems}
-            radius={300}
-            autoRotateSpeed={0.01}
+            radius={400}
+            autoRotateSpeed={0.005}
+            sectionRef={sectionRef}
             className="w-full h-full"
           />
         </div>

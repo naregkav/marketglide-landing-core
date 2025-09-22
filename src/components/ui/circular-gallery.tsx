@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, HTMLAttributes } from 'react';
 import { cn } from "@/lib/utils";
+import { useSmootherScroll } from '@/hooks/useSmootherScroll';
 
 // Define the type for a single gallery item
 export interface GalleryItem {
@@ -20,47 +21,79 @@ interface CircularGalleryProps extends HTMLAttributes<HTMLDivElement> {
   radius?: number;
   /** Controls the speed of auto-rotation when not scrolling. */
   autoRotateSpeed?: number;
+  /** Parent section ref for scroll detection */
+  sectionRef?: React.RefObject<HTMLElement>;
 }
 
 const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
-  ({ items, className, radius = 600, autoRotateSpeed = 0.02, ...props }, ref) => {
+  ({ items, className, radius = 600, autoRotateSpeed = 0.01, sectionRef, ...props }, ref) => {
     const [rotation, setRotation] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
+    const [autoRotationOffset, setAutoRotationOffset] = useState(0);
     const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const animationFrameRef = useRef<number | null>(null);
+    const lastScrollRotation = useRef(0);
+    
+    // Use section-specific scroll detection if sectionRef is provided
+    const { springRotation } = sectionRef 
+      ? useSmootherScroll(sectionRef, { tension: 80, friction: 35 })
+      : { springRotation: null };
 
-    // Effect to handle scroll-based rotation
+    // Effect to handle scroll-based rotation with section detection
     useEffect(() => {
-      const handleScroll = () => {
-        setIsScrolling(true);
-        if (scrollTimeoutRef.current) {
-          clearTimeout(scrollTimeoutRef.current);
-        }
+      if (springRotation) {
+        // Use section-based smooth rotation
+        const unsubscribe = springRotation.on('change', (latest) => {
+          setIsScrolling(true);
+          const scrollRotation = latest * 720; // Two full rotations through the section
+          setRotation(scrollRotation + autoRotationOffset);
+          lastScrollRotation.current = scrollRotation;
+          
+          if (scrollTimeoutRef.current) {
+            clearTimeout(scrollTimeoutRef.current);
+          }
+          
+          scrollTimeoutRef.current = setTimeout(() => {
+            setIsScrolling(false);
+          }, 200);
+        });
+        
+        return unsubscribe;
+      } else {
+        // Fallback to global scroll for backward compatibility
+        const handleScroll = () => {
+          setIsScrolling(true);
+          if (scrollTimeoutRef.current) {
+            clearTimeout(scrollTimeoutRef.current);
+          }
 
-        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollProgress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
-        const scrollRotation = scrollProgress * 360;
-        setRotation(scrollRotation);
+          const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollProgress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+          const scrollRotation = scrollProgress * 360;
+          setRotation(scrollRotation + autoRotationOffset);
+          lastScrollRotation.current = scrollRotation;
 
-        scrollTimeoutRef.current = setTimeout(() => {
-          setIsScrolling(false);
-        }, 150);
-      };
+          scrollTimeoutRef.current = setTimeout(() => {
+            setIsScrolling(false);
+          }, 150);
+        };
 
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-        if (scrollTimeoutRef.current) {
-          clearTimeout(scrollTimeoutRef.current);
-        }
-      };
-    }, []);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+          if (scrollTimeoutRef.current) {
+            clearTimeout(scrollTimeoutRef.current);
+          }
+        };
+      }
+    }, [springRotation, autoRotationOffset]);
 
-    // Effect for auto-rotation when not scrolling
+    // Effect for smooth auto-rotation when not scrolling
     useEffect(() => {
       const autoRotate = () => {
         if (!isScrolling) {
-          setRotation(prev => prev + autoRotateSpeed);
+          setAutoRotationOffset(prev => prev + autoRotateSpeed);
+          setRotation(lastScrollRotation.current + autoRotationOffset);
         }
         animationFrameRef.current = requestAnimationFrame(autoRotate);
       };
@@ -72,7 +105,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
           cancelAnimationFrame(animationFrameRef.current);
         }
       };
-    }, [isScrolling, autoRotateSpeed]);
+    }, [isScrolling, autoRotateSpeed, autoRotationOffset]);
 
     const anglePerItem = 360 / items.length;
     
