@@ -197,7 +197,7 @@ const Membership = () => {
           <PricingSwitch onSwitch={togglePricingPeriod} />
         </TimelineContent>
 
-        <div className="grid md:grid-cols-3 max-w-7xl gap-4 py-6 mx-auto relative z-10">
+        <div className="grid md:grid-cols-3 max-w-7xl gap-4 py-6 mx-auto relative z-10 md:items-stretch">
           {plans.map((plan, index) => (
             <TimelineContent
               key={plan.name}
@@ -207,7 +207,7 @@ const Membership = () => {
               customVariants={revealVariants}
             >
               <Card
-                className={`relative border-border min-h-[600px] flex flex-col ${
+                className={`relative border-border h-full flex flex-col ${
                   plan.popular ? "ring-2 ring-accent bg-accent/5" : "bg-card"
                 }`}
               >
