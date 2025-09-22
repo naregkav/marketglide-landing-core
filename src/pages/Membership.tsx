@@ -120,12 +120,7 @@ const PricingSwitch = ({ onSwitch }: { onSwitch: (value: string) => void }) => {
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative flex items-center gap-2">
-            Yearly
-            <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-foreground">
-              Save 20%
-            </span>
-          </span>
+          <span className="relative">Yearly</span>
         </button>
       </div>
     </div>
@@ -178,16 +173,7 @@ const Membership = () => {
             customVariants={revealVariants}
             className="md:text-6xl sm:text-4xl text-3xl font-medium text-foreground mb-4"
           >
-            Plans that works best for your{" "}
-            <TimelineContent
-              as="span"
-              animationNum={1}
-              timelineRef={pricingRef}
-              customVariants={revealVariants}
-              className="border border-dashed border-accent px-2 py-1 rounded-xl bg-accent/10 capitalize inline-block"
-            >
-              business
-            </TimelineContent>
+            Membership Tiers
           </TimelineContent>
 
           <TimelineContent
@@ -221,7 +207,7 @@ const Membership = () => {
               customVariants={revealVariants}
             >
               <Card
-                className={`relative border-border ${
+                className={`relative border-border h-[600px] flex flex-col ${
                   plan.popular ? "ring-2 ring-accent bg-accent/5" : "bg-card"
                 }`}
               >
@@ -261,7 +247,7 @@ const Membership = () => {
                   </div>
                 </CardHeader>
 
-                <CardContent className="pt-0">
+                <CardContent className="pt-0 flex-1 flex flex-col">
                   <button
                     className={`w-full mb-6 p-4 text-xl rounded-xl transition-all ${
                       plan.popular
