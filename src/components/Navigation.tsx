@@ -45,7 +45,7 @@ const Navigation = () => {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={link.href === "#membership" ? "/membership" : link.href}
                 className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
               >
                 {link.label}
@@ -81,7 +81,7 @@ const Navigation = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={link.href === "#membership" ? "/membership" : link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-2 py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

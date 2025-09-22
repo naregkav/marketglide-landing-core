@@ -4,7 +4,6 @@ import TopOpportunities from "@/components/TopOpportunities";
 import SectorsCovered from "@/components/SectorsCovered";
 import FeaturedMembers from "@/components/FeaturedMembers";
 import StrategicPartners from "@/components/StrategicPartners";
-import MembershipSection from "@/components/MembershipSection";
 import BlogSection from "@/components/BlogSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -18,7 +17,6 @@ const Index = () => {
       <SectorsCovered />
       <FeaturedMembers />
       <StrategicPartners />
-      <MembershipSection />
       <BlogSection />
       <CTASection />
       <Footer />
