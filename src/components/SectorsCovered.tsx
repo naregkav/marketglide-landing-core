@@ -147,13 +147,13 @@ const SectorsCovered = () => {
 
         {/* Horizontal Scrolling Cards */}
         <ScrollXCarouselWrap 
-          className="flex gap-6 pl-6 pr-[50vw]"
-          xRange={['0%', '-70%']}
+          className="flex gap-8 pl-8 pr-[40vw]"
+          xRange={['0%', '-75%']}
         >
           {sectors.map((sector) => (
             <CardHoverReveal 
               key={sector.id}
-              className="w-80 h-96 rounded-2xl bg-card shadow-lg flex-shrink-0"
+              className="w-[28rem] h-[32rem] rounded-2xl bg-card shadow-xl flex-shrink-0"
             >
               <CardHoverRevealMain className="rounded-2xl">
                 <div 
@@ -163,13 +163,13 @@ const SectorsCovered = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-2xl" />
                   
                   {/* Always visible content */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full mb-2">
-                      <span className="text-xs font-medium text-primary-foreground/90">
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <div className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full mb-4">
+                      <span className="text-sm font-medium text-primary-foreground/90">
                         {sector.category}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-2xl font-bold text-white mb-3">
                       {sector.title}
                     </h3>
                   </div>
@@ -178,7 +178,7 @@ const SectorsCovered = () => {
               
               {/* Hover reveal content */}
               <CardHoverRevealContent className="bg-card/90 border border-border rounded-xl">
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {sector.description}
                 </p>
               </CardHoverRevealContent>
