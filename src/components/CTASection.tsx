@@ -3,7 +3,7 @@ import { ArrowRight, Mail } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-hero relative overflow-hidden">
+    <section className="py-24 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
@@ -11,7 +11,7 @@ const CTASection = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">

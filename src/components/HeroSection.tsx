@@ -4,7 +4,7 @@ import { Globe } from "@/components/ui/globe";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] pt-20 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] pt-20 flex items-center justify-center overflow-hidden">
       {/* Interactive Globe Background */}
       <div className="absolute inset-0 flex items-end justify-center pb-8">
         <Globe className="scale-90 md:scale-100" />
@@ -12,7 +12,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeIn">
