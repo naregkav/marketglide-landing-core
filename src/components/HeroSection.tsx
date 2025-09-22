@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Globe } from "@/components/ui/globe";
 
 const HeroSection = () => {
@@ -32,10 +31,9 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="animate-slideUp delay-400">
-            <Button variant="cta" size="xl" className="group bg-white text-primary hover:bg-white/90">
+            <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
               Schedule a Call
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </InteractiveHoverButton>
           </div>
 
           {/* Trust Indicators */}

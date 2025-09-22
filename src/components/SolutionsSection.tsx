@@ -1,5 +1,5 @@
 import { Network, Shield, Users, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const SolutionsSection = () => {
   const solutions = [
@@ -81,18 +81,18 @@ const SolutionsSection = () => {
               </ul>
 
               {/* CTA */}
-              <Button variant="ghost" size="sm" className="w-full justify-center group-hover:text-accent transition-colors">
+              <InteractiveHoverButton variant="ghost" size="sm" className="w-full">
                 Learn More
-              </Button>
+              </InteractiveHoverButton>
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <Button variant="hero" size="lg">
+          <InteractiveHoverButton variant="hero" size="lg">
             Explore All Solutions
-          </Button>
+          </InteractiveHoverButton>
         </div>
       </div>
     </section>

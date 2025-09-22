@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Mail } from "lucide-react";
 
 const CTASection = () => {
   return (
@@ -45,18 +45,17 @@ const CTASection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="cta" size="xl" className="group bg-white text-primary hover:bg-white/90">
+            <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
               Apply for Membership
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
+            </InteractiveHoverButton>
+            <InteractiveHoverButton
               variant="outline"
               size="xl"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+              icon={Mail}
+              className="bg-white/10 border-white/20 text-white backdrop-blur-sm"
             >
-              <Mail className="mr-2 w-5 h-5" />
               Schedule a Demo
-            </Button>
+            </InteractiveHoverButton>
           </div>
 
           {/* Trust Message */}

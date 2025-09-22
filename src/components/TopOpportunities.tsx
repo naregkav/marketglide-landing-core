@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Badge } from "@/components/ui/badge";
 import { GlowCard } from "@/components/ui/glow-card";
 import { MapPin, TrendingUp, Clock } from "lucide-react";
@@ -101,9 +101,9 @@ const TopOpportunities = () => {
                 </div>
 
                 {/* CTA */}
-                <Button variant="outline" size="sm" className="w-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <InteractiveHoverButton variant="outline" size="sm" className="w-full">
                   View Details
-                </Button>
+                </InteractiveHoverButton>
               </div>
             </GlowCard>
           ))}
@@ -111,9 +111,9 @@ const TopOpportunities = () => {
 
         {/* View More */}
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+          <InteractiveHoverButton variant="hero" size="lg">
             View All Opportunities
-          </Button>
+          </InteractiveHoverButton>
         </div>
       </div>
     </section>

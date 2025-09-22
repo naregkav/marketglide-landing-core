@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowRight } from "lucide-react";
 
@@ -49,9 +49,9 @@ const BlogSection = () => {
           <p className="text-subtitle mb-8">
             Stay ahead with expert insights, market trends, and strategic guidance from MarketGlide's curated thought leadership.
           </p>
-          <Button variant="outline" size="sm">
+          <InteractiveHoverButton variant="outline" size="sm" showArrow={false}>
             Read More →
-          </Button>
+          </InteractiveHoverButton>
         </div>
 
         {/* Articles Grid */}
@@ -110,9 +110,9 @@ const BlogSection = () => {
 
         {/* View All */}
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+          <InteractiveHoverButton variant="hero" size="lg">
             View All Articles
-          </Button>
+          </InteractiveHoverButton>
         </div>
       </div>
     </section>

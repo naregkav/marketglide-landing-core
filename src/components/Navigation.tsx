@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -56,23 +56,24 @@ const Navigation = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <Button variant="ghost" size="sm">
+            <InteractiveHoverButton variant="ghost" size="sm" showArrow={false}>
               Sign In
-            </Button>
-            <Button variant="cta" size="sm">
+            </InteractiveHoverButton>
+            <InteractiveHoverButton variant="cta" size="sm">
               Apply
-            </Button>
+            </InteractiveHoverButton>
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
+          <InteractiveHoverButton
             variant="ghost"
             size="icon"
             className="lg:hidden"
+            showArrow={false}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </Button>
+          </InteractiveHoverButton>
         </div>
 
         {/* Mobile Menu */}
@@ -90,12 +91,12 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-2">
-                <Button variant="ghost" size="sm" className="justify-start">
+                <InteractiveHoverButton variant="ghost" size="sm" className="justify-start" showArrow={false}>
                   Sign In
-                </Button>
-                <Button variant="cta" size="sm">
+                </InteractiveHoverButton>
+                <InteractiveHoverButton variant="cta" size="sm">
                   Apply
-                </Button>
+                </InteractiveHoverButton>
               </div>
             </div>
           </div>
