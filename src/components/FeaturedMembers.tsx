@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, ExternalLink } from "lucide-react";
+import { CircularGallery, GalleryItem } from "@/components/ui/circular-gallery";
 
 const FeaturedMembers = () => {
   const members = [
@@ -7,7 +8,7 @@ const FeaturedMembers = () => {
       name: "Renato Chiodaro",
       title: "Managing Partner",
       company: "Alpine Capital Partners",
-      image: "/api/placeholder/300/300",
+      image: "/members/renato-chiodaro.webp",
       verified: true,
       expertise: ["Private Equity", "Infrastructure"]
     },
@@ -15,7 +16,7 @@ const FeaturedMembers = () => {
       name: "Richard Lark", 
       title: "Investment Director",
       company: "European Growth Fund",
-      image: "/api/placeholder/300/300",
+      image: "/members/richard-lark.webp",
       verified: true,
       expertise: ["Venture Capital", "Fintech"]
     },
@@ -23,7 +24,7 @@ const FeaturedMembers = () => {
       name: "Henrique Roloff",
       title: "Senior Advisor",
       company: "Global Asset Management",
-      image: "/api/placeholder/300/300", 
+      image: "/members/henrique-roloff.webp", 
       verified: true,
       expertise: ["Real Estate", "REIT"]
     },
@@ -31,11 +32,23 @@ const FeaturedMembers = () => {
       name: "Armen Kherlopian, Ph.D.",
       title: "Chief Investment Officer",
       company: "Strategic Partners LLC",
-      image: "/api/placeholder/300/300",
+      image: "/members/armen-kherlopian.webp",
       verified: true,
       expertise: ["Biotech", "Healthcare"]
     }
   ];
+
+  // Transform members data to match GalleryItem interface
+  const galleryItems: GalleryItem[] = members.map((member) => ({
+    common: member.name,
+    binomial: `${member.title} • ${member.company}`,
+    photo: {
+      url: member.image,
+      text: `Professional portrait of ${member.name}, ${member.title} at ${member.company}`,
+      pos: "center",
+      by: member.company
+    }
+  }));
 
   return (
     <section className="py-16 bg-background">
@@ -50,63 +63,14 @@ const FeaturedMembers = () => {
           </p>
         </div>
 
-        {/* Members Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {members.map((member, index) => (
-            <div
-              key={member.name}
-              className="card-premium p-6 text-center hover-lift group"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              {/* Profile Image */}
-              <div className="relative w-24 h-24 mx-auto mb-4">
-                <div className="w-full h-full bg-muted rounded-full flex items-center justify-center">
-                  <div className="text-muted-foreground text-xs">Photo</div>
-                </div>
-                {member.verified && (
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-background">
-                    <div className="w-4 h-4 bg-accent-foreground rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Member Info */}
-              <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors">
-                {member.name}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-1">
-                {member.title}
-              </p>
-              <p className="text-muted-foreground text-xs mb-4">
-                {member.company}
-              </p>
-
-              {/* Expertise Tags */}
-              <div className="flex flex-wrap gap-1 justify-center mb-4">
-                {member.expertise.map((skill) => (
-                  <Badge 
-                    key={skill} 
-                    variant="secondary" 
-                    className="text-xs px-2 py-1"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-
-              {/* Social Links */}
-              <div className="flex justify-center space-x-2">
-                <button className="w-8 h-8 bg-muted hover:bg-accent hover:text-accent-foreground rounded-full flex items-center justify-center transition-colors">
-                  <Linkedin className="w-4 h-4" />
-                </button>
-                <button className="w-8 h-8 bg-muted hover:bg-accent hover:text-accent-foreground rounded-full flex items-center justify-center transition-colors">
-                  <ExternalLink className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          ))}
+        {/* Circular Gallery */}
+        <div className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+          <CircularGallery 
+            items={galleryItems}
+            radius={300}
+            autoRotateSpeed={0.01}
+            className="w-full h-full"
+          />
         </div>
 
         {/* View More */}
