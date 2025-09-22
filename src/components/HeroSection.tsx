@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-landscape.jpg";
 
 const HeroSection = () => {
   return (
@@ -9,48 +9,41 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroBackground}
-          alt="Global private markets visualization"
+          alt="Serene lake and mountains landscape"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/40"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-hero text-white mb-6 animate-fadeIn">
-            Discover Premium{" "}
-            <span className="bg-gradient-accent bg-clip-text text-transparent">
-              Private Market
-            </span>{" "}
-            Opportunities
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeIn">
+            The Trusted Discovery Layer for{" "}
+            <span className="block mt-2">Global Private Markets</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-subtitle text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn delay-200">
-            Exclusive access to vetted investors, strategic advisory, and global 
-            private deals in one platform.
+          <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed animate-fadeIn delay-200">
+            Exclusive access to premium private market opportunities, trusted strategic advisory services, and a vetted community of elite investors, fund managers, and dealmakers.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slideUp delay-400">
-            <Button variant="cta" size="xl" className="group">
+          {/* Platform Message */}
+          <p className="text-white/80 mb-8 font-medium animate-fadeIn delay-300">
+            All in one powerful platform.
+          </p>
+
+          {/* CTA Button */}
+          <div className="animate-slideUp delay-400">
+            <Button variant="cta" size="xl" className="group bg-white text-primary hover:bg-white/90">
               Schedule a Call
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              variant="outline"
-              size="xl"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
-            >
-              <Play className="mr-2 w-4 h-4" />
-              Apply for Access
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16 animate-fadeIn delay-600">
+          <div className="mt-20 animate-fadeIn delay-600">
             <p className="text-white/60 text-sm mb-4 font-medium uppercase tracking-wider">
               Trusted by Leading Investment Firms
             </p>
