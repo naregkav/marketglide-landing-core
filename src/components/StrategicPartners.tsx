@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const StrategicPartners = () => {
   const partners = [
@@ -74,6 +75,13 @@ const StrategicPartners = () => {
         {/* Partners Carousel */}
         <div className="relative max-w-6xl mx-auto">
           <Carousel 
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
             opts={{
               align: "start",
               loop: true,
