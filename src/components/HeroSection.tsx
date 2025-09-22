@@ -1,18 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroBackground from "@/assets/hero-landscape.jpg";
+import { ArrowRight } from "lucide-react";
+import { Globe } from "@/components/ui/globe";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={heroBackground}
-          alt="Serene lake and mountains landscape"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/40"></div>
+      {/* Interactive Globe Background */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <Globe className="scale-110 md:scale-125" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
       </div>
 
       {/* Content */}
