@@ -1,4 +1,14 @@
-import { StoriesCarousel, Story } from "@/components/ui/stories-carousel";
+import { 
+  ScrollXCarousel, 
+  ScrollXCarouselContainer, 
+  ScrollXCarouselWrap, 
+  ScrollXCarouselProgress 
+} from "@/components/ui/scroll-x-carousel";
+import { 
+  CardHoverReveal, 
+  CardHoverRevealMain, 
+  CardHoverRevealContent 
+} from "@/components/ui/card-hover-reveal";
 import infrastructureImg from "@/assets/infrastructure.jpg";
 import agricultureImg from "@/assets/agriculture.jpg";
 import manufacturingImg from "@/assets/manufacturing.jpg";
@@ -13,8 +23,16 @@ import transportationImg from "@/assets/transportation.jpg";
 import retailImg from "@/assets/retail.jpg";
 import miningImg from "@/assets/mining.jpg";
 
+interface Sector {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  category: string;
+}
+
 const SectorsCovered = () => {
-  const sectors: Story[] = [
+  const sectors: Sector[] = [
     {
       id: "fintech",
       title: "Financial Technology",
@@ -109,10 +127,10 @@ const SectorsCovered = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/20">
-      <div className="container mx-auto px-6">
+    <ScrollXCarousel className="h-[200vh] bg-muted/20">
+      <ScrollXCarouselContainer className="h-screen">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto pt-20 pb-12 px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Sectors We Cover
           </h2>
@@ -121,17 +139,54 @@ const SectorsCovered = () => {
           </p>
         </div>
 
-        {/* Stories Carousel */}
-        <StoriesCarousel 
-          stories={sectors}
-          autoPlay={true}
-          autoPlayInterval={4000}
-          showDots={true}
-          showArrows={true}
-          className="max-w-6xl mx-auto"
+        {/* Progress Bar */}
+        <ScrollXCarouselProgress 
+          className="w-full h-1 bg-muted mb-8"
+          progressStyle="h-full bg-gradient-to-r from-primary to-primary/60"
         />
-      </div>
-    </section>
+
+        {/* Horizontal Scrolling Cards */}
+        <ScrollXCarouselWrap 
+          className="flex gap-6 pl-6 pr-[50vw]"
+          xRange={['0%', '-70%']}
+        >
+          {sectors.map((sector) => (
+            <CardHoverReveal 
+              key={sector.id}
+              className="w-80 h-96 rounded-2xl bg-card shadow-lg flex-shrink-0"
+            >
+              <CardHoverRevealMain className="rounded-2xl">
+                <div 
+                  className="w-full h-full rounded-2xl bg-cover bg-center relative"
+                  style={{ backgroundImage: `url(${sector.image})` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-2xl" />
+                  
+                  {/* Always visible content */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full mb-2">
+                      <span className="text-xs font-medium text-primary-foreground/90">
+                        {sector.category}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {sector.title}
+                    </h3>
+                  </div>
+                </div>
+              </CardHoverRevealMain>
+              
+              {/* Hover reveal content */}
+              <CardHoverRevealContent className="bg-card/90 border border-border rounded-xl">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {sector.description}
+                </p>
+              </CardHoverRevealContent>
+            </CardHoverReveal>
+          ))}
+        </ScrollXCarouselWrap>
+      </ScrollXCarouselContainer>
+    </ScrollXCarousel>
   );
 };
 
