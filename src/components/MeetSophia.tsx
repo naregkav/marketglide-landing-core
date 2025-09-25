@@ -48,50 +48,61 @@ const MeetSophia = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-accent">
+    <section className="py-20 bg-gradient-to-br from-accent via-accent to-accent-secondary">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              Meet Sophia
-            </h2>
-            
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-            >
-              {features.map((feature, index) => {
-                const IconComponent = feature.icon;
-                return (
-                  <motion.div key={index} variants={itemVariants}>
-                    <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-                      <CardContent className="p-6">
-                        <div className="mb-4">
-                          <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                            <IconComponent className="h-5 w-5 text-white" />
-                          </div>
+            Meet Sophia
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-lg text-white/80 max-w-2xl mx-auto"
+          >
+            Your AI-powered investment assistant that never sleeps
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content - Feature Cards */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+          >
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <motion.div key={index} variants={itemVariants}>
+                  <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 h-full">
+                    <CardContent className="p-6">
+                      <div className="mb-4">
+                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                          <IconComponent className="h-6 w-6 text-white" />
                         </div>
-                        <h3 className="text-white font-semibold text-lg mb-2">
-                          {feature.title}
-                        </h3>
-                        <p className="text-white/80 text-sm leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
+                      </div>
+                      <h3 className="text-white font-semibold text-lg mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-white/80 text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           {/* Right Dashboard Mockup */}
@@ -102,68 +113,111 @@ const MeetSophia = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Dashboard Container */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full"></div>
+            {/* Main Dashboard Container */}
+            <div className="bg-white/15 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+              {/* Dashboard Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-white/30 to-white/20 rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-white/40 rounded-full"></div>
+                  </div>
                   <div>
-                    <div className="w-20 h-3 bg-white/30 rounded mb-1"></div>
-                    <div className="w-16 h-2 bg-white/20 rounded"></div>
+                    <div className="w-24 h-4 bg-white/30 rounded-md mb-2"></div>
+                    <div className="w-20 h-3 bg-white/20 rounded-md"></div>
                   </div>
                 </div>
-                <div className="flex space-x-2">
-                  <div className="w-6 h-6 bg-white/20 rounded"></div>
-                  <div className="w-6 h-6 bg-white/20 rounded"></div>
+                <div className="flex space-x-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                  <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
+                  <div className="w-8 h-8 bg-white/20 rounded-lg"></div>
                 </div>
               </div>
 
-              {/* Chart Area */}
-              <div className="bg-white/10 rounded-xl p-4 mb-6">
-                <div className="flex items-end space-x-2 h-20">
-                  {[40, 60, 30, 80, 50, 70, 45].map((height, index) => (
+              {/* Chart Visualization */}
+              <div className="bg-white/10 rounded-2xl p-6 mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-32 h-4 bg-white/30 rounded"></div>
+                  <div className="flex space-x-2">
+                    <div className="w-6 h-6 bg-white/20 rounded"></div>
+                    <div className="w-6 h-6 bg-white/20 rounded"></div>
+                  </div>
+                </div>
+                <div className="flex items-end justify-between space-x-3 h-24">
+                  {[45, 70, 35, 85, 55, 75, 50, 90].map((height, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white/40 rounded-t flex-1"
+                      className="bg-gradient-to-t from-white/40 to-white/60 rounded-t-lg flex-1"
                       style={{ height: `${height}%` }}
                       initial={{ height: 0 }}
                       whileInView={{ height: `${height}%` }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
+                      transition={{ duration: 1.2, delay: 0.5 + index * 0.1 }}
                       viewport={{ once: true }}
                     />
                   ))}
                 </div>
               </div>
 
-              {/* Data Rows */}
-              <div className="space-y-3">
-                {[80, 60, 90].map((width, index) => (
+              {/* Data Metrics */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "85%", label: "Match Accuracy" },
+                  { value: "2.3x", label: "Deal Flow" },
+                  { value: "48h", label: "Response Time" },
+                  { value: "95%", label: "User Satisfaction" }
+                ].map((metric, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center space-x-3"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    className="bg-white/10 rounded-xl p-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="w-4 h-4 bg-white/30 rounded-full"></div>
-                    <div className={`h-2 bg-white/20 rounded`} style={{ width: `${width}%` }}></div>
+                    <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
+                    <div className="text-xs text-white/70">{metric.label}</div>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* Floating Elements */}
+            {/* Floating Decorative Elements */}
             <motion.div
-              className="absolute -top-4 -right-4 w-16 h-16 bg-white/20 rounded-full backdrop-blur-sm border border-white/30"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl backdrop-blur-sm border border-white/30"
+              animate={{ 
+                y: [0, -15, 0],
+                rotate: [0, 5, 0] 
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
             />
             <motion.div
-              className="absolute bottom-4 -left-4 w-12 h-12 bg-white/15 rounded-lg backdrop-blur-sm border border-white/20"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute bottom-8 -left-6 w-16 h-16 bg-gradient-to-r from-white/15 to-white/5 rounded-xl backdrop-blur-sm border border-white/20"
+              animate={{ 
+                y: [0, 12, 0],
+                rotate: [0, -3, 0] 
+              }}
+              transition={{ 
+                duration: 3.5, 
+                repeat: Infinity, 
+                ease: "easeInOut", 
+                delay: 1.5 
+              }}
+            />
+            <motion.div
+              className="absolute top-1/3 -left-4 w-12 h-12 bg-white/10 rounded-full backdrop-blur-sm border border-white/25"
+              animate={{ 
+                scale: [1, 1.1, 1],
+                opacity: [0.7, 1, 0.7] 
+              }}
+              transition={{ 
+                duration: 2.8, 
+                repeat: Infinity, 
+                ease: "easeInOut", 
+                delay: 0.8 
+              }}
             />
           </motion.div>
         </div>
