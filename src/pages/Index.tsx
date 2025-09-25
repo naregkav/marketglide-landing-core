@@ -1,10 +1,10 @@
 import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import TopOpportunities from "@/components/TopOpportunities";
-import SectorsCovered from "@/components/SectorsCovered";
-import FeaturedMembers from "@/components/FeaturedMembers";
-import StrategicPartners from "@/components/StrategicPartners";
-import BlogSection from "@/components/BlogSection";
+import HeroSectionNew from "@/components/HeroSectionNew";
+import TrustSection from "@/components/TrustSection";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import ApplicationProcess from "@/components/ApplicationProcess";
+import MeetSophia from "@/components/MeetSophia";
+import WhyMarketGlide from "@/components/WhyMarketGlide";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -12,12 +12,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <HeroSection />
-      <TopOpportunities />
-      <SectorsCovered />
-      <FeaturedMembers />
-      <StrategicPartners />
-      <BlogSection />
+      <HeroSectionNew />
+      <TrustSection />
+      <FeaturesGrid />
+      <ApplicationProcess />
+      <MeetSophia />
+      <WhyMarketGlide />
       <CTASection />
       <Footer />
     </div>
