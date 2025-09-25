@@ -5,7 +5,7 @@ import ConnectionRequests from "@/components/ConnectionRequests";
 
 const HeroSectionNew = () => {
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden bg-gradient-to-br from-accent/90 via-accent to-accent-secondary">
+    <section className="relative min-h-screen pt-20 overflow-hidden bg-gradient-to-br from-accent via-accent to-accent-secondary">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0">
         {/* Primary radial gradient */}
@@ -19,7 +19,7 @@ const HeroSectionNew = () => {
         
         {/* Animated floating orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/5 rounded-full blur-xl"
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/3 rounded-full blur-xl"
           animate={{
             y: [0, -30, 0],
             x: [0, 20, 0],
@@ -33,7 +33,7 @@ const HeroSectionNew = () => {
         />
         
         <motion.div
-          className="absolute top-3/4 right-1/3 w-24 h-24 bg-white/4 rounded-full blur-lg"
+          className="absolute top-3/4 right-1/3 w-24 h-24 bg-white/2 rounded-full blur-lg"
           animate={{
             y: [0, 25, 0],
             x: [0, -15, 0],
@@ -48,7 +48,7 @@ const HeroSectionNew = () => {
         />
         
         <motion.div
-          className="absolute top-1/2 right-1/4 w-16 h-16 bg-white/6 rounded-full blur-md"
+          className="absolute top-1/2 right-1/4 w-16 h-16 bg-white/4 rounded-full blur-md"
           animate={{
             y: [0, -20, 0],
             x: [0, 10, 0],
@@ -87,7 +87,7 @@ const HeroSectionNew = () => {
               transition={{ duration: 0.6 }}
               className="mb-6"
             >
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm">
+              <Badge variant="secondary" className="bg-white/30 text-foreground border-white/40 px-4 py-2 text-sm">
                 Coming Soon: AI Agent on WhatsApp
               </Badge>
             </motion.div>
@@ -97,7 +97,7 @@ const HeroSectionNew = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-6"
             >
               The Trusted Discovery Layer For{" "}
               <span className="block mt-2">Global Private Markets</span>
@@ -108,7 +108,7 @@ const HeroSectionNew = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl lg:max-w-none"
+              className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl lg:max-w-none"
             >
               Connect with elite investors, funds, and opportunities. All in one place.
             </motion.p>
@@ -119,7 +119,7 @@ const HeroSectionNew = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-accent hover:bg-white/90">
+              <InteractiveHoverButton variant="cta" size="xl" className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Schedule a Call
               </InteractiveHoverButton>
             </motion.div>
