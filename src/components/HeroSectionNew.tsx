@@ -6,8 +6,74 @@ import ConnectionRequests from "@/components/ConnectionRequests";
 const HeroSectionNew = () => {
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden bg-gradient-to-br from-accent/90 via-accent to-accent-secondary">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#ffffff10,transparent)]"></div>
+      {/* Enhanced Background Pattern */}
+      <div className="absolute inset-0">
+        {/* Primary radial gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_30%_300px,#ffffff15,transparent)]"></div>
+        
+        {/* Secondary radial gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_600px_at_70%_100px,#ffffff08,transparent)]"></div>
+        
+        {/* Mesh gradient overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_1200px_800px_at_50%_400px,#ffffff05,transparent)]"></div>
+        
+        {/* Animated floating orbs */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/5 rounded-full blur-xl"
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 20, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        <motion.div
+          className="absolute top-3/4 right-1/3 w-24 h-24 bg-white/4 rounded-full blur-lg"
+          animate={{
+            y: [0, 25, 0],
+            x: [0, -15, 0],
+            scale: [1, 0.8, 1],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+        
+        <motion.div
+          className="absolute top-1/2 right-1/4 w-16 h-16 bg-white/6 rounded-full blur-md"
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 10, 0],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4
+          }}
+        />
+        
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }}
+        />
+      </div>
       
       {/* Main Content Container */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 h-screen flex items-center">
