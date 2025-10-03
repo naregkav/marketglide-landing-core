@@ -39,27 +39,27 @@ const Navigation = () => {
     { 
       label: "Startups & Companies (Raising)", 
       description: "Founders, developers, and operators raising capital across sectors.",
-      href: "/apply/startups" 
+      href: "https://marketglide.io/app/registration/company?type=company" 
     },
     { 
       label: "Emerging Fund Managers (Raising)", 
       description: "First-time GPs and new strategies seeking LPs.",
-      href: "/apply/fund-managers" 
+      href: "https://marketglide.io/app/registration/company?type=fund" 
     },
     { 
       label: "Venture Capital & Private Equity Firms", 
       description: "Established funds sourcing deals and co-investments.",
-      href: "/apply/pe-vc" 
+      href: "https://marketglide.io/app/registration/investor?type=investor" 
     },
     { 
       label: "Private Investors & Institutional LPs", 
       description: "Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.",
-      href: "/apply/family-offices" 
+      href: "https://marketglide.io/app/registration/investor?type=investor-private" 
     },
     { 
       label: "Advisors & Ecosystem Partners", 
       description: "Lawyers, consultants, fund admins, accelerators, and others supporting transactions.",
-      href: "/apply/advisors" 
+      href: "https://marketglide.io/app/registration/investor?type=investor-advisors" 
     },
   ];
 
@@ -138,10 +138,10 @@ const Navigation = () => {
               <DropdownMenuContent align="end" className="w-[360px] p-2">
                 {applyLinks.map((link) => (
                   <DropdownMenuItem key={link.label} asChild className="cursor-pointer p-3 flex-col items-start gap-1">
-                    <Link to={link.href}>
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">
                       <div className="font-medium text-foreground">{link.label}</div>
                       <div className="text-xs text-muted-foreground">{link.description}</div>
-                    </Link>
+                    </a>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -214,9 +214,11 @@ const Navigation = () => {
                   <div className="text-muted-foreground font-medium mb-2">Apply</div>
                   <div className="flex flex-col space-y-3 pl-2">
                     {applyLinks.map((link) => (
-                      <Link
+                      <a
                         key={link.label}
-                        to={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex flex-col gap-1"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -226,7 +228,7 @@ const Navigation = () => {
                         <div className="text-xs text-muted-foreground">
                           {link.description}
                         </div>
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>
