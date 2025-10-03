@@ -61,7 +61,7 @@ const CTASection = () => {
               <DropdownMenuContent align="center" className="w-64">
                 <DropdownMenuItem asChild>
                   <a
-                    href="https://marketglide.io/app/registration/company?type=company"
+                    href="https://stage.marketglide.io/app/registration/company?type=company"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer"
@@ -74,7 +74,7 @@ const CTASection = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a
-                    href="https://marketglide.io/app/registration/company?type=fund"
+                    href="https://stage.marketglide.io/app/registration/company?type=fund"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer"
@@ -87,7 +87,7 @@ const CTASection = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a
-                    href="https://marketglide.io/app/registration/investor?type=investor"
+                    href="https://stage.marketglide.io/app/registration/investor?type=investor"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer"
@@ -100,7 +100,7 @@ const CTASection = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a
-                    href="https://marketglide.io/app/registration/investor?type=investor-private"
+                    href="https://stage.marketglide.io/app/registration/investor?type=investor-private"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer"
@@ -113,7 +113,7 @@ const CTASection = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a
-                    href="https://marketglide.io/app/registration/investor?type=investor-advisors"
+                    href="https://stage.marketglide.io/app/registration/investor?type=investor-advisors"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer"
