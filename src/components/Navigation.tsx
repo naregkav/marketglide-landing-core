@@ -39,27 +39,27 @@ const Navigation = () => {
     { 
       label: "Startups & Companies (Raising)", 
       description: "Founders, developers, and operators raising capital across sectors.",
-      href: "https://marketglide.io/app/registration/company?type=company" 
+      href: "https://stage.marketglide.io/app/registration/company?type=company" 
     },
     { 
       label: "Emerging Fund Managers (Raising)", 
       description: "First-time GPs and new strategies seeking LPs.",
-      href: "https://marketglide.io/app/registration/company?type=fund" 
+      href: "https://stage.marketglide.io/app/registration/company?type=fund" 
     },
     { 
       label: "Venture Capital & Private Equity Firms", 
       description: "Established funds sourcing deals and co-investments.",
-      href: "https://marketglide.io/app/registration/investor?type=investor" 
+      href: "https://stage.marketglide.io/app/registration/investor?type=investor" 
     },
     { 
       label: "Private Investors & Institutional LPs", 
       description: "Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.",
-      href: "https://marketglide.io/app/registration/investor?type=investor-private" 
+      href: "https://stage.marketglide.io/app/registration/investor?type=investor-private" 
     },
     { 
       label: "Advisors & Ecosystem Partners", 
       description: "Lawyers, consultants, fund admins, accelerators, and others supporting transactions.",
-      href: "https://marketglide.io/app/registration/investor?type=investor-advisors" 
+      href: "https://stage.marketglide.io/app/registration/investor?type=investor-advisors" 
     },
   ];
 
