@@ -23,10 +23,17 @@ const Navigation = () => {
 
   const navLinks = [
     { label: "Product", href: "#product" },
-    { label: "Solutions", href: "#solutions" },
     { label: "Membership", href: "#membership" },
     { label: "Blog", href: "#blog" },
     { label: "FAQ", href: "#faq" },
+  ];
+
+  const solutionsLinks = [
+    { label: "Startups & Companies", href: "/apply/startups" },
+    { label: "Emerging Fund Managers", href: "/apply/fund-managers" },
+    { label: "PE & VC Firms", href: "/apply/pe-vc" },
+    { label: "Family Offices", href: "/apply/family-offices" },
+    { label: "Advisors & Partners", href: "/apply/advisors" },
   ];
 
   return (
@@ -49,6 +56,29 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
+            <a
+              href="#product"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
+            >
+              Product
+            </a>
+            
+            {/* Solutions Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium flex items-center gap-1">
+                Solutions <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-[280px] p-2">
+                {solutionsLinks.map((link) => (
+                  <DropdownMenuItem key={link.label} asChild>
+                    <Link to={link.href} className="cursor-pointer">
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -69,45 +99,9 @@ const Navigation = () => {
             <InteractiveHoverButton variant="ghost" size="sm" showArrow={false}>
               Sign In
             </InteractiveHoverButton>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <InteractiveHoverButton variant="cta" size="sm">
-                  Apply <ChevronDown className="ml-1 h-4 w-4" />
-                </InteractiveHoverButton>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-[420px] p-2">
-                <DropdownMenuItem asChild>
-                  <Link to="/apply/startups" className="flex flex-col items-start gap-1 cursor-pointer">
-                    <span className="font-semibold">Startups & Companies (Raising)</span>
-                    <span className="text-xs text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/apply/fund-managers" className="flex flex-col items-start gap-1 cursor-pointer">
-                    <span className="font-semibold">Emerging Fund Managers (Raising)</span>
-                    <span className="text-xs text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/apply/vc-pe" className="flex flex-col items-start gap-1 cursor-pointer">
-                    <span className="font-semibold">Venture Capital & Private Equity Firms</span>
-                    <span className="text-xs text-muted-foreground">Established funds sourcing deals and co-investments.</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/apply/investors" className="flex flex-col items-start gap-1 cursor-pointer">
-                    <span className="font-semibold">Private Investors & Institutional LPs</span>
-                    <span className="text-xs text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/apply/advisors" className="flex flex-col items-start gap-1 cursor-pointer">
-                    <span className="font-semibold">Advisors & Ecosystem Partners</span>
-                    <span className="text-xs text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <InteractiveHoverButton variant="cta" size="sm">
+              Apply
+            </InteractiveHoverButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -126,6 +120,31 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border py-4">
             <div className="flex flex-col space-y-4">
+              <a
+                href="#product"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-2 py-1"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Product
+              </a>
+              
+              {/* Solutions Dropdown Mobile */}
+              <div className="px-2">
+                <div className="text-muted-foreground font-medium mb-2">Solutions</div>
+                <div className="flex flex-col space-y-2 pl-4">
+                  {solutionsLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -144,45 +163,9 @@ const Navigation = () => {
                 <InteractiveHoverButton variant="ghost" size="sm" className="justify-start" showArrow={false}>
                   Sign In
                 </InteractiveHoverButton>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <InteractiveHoverButton variant="cta" size="sm" className="w-full">
-                      Apply <ChevronDown className="ml-1 h-4 w-4" />
-                    </InteractiveHoverButton>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-[calc(100vw-3rem)] max-w-[420px] p-2">
-                    <DropdownMenuItem asChild>
-                      <Link to="/apply/startups" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className="font-semibold">Startups & Companies (Raising)</span>
-                        <span className="text-xs text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/apply/fund-managers" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className="font-semibold">Emerging Fund Managers (Raising)</span>
-                        <span className="text-xs text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/apply/vc-pe" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className="font-semibold">Venture Capital & Private Equity Firms</span>
-                        <span className="text-xs text-muted-foreground">Established funds sourcing deals and co-investments.</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/apply/investors" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className="font-semibold">Private Investors & Institutional LPs</span>
-                        <span className="text-xs text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link to="/apply/advisors" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className="font-semibold">Advisors & Ecosystem Partners</span>
-                        <span className="text-xs text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
-                      </Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <InteractiveHoverButton variant="cta" size="sm" className="w-full">
+                  Apply
+                </InteractiveHoverButton>
               </div>
             </div>
           </div>
