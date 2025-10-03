@@ -22,7 +22,6 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: "Product", href: "#product" },
     { label: "Membership", href: "#membership" },
     { label: "Blog", href: "#blog" },
     { label: "FAQ", href: "#faq" },
