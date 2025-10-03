@@ -11,67 +11,66 @@ import Footer from "@/components/Footer";
 const plans = [
   {
     name: "Basic",
-    description: "Perfect for those that best fits your investor or founder journey",
+    description: "For founders, funds, and investors getting started.",
     price: 0,
     yearlyPrice: 0,
-    buttonText: "Apply",
+    buttonText: "Apply now",
     buttonVariant: "outline" as const,
     features: [
-      { text: "3 Current Listings & 3 Community Profiles", icon: <Eye size={20} /> },
-      { text: "Reply-Only Access", icon: <MessageSquare size={20} /> },
-      { text: "Industry & Region Filters Only", icon: <Filter size={20} /> },
-    ],
-    includes: [
-      "Free includes:",
-      "Profile Views",
-      "Basic Messaging",
-      "Regional Filters",
-      "Community Access",
+      { text: "View 3 listings/month", icon: <Eye size={20} /> },
+      { text: "View 3 members/month", icon: <Users size={20} /> },
+      { text: "Reply-only messaging", icon: <MessageSquare size={20} /> },
+      { text: "Industry & region filters only", icon: <Filter size={20} /> },
+      { text: "MarketGlide newsletter", icon: <Bell size={20} /> },
     ],
   },
   {
     name: "Standard",
-    description: "Enhanced features for serious investors",
+    description: "For active users raising or deploying capital.",
     price: 199,
-    yearlyPrice: 1999,
-    buttonText: "Apply",
+    yearlyPrice: 167, // 199 * 12 * 0.84 / 12 = 167 (16% savings)
+    buttonText: "Apply now",
     buttonVariant: "default" as const,
-    popular: true,
     features: [
-      { text: "10 Current Listings & 10 Community Profiles", icon: <Users size={20} /> },
-      { text: "Start Chats with 10 Listings", icon: <MessageSquare size={20} /> },
-      { text: "Advanced Filters", icon: <Filter size={20} /> },
-    ],
-    includes: [
-      "Everything in Basic, plus:",
-      "Connection Requests",
-      "Direct Messaging",
-      "Investment Size Filters",
-      "Funding Stage Filters",
+      { text: "Everything in Free", icon: <CheckCheck size={20} /> },
+      { text: "View 10 listings/month", icon: <Eye size={20} /> },
+      { text: "View 10 members/month", icon: <Users size={20} /> },
+      { text: "Smart filters (by deal stage, ticket size, investor type)", icon: <Filter size={20} /> },
+      { text: "Start and reply to chats", icon: <MessageSquare size={20} /> },
+      { text: "Investor roundtable invites", icon: <Calendar size={20} /> },
     ],
   },
   {
     name: "Premium",
-    description: "Full access for professional fund managers",
+    description: "Our most popular plan for a reason.",
     price: 299,
-    yearlyPrice: 2999,
-    buttonText: "Apply",
+    yearlyPrice: 251, // 299 * 12 * 0.84 / 12 = 251 (16% savings)
+    buttonText: "Apply now",
     buttonVariant: "outline" as const,
+    popular: true,
     features: [
-      { text: "Unlimited Access", icon: <Database size={20} /> },
-      { text: "Expert Network (2 Hours/Month)", icon: <Users2 size={20} /> },
-      { text: "Curated Strategy Sessions", icon: <Calendar size={20} /> },
+      { text: "Everything in Pro", icon: <CheckCheck size={20} /> },
+      { text: "Unlimited listings & members", icon: <Database size={20} /> },
+      { text: "Unlimited direct chats", icon: <MessageSquare size={20} /> },
+      { text: "Unlimited custom filters", icon: <Filter size={20} /> },
+      { text: "Performance Analytics & Insights", icon: <BarChart size={20} /> },
+      { text: "Priority Support", icon: <HeadphonesIcon size={20} /> },
     ],
-    includes: [
-      "Everything in Standard, plus:",
-      "Unlimited Connections",
-      "Expert Network Access",
-      "Strategy Sessions",
-      "Investor Roundtables",
-      "Community Events",
-      "Market Research Reports",
-      "Platform Matching Alerts",
-      "Concierge Support",
+  },
+  {
+    name: "Enterprise",
+    description: "For family offices, corporate VC arms, or institutions.",
+    price: null,
+    yearlyPrice: null,
+    buttonText: "Get started",
+    buttonVariant: "default" as const,
+    features: [
+      { text: "Everything in Pro", icon: <CheckCheck size={20} /> },
+      { text: "Custom team accounts", icon: <Users2 size={20} /> },
+      { text: "White-glove onboarding", icon: <HeadphonesIcon size={20} /> },
+      { text: "Dedicated relationship manager", icon: <MessageCircle size={20} /> },
+      { text: "Advanced reporting & analytics", icon: <BarChart size={20} /> },
+      { text: "Investor syndicate building", icon: <Users size={20} /> },
     ],
   },
 ];
@@ -120,7 +119,12 @@ const PricingSwitch = ({ onSwitch }: { onSwitch: (value: string) => void }) => {
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative">Yearly</span>
+          <span className="relative flex items-center gap-2">
+            Yearly
+            <span className="bg-accent text-accent-foreground px-2 py-0.5 rounded-full text-xs font-medium">
+              SAVE 16%
+            </span>
+          </span>
         </button>
       </div>
     </div>
@@ -197,7 +201,7 @@ const Membership = () => {
           <PricingSwitch onSwitch={togglePricingPeriod} />
         </TimelineContent>
 
-        <div className="grid md:grid-cols-3 max-w-7xl gap-4 py-6 mx-auto relative z-10">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 max-w-7xl gap-4 py-6 mx-auto relative z-10 md:items-stretch">
           {plans.map((plan, index) => (
             <TimelineContent
               key={plan.name}
@@ -207,7 +211,7 @@ const Membership = () => {
               customVariants={revealVariants}
             >
               <Card
-                className={`relative border-border h-[600px] flex flex-col ${
+                className={`relative border-border h-full flex flex-col ${
                   plan.popular ? "ring-2 ring-accent bg-accent/5" : "bg-card"
                 }`}
               >
@@ -229,17 +233,19 @@ const Membership = () => {
                     <span className="text-4xl font-semibold text-foreground">
                       {plan.price === 0 ? (
                         "Free"
+                      ) : plan.price === null ? (
+                        "Custom"
                       ) : (
                         <>
                           $
                           <NumberFlow
-                            value={isYearly ? plan.yearlyPrice : plan.price}
+                            value={isYearly ? plan.yearlyPrice! : plan.price}
                             className="text-4xl font-semibold"
                           />
                         </>
                       )}
                     </span>
-                    {plan.price !== 0 && (
+                    {plan.price !== 0 && plan.price !== null && (
                       <span className="text-muted-foreground ml-1">
                         /{isYearly ? "year" : "month"}
                       </span>
@@ -259,11 +265,11 @@ const Membership = () => {
                   >
                     {plan.buttonText} →
                   </button>
-                  <ul className="space-y-2 font-semibold py-5">
+                  <ul className="space-y-3 flex-1">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <span className="text-muted-foreground grid place-content-center mt-0.5 mr-3">
-                          {feature.icon}
+                      <li key={featureIndex} className="flex items-start">
+                        <span className="h-6 w-6 bg-accent/10 border border-accent rounded-full grid place-content-center mt-0.5 mr-3 flex-shrink-0">
+                          <CheckCheck className="h-4 w-4 text-accent" />
                         </span>
                         <span className="text-sm text-muted-foreground">
                           {feature.text}
@@ -271,22 +277,6 @@ const Membership = () => {
                       </li>
                     ))}
                   </ul>
-
-                  <div className="space-y-3 pt-4 border-t border-border">
-                    <h4 className="font-medium text-base text-foreground mb-3">
-                      {plan.includes[0]}
-                    </h4>
-                    <ul className="space-y-2 font-semibold">
-                      {plan.includes.slice(1).map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center">
-                          <span className="h-6 w-6 bg-accent/10 border border-accent rounded-full grid place-content-center mt-0.5 mr-3">
-                            <CheckCheck className="h-4 w-4 text-accent" />
-                          </span>
-                          <span className="text-sm text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </CardContent>
               </Card>
             </TimelineContent>
@@ -294,32 +284,6 @@ const Membership = () => {
         </div>
       </div>
 
-      {/* Enterprise Section */}
-      <section className="pb-20">
-        <div className="container mx-auto px-6">
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="bg-gradient-accent p-8 rounded-lg text-accent-foreground">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
-                  <p className="text-accent-foreground/90 mb-2">
-                    For firms with complex needs, high-volume deal flow, or multi-team usage, our Enterprise plan offers customized access, advanced features, and dedicated support.
-                  </p>
-                  <p className="text-accent-foreground/80 text-sm">
-                    Whether you're a fund, family office, corporate VC, or ecosystem partner, we'll tailor MarketGlide to work for you.
-                  </p>
-                </div>
-                <div className="flex-shrink-0">
-                  <button className="bg-white/10 border border-white/20 text-white hover:bg-white/20 px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4" />
-                    Talk to us
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

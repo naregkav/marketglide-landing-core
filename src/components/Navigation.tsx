@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,26 +27,30 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-medium"
-          : "bg-transparent"
+          ? "bg-background/98 backdrop-blur-lg shadow-medium border-b border-border/20"
+          : "bg-background/80 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center">
               <span className="text-accent-foreground font-bold text-sm">MG</span>
             </div>
             <span className="text-xl font-bold text-foreground">MarketGlide</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href === "#membership" ? "/membership" : link.href}
+                href={
+                  link.href === "#membership" ? "/membership" :
+                  link.href === "#blog" ? "/blog" :
+                  link.href
+                }
                 className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
               >
                 {link.label}
@@ -61,59 +60,24 @@ const Navigation = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <Button variant="ghost" size="sm">
+            <InteractiveHoverButton variant="ghost" size="sm" showArrow={false}>
               Sign In
-            </Button>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="cta" size="sm">
-                  Apply <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-80 bg-background border-border">
-                <DropdownMenuItem asChild>
-                  <a href="/apply/startups" className="flex flex-col items-start py-3 cursor-pointer">
-                    <span className="font-semibold text-foreground">Startups & Companies (Raising)</span>
-                    <span className="text-sm text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="/apply/emerging-fund-managers" className="flex flex-col items-start py-3 cursor-pointer">
-                    <span className="font-semibold text-foreground">Emerging Fund Managers (Raising)</span>
-                    <span className="text-sm text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="/apply/vc-pe-firms" className="flex flex-col items-start py-3 cursor-pointer">
-                    <span className="font-semibold text-foreground">Venture Capital & Private Equity Firms</span>
-                    <span className="text-sm text-muted-foreground">Established funds sourcing deals and co-investments.</span>
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="/apply/private-investors" className="flex flex-col items-start py-3 cursor-pointer">
-                    <span className="font-semibold text-foreground">Private Investors & Institutional LPs</span>
-                    <span className="text-sm text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="/apply/advisors" className="flex flex-col items-start py-3 cursor-pointer">
-                    <span className="font-semibold text-foreground">Advisors & Ecosystem Partners</span>
-                    <span className="text-sm text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            </InteractiveHoverButton>
+            <InteractiveHoverButton variant="cta" size="sm">
+              Apply
+            </InteractiveHoverButton>
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
+          <InteractiveHoverButton
             variant="ghost"
             size="icon"
             className="lg:hidden"
+            showArrow={false}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </Button>
+          </InteractiveHoverButton>
         </div>
 
         {/* Mobile Menu */}
@@ -123,7 +87,11 @@ const Navigation = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.label}
-                  href={link.href === "#membership" ? "/membership" : link.href}
+                  href={
+                    link.href === "#membership" ? "/membership" :
+                    link.href === "#blog" ? "/blog" :
+                    link.href
+                  }
                   className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-2 py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -131,48 +99,12 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-2">
-                <Button variant="ghost" size="sm" className="justify-start">
+                <InteractiveHoverButton variant="ghost" size="sm" className="justify-start" showArrow={false}>
                   Sign In
-                </Button>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="cta" size="sm" className="w-full">
-                      Apply <ChevronDown className="ml-1 h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-80 bg-background border-border">
-                    <DropdownMenuItem asChild>
-                      <a href="/apply/startups" className="flex flex-col items-start py-3 cursor-pointer">
-                        <span className="font-semibold text-foreground">Startups & Companies (Raising)</span>
-                        <span className="text-sm text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="/apply/emerging-fund-managers" className="flex flex-col items-start py-3 cursor-pointer">
-                        <span className="font-semibold text-foreground">Emerging Fund Managers (Raising)</span>
-                        <span className="text-sm text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="/apply/vc-pe-firms" className="flex flex-col items-start py-3 cursor-pointer">
-                        <span className="font-semibold text-foreground">Venture Capital & Private Equity Firms</span>
-                        <span className="text-sm text-muted-foreground">Established funds sourcing deals and co-investments.</span>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="/apply/private-investors" className="flex flex-col items-start py-3 cursor-pointer">
-                        <span className="font-semibold text-foreground">Private Investors & Institutional LPs</span>
-                        <span className="text-sm text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="/apply/advisors" className="flex flex-col items-start py-3 cursor-pointer">
-                        <span className="font-semibold text-foreground">Advisors & Ecosystem Partners</span>
-                        <span className="text-sm text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
-                      </a>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                </InteractiveHoverButton>
+                <InteractiveHoverButton variant="cta" size="sm">
+                  Apply
+                </InteractiveHoverButton>
               </div>
             </div>
           </div>

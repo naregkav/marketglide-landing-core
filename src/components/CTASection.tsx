@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Mail } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-hero relative overflow-hidden">
+    <section className="py-24 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
@@ -11,7 +11,7 @@ const CTASection = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -45,18 +45,17 @@ const CTASection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="cta" size="xl" className="group bg-white text-primary hover:bg-white/90">
+            <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
               Apply for Membership
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
+            </InteractiveHoverButton>
+            <InteractiveHoverButton
               variant="outline"
               size="xl"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+              icon={Mail}
+              className="bg-white/10 border-white/20 text-white backdrop-blur-sm"
             >
-              <Mail className="mr-2 w-5 h-5" />
               Schedule a Demo
-            </Button>
+            </InteractiveHoverButton>
           </div>
 
           {/* Trust Message */}
