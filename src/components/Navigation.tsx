@@ -85,6 +85,7 @@ const Navigation = () => {
                 href={
                   link.href === "#membership" ? "/membership" :
                   link.href === "#blog" ? "/blog" :
+                  link.href === "#faq" ? "/faq" :
                   link.href
                 }
                 className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
@@ -151,6 +152,7 @@ const Navigation = () => {
                   href={
                     link.href === "#membership" ? "/membership" :
                     link.href === "#blog" ? "/blog" :
+                    link.href === "#faq" ? "/faq" :
                     link.href
                   }
                   className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-2 py-1"
