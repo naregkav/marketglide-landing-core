@@ -2,6 +2,7 @@ import { Crown, Handshake, Calendar, Shield, Globe2, TrendingUp } from "lucide-r
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 
 const FamilyOfficesPage = () => {
   const benefits = [
@@ -44,9 +45,11 @@ const FamilyOfficesPage = () => {
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
               MarketGlide empowers family offices to seamlessly explore exciting deals, tailored to long-term wealth strategies and cross-border market access.
             </p>
-            <InteractiveHoverButton variant="hero" size="xl" className="shadow-large">
-              Explore Opportunities
-            </InteractiveHoverButton>
+            <ScheduleCallDialog>
+              <InteractiveHoverButton variant="hero" size="xl" className="shadow-large">
+                Explore Opportunities
+              </InteractiveHoverButton>
+            </ScheduleCallDialog>
           </div>
         </div>
       </section>
@@ -191,13 +194,15 @@ const FamilyOfficesPage = () => {
             <p className="text-xl text-accent-foreground/90 mb-10 font-light">
               Schedule a call to discover how MarketGlide can help your family office identify and execute high-quality investment opportunities.
             </p>
-            <InteractiveHoverButton 
-              variant="cta" 
-              size="xl" 
-              className="bg-background text-foreground hover:bg-background/90 shadow-large"
-            >
-              Schedule a Confidential Call
-            </InteractiveHoverButton>
+            <ScheduleCallDialog>
+              <InteractiveHoverButton 
+                variant="cta" 
+                size="xl" 
+                className="bg-background text-foreground hover:bg-background/90 shadow-large"
+              >
+                Schedule a Confidential Call
+              </InteractiveHoverButton>
+            </ScheduleCallDialog>
           </div>
         </div>
       </section>

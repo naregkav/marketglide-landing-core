@@ -56,7 +56,7 @@ export const ScheduleCallDialog = ({ children }: ScheduleCallDialogProps) => {
 
     try {
       // TODO: Replace with your Airtable API endpoint
-      const airtableWebhook = "YOUR_AIRTABLE_WEBHOOK_URL";
+      const airtableWebhook = "https://hooks.airtable.com/workflows/v1/genericWebhook/appJwJyDaTSMvbhNF/wfl9oUSac6PiY080c/wtrMgAQUksNe3BNeQ";
       
       const response = await fetch(airtableWebhook, {
         method: "POST",

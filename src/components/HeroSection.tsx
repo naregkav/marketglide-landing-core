@@ -1,5 +1,6 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Globe } from "@/components/ui/globe";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 
 const HeroSection = () => {
   return (
@@ -31,9 +32,11 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="animate-slideUp delay-400">
-            <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
-              Schedule a Call
-            </InteractiveHoverButton>
+            <ScheduleCallDialog>
+              <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
+                Schedule a Call
+              </InteractiveHoverButton>
+            </ScheduleCallDialog>
           </div>
 
           {/* Trust Indicators */}

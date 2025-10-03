@@ -2,6 +2,7 @@ import { Shield, Users, FileCheck, Building2, CheckCircle2 } from "lucide-react"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 
 const FundManagersPage = () => {
   const benefits = [
@@ -43,9 +44,11 @@ const FundManagersPage = () => {
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
               Raising capital as a new fund manager is notoriously difficult, especially without established track records or institutional infrastructure. MarketGlide helps emerging GPs cut through the noise and build credibility from day one.
             </p>
-            <InteractiveHoverButton variant="hero" size="xl">
-              Schedule Your Consultation
-            </InteractiveHoverButton>
+            <ScheduleCallDialog>
+              <InteractiveHoverButton variant="hero" size="xl">
+                Schedule Your Consultation
+              </InteractiveHoverButton>
+            </ScheduleCallDialog>
           </div>
         </div>
       </section>
@@ -178,9 +181,11 @@ const FundManagersPage = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Schedule a call to discover how MarketGlide can help you achieve your investment goals.
             </p>
-            <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-              Schedule a Call
-            </InteractiveHoverButton>
+            <ScheduleCallDialog>
+              <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                Schedule a Call
+              </InteractiveHoverButton>
+            </ScheduleCallDialog>
           </div>
         </div>
       </section>

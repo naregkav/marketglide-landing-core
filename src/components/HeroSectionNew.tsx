@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Badge } from "@/components/ui/badge";
 import ConnectionRequests from "@/components/ConnectionRequests";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 
 const HeroSectionNew = () => {
   return (
@@ -53,9 +54,11 @@ const HeroSectionNew = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-accent hover:bg-white/90">
-                Schedule a Call
-              </InteractiveHoverButton>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-accent hover:bg-white/90">
+                  Schedule a Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
             </motion.div>
           </div>
 

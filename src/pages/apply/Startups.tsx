@@ -2,6 +2,7 @@ import { ArrowRight, Check, Users, FileText, TrendingUp, Network } from "lucide-
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 
 const StartupsPage = () => {
   const benefits = [
@@ -55,9 +56,11 @@ const StartupsPage = () => {
               We give startups and companies a direct path to curated investors, plus the infrastructure to present your opportunity professionally and credibly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <InteractiveHoverButton variant="hero" size="xl">
-                Schedule a Call
-              </InteractiveHoverButton>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton variant="hero" size="xl">
+                  Schedule a Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
               <InteractiveHoverButton variant="outline" size="xl">
                 View Demo
               </InteractiveHoverButton>
@@ -174,9 +177,11 @@ const StartupsPage = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Schedule a call to see how MarketGlide can help accelerate your fundraising.
             </p>
-            <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-              Schedule a Call <ArrowRight className="ml-2 w-5 h-5" />
-            </InteractiveHoverButton>
+            <ScheduleCallDialog>
+              <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                Schedule a Call <ArrowRight className="ml-2 w-5 h-5" />
+              </InteractiveHoverButton>
+            </ScheduleCallDialog>
           </div>
         </div>
       </section>
