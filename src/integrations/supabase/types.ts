@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      schedule_calls: {
+        Row: {
+          agreed_to_terms: boolean
+          company_name: string
+          created_at: string | null
+          email: string
+          first_name: string
+          id: string
+          interest: string
+          last_name: string
+        }
+        Insert: {
+          agreed_to_terms?: boolean
+          company_name: string
+          created_at?: string | null
+          email: string
+          first_name: string
+          id?: string
+          interest: string
+          last_name: string
+        }
+        Update: {
+          agreed_to_terms?: boolean
+          company_name?: string
+          created_at?: string | null
+          email?: string
+          first_name?: string
+          id?: string
+          interest?: string
+          last_name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

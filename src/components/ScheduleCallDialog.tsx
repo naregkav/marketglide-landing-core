@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { X } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const scheduleCallSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -55,26 +56,19 @@ export const ScheduleCallDialog = ({ children }: ScheduleCallDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with your Airtable API endpoint
-      const airtableWebhook = "https://hooks.airtable.com/workflows/v1/genericWebhook/appJwJyDaTSMvbhNF/wfl9oUSac6PiY080c/wtrMgAQUksNe3BNeQ";
-      
-      const response = await fetch(airtableWebhook, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+      const { error } = await supabase
+        .from("schedule_calls")
+        .insert({
+          first_name: formData.firstName,
+          last_name: formData.lastName,
           email: formData.email,
-          companyName: formData.companyName,
+          company_name: formData.companyName,
           interest: formData.interest,
-          timestamp: new Date().toISOString(),
-        }),
-      });
+          agreed_to_terms: formData.agreedToTerms,
+        });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit");
+      if (error) {
+        throw error;
       }
 
       toast({
