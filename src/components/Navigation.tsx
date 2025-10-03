@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,9 +69,45 @@ const Navigation = () => {
             <InteractiveHoverButton variant="ghost" size="sm" showArrow={false}>
               Sign In
             </InteractiveHoverButton>
-            <InteractiveHoverButton variant="cta" size="sm">
-              Apply
-            </InteractiveHoverButton>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <InteractiveHoverButton variant="cta" size="sm">
+                  Apply <ChevronDown className="ml-1 h-4 w-4" />
+                </InteractiveHoverButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[420px] p-2">
+                <DropdownMenuItem asChild>
+                  <Link to="/apply/startups" className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-semibold">Startups & Companies (Raising)</span>
+                    <span className="text-xs text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/apply/fund-managers" className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-semibold">Emerging Fund Managers (Raising)</span>
+                    <span className="text-xs text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/apply/vc-pe" className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-semibold">Venture Capital & Private Equity Firms</span>
+                    <span className="text-xs text-muted-foreground">Established funds sourcing deals and co-investments.</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/apply/investors" className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-semibold">Private Investors & Institutional LPs</span>
+                    <span className="text-xs text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/apply/advisors" className="flex flex-col items-start gap-1 cursor-pointer">
+                    <span className="font-semibold">Advisors & Ecosystem Partners</span>
+                    <span className="text-xs text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,9 +144,45 @@ const Navigation = () => {
                 <InteractiveHoverButton variant="ghost" size="sm" className="justify-start" showArrow={false}>
                   Sign In
                 </InteractiveHoverButton>
-                <InteractiveHoverButton variant="cta" size="sm">
-                  Apply
-                </InteractiveHoverButton>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <InteractiveHoverButton variant="cta" size="sm" className="w-full">
+                      Apply <ChevronDown className="ml-1 h-4 w-4" />
+                    </InteractiveHoverButton>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-[calc(100vw-3rem)] max-w-[420px] p-2">
+                    <DropdownMenuItem asChild>
+                      <Link to="/apply/startups" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                        <span className="font-semibold">Startups & Companies (Raising)</span>
+                        <span className="text-xs text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/apply/fund-managers" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                        <span className="font-semibold">Emerging Fund Managers (Raising)</span>
+                        <span className="text-xs text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/apply/vc-pe" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                        <span className="font-semibold">Venture Capital & Private Equity Firms</span>
+                        <span className="text-xs text-muted-foreground">Established funds sourcing deals and co-investments.</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/apply/investors" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                        <span className="font-semibold">Private Investors & Institutional LPs</span>
+                        <span className="text-xs text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/apply/advisors" className="flex flex-col items-start gap-1 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                        <span className="font-semibold">Advisors & Ecosystem Partners</span>
+                        <span className="text-xs text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </div>
