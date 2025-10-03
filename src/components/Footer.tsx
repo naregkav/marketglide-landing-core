@@ -116,7 +116,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-sm text-muted-foreground">
-              © 2024 MarketGlide. All rights reserved. | Regulated by Financial Conduct Authority
+              © 2025 MarketGlide. All rights reserved.
             </div>
 
             {/* Social Links */}
@@ -148,9 +148,7 @@ const Footer = () => {
       <div className="bg-muted/50 border-t border-border">
         <div className="container mx-auto px-6 py-4">
           <p className="text-xs text-muted-foreground text-center leading-relaxed">
-            <strong>Important:</strong> Private market investments carry significant risk and may not be 
-            suitable for all investors. Past performance does not guarantee future results. 
-            All investment opportunities are subject to regulatory approval and member verification.
+            <strong>Important:</strong> MarketGlide is a trading name of Ventures Without Borders Limited (UK Reg. 15397290). “MarketGlide” and “Ventures Without Borders” are registered trademarks in the United Kingdom. Any financial promotions made through the platform are directed only at persons who are exempt under the UK Financial Services and Markets Act 2000 (Financial Promotion) Order 2005. All other content is provided for general information only and does not constitute investment advice.
           </p>
         </div>
       </div>
