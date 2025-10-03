@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,9 +64,45 @@ const Navigation = () => {
             <Button variant="ghost" size="sm">
               Sign In
             </Button>
-            <Button variant="cta" size="sm">
-              Apply
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="cta" size="sm">
+                  Apply <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-80 bg-background border-border">
+                <DropdownMenuItem asChild>
+                  <a href="/apply/startups" className="flex flex-col items-start py-3 cursor-pointer">
+                    <span className="font-semibold text-foreground">Startups & Companies (Raising)</span>
+                    <span className="text-sm text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/apply/emerging-fund-managers" className="flex flex-col items-start py-3 cursor-pointer">
+                    <span className="font-semibold text-foreground">Emerging Fund Managers (Raising)</span>
+                    <span className="text-sm text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/apply/vc-pe-firms" className="flex flex-col items-start py-3 cursor-pointer">
+                    <span className="font-semibold text-foreground">Venture Capital & Private Equity Firms</span>
+                    <span className="text-sm text-muted-foreground">Established funds sourcing deals and co-investments.</span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/apply/private-investors" className="flex flex-col items-start py-3 cursor-pointer">
+                    <span className="font-semibold text-foreground">Private Investors & Institutional LPs</span>
+                    <span className="text-sm text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/apply/advisors" className="flex flex-col items-start py-3 cursor-pointer">
+                    <span className="font-semibold text-foreground">Advisors & Ecosystem Partners</span>
+                    <span className="text-sm text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -92,9 +134,45 @@ const Navigation = () => {
                 <Button variant="ghost" size="sm" className="justify-start">
                   Sign In
                 </Button>
-                <Button variant="cta" size="sm">
-                  Apply
-                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="cta" size="sm" className="w-full">
+                      Apply <ChevronDown className="ml-1 h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-80 bg-background border-border">
+                    <DropdownMenuItem asChild>
+                      <a href="/apply/startups" className="flex flex-col items-start py-3 cursor-pointer">
+                        <span className="font-semibold text-foreground">Startups & Companies (Raising)</span>
+                        <span className="text-sm text-muted-foreground">Founders, developers, and operators raising capital across sectors.</span>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href="/apply/emerging-fund-managers" className="flex flex-col items-start py-3 cursor-pointer">
+                        <span className="font-semibold text-foreground">Emerging Fund Managers (Raising)</span>
+                        <span className="text-sm text-muted-foreground">First-time GPs and new strategies seeking LPs.</span>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href="/apply/vc-pe-firms" className="flex flex-col items-start py-3 cursor-pointer">
+                        <span className="font-semibold text-foreground">Venture Capital & Private Equity Firms</span>
+                        <span className="text-sm text-muted-foreground">Established funds sourcing deals and co-investments.</span>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href="/apply/private-investors" className="flex flex-col items-start py-3 cursor-pointer">
+                        <span className="font-semibold text-foreground">Private Investors & Institutional LPs</span>
+                        <span className="text-sm text-muted-foreground">Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.</span>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href="/apply/advisors" className="flex flex-col items-start py-3 cursor-pointer">
+                        <span className="font-semibold text-foreground">Advisors & Ecosystem Partners</span>
+                        <span className="text-sm text-muted-foreground">Lawyers, consultants, fund admins, accelerators, and others supporting transactions.</span>
+                      </a>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </div>
