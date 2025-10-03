@@ -38,7 +38,7 @@ const CTASection = () => {
               <div className="text-white/70">Active Members</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">20+</div>
               <div className="text-white/70">Countries Covered</div>
             </div>
           </div>
