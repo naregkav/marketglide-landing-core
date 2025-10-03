@@ -1,17 +1,22 @@
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { Globe } from "@/components/ui/globe";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play } from "lucide-react";
+import heroBackground from "@/assets/hero-landscape.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] pt-20 flex items-center justify-center overflow-hidden">
-      {/* Interactive Globe Background */}
-      <div className="absolute inset-0 flex items-end justify-center pb-8">
-        <Globe className="scale-90 md:scale-100" />
-        <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img
+          src={heroBackground}
+          alt="Serene lake and mountains landscape"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/40"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeIn">
@@ -31,9 +36,10 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="animate-slideUp delay-400">
-            <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
+            <Button variant="cta" size="xl" className="group bg-white text-primary hover:bg-white/90">
               Schedule a Call
-            </InteractiveHoverButton>
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Button>
           </div>
 
           {/* Trust Indicators */}

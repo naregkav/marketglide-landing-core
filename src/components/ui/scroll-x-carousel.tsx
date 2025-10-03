@@ -8,13 +8,10 @@ import {
   MotionValue,
   useScroll,
   useTransform,
-  useSpring,
 } from 'framer-motion';
-import { useSmootherScroll } from '@/hooks/useSmootherScroll';
 
 interface ScrollXCarouselContextValue {
   scrollYProgress: MotionValue<number>;
-  springX: MotionValue<number>;
 }
 
 const ScrollXCarouselContext =
@@ -34,14 +31,12 @@ export function ScrollXCarousel({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   const carouselRef = React.useRef<HTMLDivElement>(null);
-  const { scrollYProgress, springX } = useSmootherScroll(carouselRef, {
-    tension: 100,
-    friction: 30,
-    mass: 0.8
+  const { scrollYProgress } = useScroll({
+    target: carouselRef,
   });
   
   return (
-    <ScrollXCarouselContext.Provider value={{ scrollYProgress, springX }}>
+    <ScrollXCarouselContext.Provider value={{ scrollYProgress }}>
       <div
         ref={carouselRef}
         className={cn('relative w-screen max-w-full', className)}
@@ -71,18 +66,13 @@ export function ScrollXCarouselWrap({
   xRange = ['-0%', '-80%'],
   ...props
 }: HTMLMotionProps<'div'> & { xRange?: unknown[] }) {
-  const { springX } = useScrollXCarousel();
-  
-  // Apply progressive easing to the transform range
-  const x = useTransform(springX, [0, 1], xRange);
-  
-  // Add subtle parallax effect to individual cards
-  const y = useTransform(springX, [0, 1], ['0px', '-20px']);
+  const { scrollYProgress } = useScrollXCarousel();
+  const x = useTransform(scrollYProgress, [0, 1], xRange);
 
   return (
     <motion.div
       className={cn('w-fit', className)}
-      style={{ x, y, ...style }}
+      style={{ x, ...style }}
       {...props}
     />
   );

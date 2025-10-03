@@ -1,4 +1,4 @@
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, Linkedin, Twitter, Globe } from "lucide-react";
 
@@ -77,9 +77,9 @@ const Footer = () => {
                   className="flex-1"
                   type="email"
                 />
-                <InteractiveHoverButton variant="hero" size="sm" icon={Mail} showArrow={false}>
-                  
-                </InteractiveHoverButton>
+                <Button variant="hero" size="sm">
+                  <Mail className="w-4 h-4" />
+                </Button>
               </div>
               <p className="text-xs text-muted-foreground mt-2">
                 Get exclusive market insights and opportunities.

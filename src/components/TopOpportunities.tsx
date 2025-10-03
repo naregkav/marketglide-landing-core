@@ -1,4 +1,4 @@
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { GlowCard } from "@/components/ui/glow-card";
 import { MapPin, TrendingUp, Clock } from "lucide-react";
@@ -38,11 +38,11 @@ const TopOpportunities = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Top Opportunities
           </h2>
           <p className="text-subtitle">
@@ -51,7 +51,7 @@ const TopOpportunities = () => {
         </div>
 
         {/* Opportunities Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {opportunities.map((opportunity, index) => (
             <GlowCard
               key={opportunity.title}
@@ -101,9 +101,9 @@ const TopOpportunities = () => {
                 </div>
 
                 {/* CTA */}
-                <InteractiveHoverButton variant="outline" size="sm" className="w-full">
+                <Button variant="outline" size="sm" className="w-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                   View Details
-                </InteractiveHoverButton>
+                </Button>
               </div>
             </GlowCard>
           ))}
@@ -111,9 +111,9 @@ const TopOpportunities = () => {
 
         {/* View More */}
         <div className="text-center mt-12">
-          <InteractiveHoverButton variant="hero" size="lg">
+          <Button variant="hero" size="lg">
             View All Opportunities
-          </InteractiveHoverButton>
+          </Button>
         </div>
       </div>
     </section>

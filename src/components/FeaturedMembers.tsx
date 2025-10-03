@@ -1,16 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, ExternalLink } from "lucide-react";
-import { CircularGallery, GalleryItem } from "@/components/ui/circular-gallery";
-import { useRef } from 'react';
 
 const FeaturedMembers = () => {
-  const sectionRef = useRef<HTMLElement>(null);
   const members = [
     {
       name: "Renato Chiodaro",
       title: "Managing Partner",
       company: "Alpine Capital Partners",
-      image: "/members/renato-chiodaro.webp",
+      image: "/api/placeholder/300/300",
       verified: true,
       expertise: ["Private Equity", "Infrastructure"]
     },
@@ -18,7 +15,7 @@ const FeaturedMembers = () => {
       name: "Richard Lark", 
       title: "Investment Director",
       company: "European Growth Fund",
-      image: "/members/richard-lark.webp",
+      image: "/api/placeholder/300/300",
       verified: true,
       expertise: ["Venture Capital", "Fintech"]
     },
@@ -26,7 +23,7 @@ const FeaturedMembers = () => {
       name: "Henrique Roloff",
       title: "Senior Advisor",
       company: "Global Asset Management",
-      image: "/members/henrique-roloff.webp", 
+      image: "/api/placeholder/300/300", 
       verified: true,
       expertise: ["Real Estate", "REIT"]
     },
@@ -34,46 +31,82 @@ const FeaturedMembers = () => {
       name: "Armen Kherlopian, Ph.D.",
       title: "Chief Investment Officer",
       company: "Strategic Partners LLC",
-      image: "/members/armen-kherlopian.webp",
+      image: "/api/placeholder/300/300",
       verified: true,
       expertise: ["Biotech", "Healthcare"]
     }
   ];
 
-  // Transform members data to match GalleryItem interface
-  const galleryItems: GalleryItem[] = members.map((member) => ({
-    common: member.name,
-    binomial: `${member.title} • ${member.company}`,
-    photo: {
-      url: member.image,
-      text: `Professional portrait of ${member.name}, ${member.title} at ${member.company}`,
-      pos: "center",
-      by: member.company
-    }
-  }));
-
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-background via-muted/20 to-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-6">
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Featured Members
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Meet our distinguished network of investment professionals, entrepreneurs, and industry leaders 
-            who are shaping the future of global business.
+          <p className="text-subtitle">
+            Meet and connect with elite investors, top-tier fund managers, and renowned dealmakers, gaining exclusive insights from them as they shape the future of private markets.
           </p>
         </div>
 
-        {/* 3D Circular Gallery */}
-        <div className="relative h-[600px] mb-16">
-          <CircularGallery
-            items={galleryItems}
-            radius={400}
-            autoRotateSpeed={0.005}
-            sectionRef={sectionRef}
-            className="w-full h-full"
-          />
+        {/* Members Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {members.map((member, index) => (
+            <div
+              key={member.name}
+              className="card-premium p-6 text-center hover-lift group"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              {/* Profile Image */}
+              <div className="relative w-24 h-24 mx-auto mb-4">
+                <div className="w-full h-full bg-muted rounded-full flex items-center justify-center">
+                  <div className="text-muted-foreground text-xs">Photo</div>
+                </div>
+                {member.verified && (
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-background">
+                    <div className="w-4 h-4 bg-accent-foreground rounded-full flex items-center justify-center">
+                      <div className="w-2 h-2 bg-accent rounded-full"></div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Member Info */}
+              <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors">
+                {member.name}
+              </h3>
+              <p className="text-muted-foreground text-sm mb-1">
+                {member.title}
+              </p>
+              <p className="text-muted-foreground text-xs mb-4">
+                {member.company}
+              </p>
+
+              {/* Expertise Tags */}
+              <div className="flex flex-wrap gap-1 justify-center mb-4">
+                {member.expertise.map((skill) => (
+                  <Badge 
+                    key={skill} 
+                    variant="secondary" 
+                    className="text-xs px-2 py-1"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+
+              {/* Social Links */}
+              <div className="flex justify-center space-x-2">
+                <button className="w-8 h-8 bg-muted hover:bg-accent hover:text-accent-foreground rounded-full flex items-center justify-center transition-colors">
+                  <Linkedin className="w-4 h-4" />
+                </button>
+                <button className="w-8 h-8 bg-muted hover:bg-accent hover:text-accent-foreground rounded-full flex items-center justify-center transition-colors">
+                  <ExternalLink className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* View More */}
