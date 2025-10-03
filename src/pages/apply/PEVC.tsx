@@ -69,7 +69,7 @@ const PEVCPage = () => {
                 Access Deal Flow
               </InteractiveHoverButton>
               <InteractiveHoverButton variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                Schedule Demo
+                Schedule a Call
               </InteractiveHoverButton>
             </div>
           </div>

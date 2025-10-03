@@ -1,5 +1,12 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Mail } from "lucide-react";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const CTASection = () => {
   return (
@@ -45,17 +52,90 @@ const CTASection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
-              Apply for Membership
-            </InteractiveHoverButton>
-            <InteractiveHoverButton
-              variant="outline"
-              size="xl"
-              icon={Mail}
-              className="bg-white/10 border-white/20 text-white backdrop-blur-sm"
-            >
-              Schedule a Demo
-            </InteractiveHoverButton>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-white text-primary">
+                  Apply for Membership
+                </InteractiveHoverButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-64">
+                <DropdownMenuItem asChild>
+                  <a
+                    href="https://marketglide.io/app/registration/company?type=company"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <div>
+                      <div className="font-semibold">Startups</div>
+                      <div className="text-xs text-muted-foreground">Raise capital and grow</div>
+                    </div>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href="https://marketglide.io/app/registration/company?type=fund"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <div>
+                      <div className="font-semibold">Emerging Fund Managers</div>
+                      <div className="text-xs text-muted-foreground">Launch and scale funds</div>
+                    </div>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href="https://marketglide.io/app/registration/investor?type=investor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <div>
+                      <div className="font-semibold">PE & Venture Capital</div>
+                      <div className="text-xs text-muted-foreground">Access deal flow</div>
+                    </div>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href="https://marketglide.io/app/registration/investor?type=investor-private"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <div>
+                      <div className="font-semibold">Private Investors</div>
+                      <div className="text-xs text-muted-foreground">Invest in opportunities</div>
+                    </div>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href="https://marketglide.io/app/registration/investor?type=investor-advisors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <div>
+                      <div className="font-semibold">Advisors</div>
+                      <div className="text-xs text-muted-foreground">Connect and advise</div>
+                    </div>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <ScheduleCallDialog>
+              <InteractiveHoverButton
+                variant="outline"
+                size="xl"
+                icon={Mail}
+                className="bg-white/10 border-white/20 text-white backdrop-blur-sm"
+              >
+                Schedule a Call
+              </InteractiveHoverButton>
+            </ScheduleCallDialog>
           </div>
 
           {/* Trust Message */}

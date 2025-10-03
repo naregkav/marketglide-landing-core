@@ -63,13 +63,16 @@ const ConnectionRequests = () => {
           ))}
         </div>
         
-        <motion.button 
-          className="w-full mt-8 bg-white/10 hover:bg-white/20 text-white text-sm font-medium py-3 px-4 rounded-xl transition-all duration-300 border border-white/20"
+        <motion.a
+          href="https://stage.marketglide.io/app/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full mt-8 bg-white/10 hover:bg-white/20 text-white text-sm font-medium py-3 px-4 rounded-xl transition-all duration-300 border border-white/20 text-center"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
           View All Requests →
-        </motion.button>
+        </motion.a>
       </CardContent>
     </Card>
   );
