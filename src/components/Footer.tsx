@@ -1,6 +1,6 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Input } from "@/components/ui/input";
-import { Mail, Linkedin, Instagram, Globe } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -151,12 +151,6 @@ const Footer = () => {
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Globe className="w-5 h-5" />
               </a>
             </div>
           </div>
