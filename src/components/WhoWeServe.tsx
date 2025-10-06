@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Rocket, Building2, Home, TrendingUp } from "lucide-react";
+import { Rocket, Building2, Home, TrendingUp, Users } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const WhoWeServe = () => {
   const communities = [
@@ -12,7 +13,10 @@ const WhoWeServe = () => {
       buttonText: "Raise Faster",
       description: "Connect with VCs, angels, and strategic investors who are actively looking for deals in your sector.",
       stat: "Average 3.2 months to close",
-      highlighted: false,
+      link: "https://stage.marketglide.io/app/registration/company?type=company",
+      bgColor: "from-primary/10 to-primary/5",
+      iconBg: "bg-primary/10",
+      iconColor: "text-primary",
     },
     {
       icon: Building2,
@@ -21,7 +25,10 @@ const WhoWeServe = () => {
       buttonText: "Find LPs",
       description: "Access family offices, institutional investors, and HNWIs ready to commit capital to your fund.",
       stat: "€50M+ average fund size",
-      highlighted: false,
+      link: "https://stage.marketglide.io/app/registration/company?type=fund",
+      bgColor: "from-accent/10 to-accent/5",
+      iconBg: "bg-accent/10",
+      iconColor: "text-accent",
     },
     {
       icon: Home,
@@ -30,7 +37,10 @@ const WhoWeServe = () => {
       buttonText: "Showcase Developments",
       description: "Present your projects to real estate investors, REITs, and development finance partners.",
       stat: "€2M-€100M+ deal sizes",
-      highlighted: false,
+      link: "https://stage.marketglide.io/app/registration/company?type=company",
+      bgColor: "from-success/10 to-success/5",
+      iconBg: "bg-success/10",
+      iconColor: "text-success",
     },
     {
       icon: TrendingUp,
@@ -39,7 +49,23 @@ const WhoWeServe = () => {
       buttonText: "Access Vetted Dealflow",
       description: "Discover curated investment opportunities across all asset classes and geographies.",
       stat: "500+ verified deals monthly",
+      link: "https://stage.marketglide.io/app/registration/investor?type=investor-private",
+      bgColor: "from-primary-glow/10 to-primary-glow/5",
+      iconBg: "bg-primary-glow/10",
+      iconColor: "text-primary-glow",
       highlighted: true,
+    },
+    {
+      icon: Users,
+      title: "Advisors and Partners",
+      subtitle: "Strategic Experts",
+      buttonText: "Join Network",
+      description: "Connect with companies and investors as a trusted advisor, bringing expertise and opportunities.",
+      stat: "Premium advisor network",
+      link: "https://stage.marketglide.io/app/registration/investor?type=investor-advisors",
+      bgColor: "from-accent-secondary/10 to-accent-secondary/5",
+      iconBg: "bg-accent-secondary/10",
+      iconColor: "text-accent-secondary",
     },
   ];
 
@@ -57,11 +83,11 @@ const WhoWeServe = () => {
             Who We Serve
           </h2>
           <p className="text-lg text-muted-foreground">
-            Four distinct communities, one powerful platform
+            Five distinct communities, one powerful platform
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
           {communities.map((community, index) => {
             const Icon = community.icon;
             return (
@@ -72,25 +98,29 @@ const WhoWeServe = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className={`h-full flex flex-col ${community.highlighted ? 'border-primary shadow-lg' : ''}`}>
-                  <CardHeader>
-                    <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center mb-4">
-                      <Icon className="w-7 h-7 text-muted-foreground" />
+                <Card className={`h-full flex flex-col relative overflow-hidden ${community.highlighted ? 'border-primary shadow-lg' : ''}`}>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${community.bgColor} pointer-events-none`} />
+                  <CardHeader className="relative">
+                    <div className={`w-14 h-14 rounded-full ${community.iconBg} flex items-center justify-center mb-4`}>
+                      <Icon className={`w-7 h-7 ${community.iconColor}`} />
                     </div>
                     <CardTitle className="text-xl mb-1">{community.title}</CardTitle>
                     <CardDescription className="text-sm">{community.subtitle}</CardDescription>
                   </CardHeader>
-                  <CardContent className="flex-1 flex flex-col">
+                  <CardContent className="flex-1 flex flex-col relative">
                     <Button
                       variant={community.highlighted ? "default" : "outline"}
                       className="w-full mb-4"
+                      asChild
                     >
-                      {community.buttonText}
+                      <a href={community.link} target="_blank" rel="noopener noreferrer">
+                        {community.buttonText}
+                      </a>
                     </Button>
                     <p className="text-sm text-muted-foreground mb-4 flex-1">
                       {community.description}
                     </p>
-                    <div className="bg-muted/50 rounded-lg px-3 py-2">
+                    <div className="bg-background/50 backdrop-blur-sm rounded-lg px-3 py-2 border border-border/50">
                       <p className="text-xs text-center text-muted-foreground">
                         {community.stat}
                       </p>
