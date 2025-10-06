@@ -17,18 +17,14 @@ const Footer = () => {
       links: [
         "Deal Flow",
         "Member Network",
-        "Advisory Services",
-        "Analytics",
-        "API Access"
+        "Advisory Services"
       ]
     },
     {
       title: "Resources",
       links: [
         "Market Reports",
-        "Research",
         "Webinars",
-        "Documentation",
         "Blog"
       ]
     },
@@ -46,10 +42,7 @@ const Footer = () => {
       title: "Legal",
       links: [
         "Privacy Policy",
-        "Terms of Service",
-        "Compliance",
-        "Security",
-        "Cookie Policy"
+        "Terms of Service"
       ]
     }
   ];
