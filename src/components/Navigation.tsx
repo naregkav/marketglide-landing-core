@@ -124,9 +124,11 @@ const Navigation = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <InteractiveHoverButton variant="ghost" size="sm" showArrow={false}>
-              Sign In
-            </InteractiveHoverButton>
+            <a href="https://stage.marketglide.io/app/login" target="_blank" rel="noopener noreferrer">
+              <InteractiveHoverButton variant="ghost" size="sm" showArrow={false}>
+                Sign In
+              </InteractiveHoverButton>
+            </a>
             
             {/* Apply Dropdown */}
             <DropdownMenu>
@@ -205,9 +207,11 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-2">
-                <InteractiveHoverButton variant="ghost" size="sm" className="justify-start" showArrow={false}>
-                  Sign In
-                </InteractiveHoverButton>
+                <a href="https://stage.marketglide.io/app/login" target="_blank" rel="noopener noreferrer">
+                  <InteractiveHoverButton variant="ghost" size="sm" className="justify-start" showArrow={false}>
+                    Sign In
+                  </InteractiveHoverButton>
+                </a>
                 
                 {/* Apply Dropdown Mobile */}
                 <div className="px-2">
