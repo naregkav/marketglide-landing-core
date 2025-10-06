@@ -90,9 +90,9 @@ const ApplicationProcess = () => {
               {steps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
-                  <motion.div key={index} variants={itemVariants}>
-                    <Card className="card-premium hover-lift group relative">
-                      <CardContent className="p-6 text-center">
+                  <motion.div key={index} variants={itemVariants} className="h-full">
+                    <Card className="card-premium hover-lift group relative h-full">
+                      <CardContent className="p-6 text-center h-full flex flex-col">
                         {/* Step Number */}
                         <div className="relative mb-6">
                           <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto text-white font-bold text-lg ${
@@ -116,7 +116,7 @@ const ApplicationProcess = () => {
                         <h3 className="text-lg font-semibold text-foreground mb-3">
                           {step.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                           {step.description}
                         </p>
                       </CardContent>
