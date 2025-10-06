@@ -100,28 +100,28 @@ const WhoWeServe = () => {
               >
                 <Card className={`h-full flex flex-col relative overflow-hidden ${community.highlighted ? 'border-primary shadow-lg' : ''}`}>
                   <div className={`absolute inset-0 bg-gradient-to-br ${community.bgColor} pointer-events-none`} />
-                  <CardHeader className="relative">
-                    <div className={`w-14 h-14 rounded-full ${community.iconBg} flex items-center justify-center mb-4`}>
-                      <Icon className={`w-7 h-7 ${community.iconColor}`} />
+                  <CardHeader className="relative pb-4">
+                    <div className={`w-12 h-12 rounded-full ${community.iconBg} flex items-center justify-center mb-3`}>
+                      <Icon className={`w-6 h-6 ${community.iconColor}`} />
                     </div>
-                    <CardTitle className="text-xl mb-1">{community.title}</CardTitle>
-                    <CardDescription className="text-sm">{community.subtitle}</CardDescription>
+                    <CardTitle className="text-lg mb-1 min-h-[3rem] flex items-start">{community.title}</CardTitle>
+                    <CardDescription className="text-xs">{community.subtitle}</CardDescription>
                   </CardHeader>
-                  <CardContent className="flex-1 flex flex-col relative">
+                  <CardContent className="flex-1 flex flex-col relative pt-0">
                     <Button
                       variant={community.highlighted ? "default" : "outline"}
-                      className="w-full mb-4"
+                      className="w-full mb-3 text-sm"
                       asChild
                     >
                       <a href={community.link} target="_blank" rel="noopener noreferrer">
                         {community.buttonText}
                       </a>
                     </Button>
-                    <p className="text-sm text-muted-foreground mb-4 flex-1">
+                    <p className="text-xs text-muted-foreground mb-auto min-h-[4.5rem]">
                       {community.description}
                     </p>
-                    <div className="bg-background/50 backdrop-blur-sm rounded-lg px-3 py-2 border border-border/50">
-                      <p className="text-xs text-center text-muted-foreground">
+                    <div className="bg-background/50 backdrop-blur-sm rounded-lg px-2 py-2 border border-border/50 mt-3">
+                      <p className="text-xs text-center text-muted-foreground font-medium">
                         {community.stat}
                       </p>
                     </div>
