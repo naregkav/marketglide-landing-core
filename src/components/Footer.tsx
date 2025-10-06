@@ -8,7 +8,9 @@ const Footer = () => {
     "Privacy Policy": "/privacy-policy",
     "Terms of Service": "/terms-of-service",
     "Blog": "/blog",
-    "FAQ": "/faq"
+    "FAQ": "/faq",
+    "Market Reports": "/#community",
+    "Webinars": "/#community"
   };
 
   const footerSections = [

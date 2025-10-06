@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      events: {
+        Row: {
+          created_at: string
+          description: string | null
+          event_date: string
+          event_time: string | null
+          id: string
+          is_featured: boolean | null
+          location: string
+          title: string
+          type: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          event_date: string
+          event_time?: string | null
+          id?: string
+          is_featured?: boolean | null
+          location: string
+          title: string
+          type?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          event_date?: string
+          event_time?: string | null
+          id?: string
+          is_featured?: boolean | null
+          location?: string
+          title?: string
+          type?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       schedule_calls: {
         Row: {
           agreed_to_terms: boolean

@@ -5,6 +5,7 @@ import FeaturesGrid from "@/components/FeaturesGrid";
 import ApplicationProcess from "@/components/ApplicationProcess";
 import MeetSophia from "@/components/MeetSophia";
 import WhyMarketGlide from "@/components/WhyMarketGlide";
+import CommunitySection from "@/components/CommunitySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => {
       <ApplicationProcess />
       <MeetSophia />
       <WhyMarketGlide />
+      <CommunitySection />
       <CTASection />
       <Footer />
     </div>
