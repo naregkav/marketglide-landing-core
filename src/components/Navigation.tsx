@@ -84,7 +84,7 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <a
-              href="#product"
+              href="/#product"
               className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
             >
               Product
@@ -165,7 +165,7 @@ const Navigation = () => {
           <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border py-4">
             <div className="flex flex-col space-y-4">
               <a
-                href="#product"
+                href="/#product"
                 className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-2 py-1"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
