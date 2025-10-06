@@ -253,23 +253,9 @@ const Membership = () => {
                   </div>
                 </CardHeader>
 
-                <CardContent className="pt-0 flex-1 flex flex-col justify-between">
-                  <div className="flex-1 flex items-center">
-                    <ul className="space-y-3 w-full">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start">
-                          <span className="h-6 w-6 bg-accent/10 border border-accent rounded-full grid place-content-center mt-0.5 mr-3 flex-shrink-0">
-                            <CheckCheck className="h-4 w-4 text-accent" />
-                          </span>
-                          <span className="text-sm text-muted-foreground">
-                            {feature.text}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <CardContent className="pt-0 flex-1 flex flex-col">
                   <button
-                    className={`w-full p-4 text-xl rounded-xl transition-all mt-6 ${
+                    className={`w-full mb-6 p-4 text-xl rounded-xl transition-all ${
                       plan.popular
                         ? "bg-gradient-accent shadow-lg shadow-accent/20 border border-accent/30 text-accent-foreground"
                         : plan.buttonVariant === "outline"
@@ -279,6 +265,18 @@ const Membership = () => {
                   >
                     {plan.buttonText} →
                   </button>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <span className="h-6 w-6 bg-accent/10 border border-accent rounded-full grid place-content-center mt-0.5 mr-3 flex-shrink-0">
+                          <CheckCheck className="h-4 w-4 text-accent" />
+                        </span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             </TimelineContent>
