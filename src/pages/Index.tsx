@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSectionNew from "@/components/HeroSectionNew";
 import TrustSection from "@/components/TrustSection";
+import WhoWeServe from "@/components/WhoWeServe";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import ApplicationProcess from "@/components/ApplicationProcess";
 import MeetSophia from "@/components/MeetSophia";
@@ -15,6 +16,7 @@ const Index = () => {
       <Navigation />
       <HeroSectionNew />
       <TrustSection />
+      <WhoWeServe />
       <FeaturesGrid />
       <ApplicationProcess />
       <MeetSophia />

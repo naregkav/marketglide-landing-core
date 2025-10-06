@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_submissions: {
+        Row: {
+          agreed_to_terms: boolean
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          subject: string
+          updated_at: string
+        }
+        Insert: {
+          agreed_to_terms?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          subject: string
+          updated_at?: string
+        }
+        Update: {
+          agreed_to_terms?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          subject?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           created_at: string
