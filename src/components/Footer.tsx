@@ -1,8 +1,16 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Input } from "@/components/ui/input";
 import { Mail, Linkedin, Twitter, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const linkRoutes: Record<string, string> = {
+    "Privacy Policy": "/privacy-policy",
+    "Terms of Service": "/terms-of-service",
+    "Blog": "/blog",
+    "FAQ": "/faq"
+  };
+
   const footerSections = [
     {
       title: "Platform",
@@ -94,16 +102,28 @@ const Footer = () => {
                 {section.title}
               </h4>
               <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {section.links.map((link) => {
+                  const route = linkRoutes[link];
+                  return (
+                    <li key={link}>
+                      {route ? (
+                        <Link
+                          to={route}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                        >
+                          {link}
+                        </Link>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                        >
+                          {link}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
