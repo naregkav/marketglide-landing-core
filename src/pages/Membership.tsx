@@ -254,18 +254,7 @@ const Membership = () => {
                 </CardHeader>
 
                 <CardContent className="pt-0 flex-1 flex flex-col">
-                  <button
-                    className={`w-full mb-6 p-4 text-xl rounded-xl transition-all ${
-                      plan.popular
-                        ? "bg-gradient-accent shadow-lg shadow-accent/20 border border-accent/30 text-accent-foreground"
-                        : plan.buttonVariant === "outline"
-                          ? "bg-gradient-primary shadow-lg shadow-primary/20 border border-primary/30 text-primary-foreground"
-                          : "bg-gradient-primary shadow-lg shadow-primary/20 border border-primary/30 text-primary-foreground"
-                    }`}
-                  >
-                    {plan.buttonText} →
-                  </button>
-                  <ul className="space-y-3 flex-1">
+                  <ul className="space-y-3 flex-1 mb-6">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <span className="h-6 w-6 bg-accent/10 border border-accent rounded-full grid place-content-center mt-0.5 mr-3 flex-shrink-0">
@@ -277,6 +266,17 @@ const Membership = () => {
                       </li>
                     ))}
                   </ul>
+                  <button
+                    className={`w-full p-4 text-xl rounded-xl transition-all ${
+                      plan.popular
+                        ? "bg-gradient-accent shadow-lg shadow-accent/20 border border-accent/30 text-accent-foreground"
+                        : plan.buttonVariant === "outline"
+                          ? "bg-gradient-primary shadow-lg shadow-primary/20 border border-primary/30 text-primary-foreground"
+                          : "bg-gradient-primary shadow-lg shadow-primary/20 border border-primary/30 text-primary-foreground"
+                    }`}
+                  >
+                    {plan.buttonText} →
+                  </button>
                 </CardContent>
               </Card>
             </TimelineContent>
