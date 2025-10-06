@@ -210,12 +210,12 @@ const Membership = () => {
               timelineRef={pricingRef}
               customVariants={revealVariants}
             >
-              <Card
+               <Card
                 className={`relative border-border h-full flex flex-col ${
                   plan.popular ? "ring-2 ring-accent bg-accent/5" : "bg-card"
                 }`}
               >
-                <CardHeader className="text-left">
+                <CardHeader className="text-left min-h-[200px] flex flex-col">
                   <div className="flex justify-between">
                     <h3 className="text-3xl font-semibold text-foreground mb-2">
                       {plan.name}
@@ -229,7 +229,7 @@ const Membership = () => {
                     )}
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
-                  <div className="flex items-baseline">
+                  <div className="flex items-baseline mt-auto">
                     <span className="text-4xl font-semibold text-foreground">
                       {plan.price === 0 ? (
                         "Free"
