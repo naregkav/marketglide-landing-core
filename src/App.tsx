@@ -8,6 +8,8 @@ import Membership from "./pages/Membership";
 import BlogPage from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import StartupsPage from "./pages/apply/Startups";
 import FundManagersPage from "./pages/apply/FundManagers";
 import PEVCPage from "./pages/apply/PEVC";
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/membership" element={<Membership />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/apply/startups" element={<StartupsPage />} />
           <Route path="/apply/fund-managers" element={<FundManagersPage />} />
           <Route path="/apply/pe-vc" element={<PEVCPage />} />
