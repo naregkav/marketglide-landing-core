@@ -2,6 +2,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { Input } from "@/components/ui/input";
 import { Mail, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ContactDialog } from "@/components/ContactDialog";
 
 const Footer = () => {
   const linkRoutes: Record<string, string> = {
@@ -99,6 +100,20 @@ const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link) => {
                   const route = linkRoutes[link];
+                  
+                  // Handle Contact link specially with dialog
+                  if (link === "Contact") {
+                    return (
+                      <li key={link}>
+                        <ContactDialog>
+                          <button className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+                            {link}
+                          </button>
+                        </ContactDialog>
+                      </li>
+                    );
+                  }
+                  
                   return (
                     <li key={link}>
                       {route ? (
