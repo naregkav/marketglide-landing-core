@@ -1,6 +1,6 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Input } from "@/components/ui/input";
-import { Mail, Linkedin, Twitter, Globe } from "lucide-react";
+import { Mail, Linkedin, Instagram, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -137,16 +137,20 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/marketglideofficial"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/marketglide"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Twitter className="w-5 h-5" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="#"
