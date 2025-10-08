@@ -6,35 +6,43 @@ const BlogSection = () => {
   const articles = [
     {
       title: "The Emergence of the Multi-Family Office",
-      excerpt: "We explore how private family offices (MFOs) can be solutions that provide sophisticated investment and wealth management for high-net-worth families.",
+      excerpt: "We explore how multi-family offices (MFOs) are transforming wealth management for high-net-worth families through sophisticated investment strategies and expert-driven approaches.",
       date: "Feb 26, 2025",
       category: "Wealth Management",
       image: "/api/placeholder/400/250",
-      readTime: "5 min read"
+      readTime: "12 min read"
     },
     {
       title: "The Power of Access & Why Private Markets Are Built on Exclusivity",
-      excerpt: "The best opportunities never appear in public markets but are shared within a single platform, where high-caliber investments are curated and intelligently matched to serious investors.",
+      excerpt: "The best opportunities never appear in public markets but are shared within exclusive networks, where high-caliber investments are curated and intelligently matched to serious investors.",
       date: "Feb 27, 2025", 
       category: "Market Insights",
-      image: "/api/placeholder/400/250",
-      readTime: "7 min read"
-    },
-    {
-      title: "The Rise of the Anti-Marketplace",
-      excerpt: "As more low-quality deals reach equity crowdfunding platforms and failing the very people they claim to serve, we explore why volume-based marketplaces no longer work.",
-      date: "Jul 4, 2025",
-      category: "Industry Analysis", 
       image: "/api/placeholder/400/250",
       readTime: "6 min read"
     },
     {
+      title: "The Rise of the Anti-Marketplace",
+      excerpt: "As private capital markets grow noisier, traditional fundraising platforms are failing the very people they claim to serve. We explore why volume-based marketplaces no longer work and introduce permission-based discovery as the future of capital formation.",
+      date: "Jul 4, 2025",
+      category: "Industry Analysis", 
+      image: "/api/placeholder/400/250",
+      readTime: "7 min read"
+    },
+    {
       title: "The False Meritocracy of Warm Intros",
-      excerpt: "Warm intros combine signal and access into a single filter, making them the most democratic path forward. How the referral system reinforces bias and how curated, permission-based discovery can level the playing field.",
+      excerpt: "Warm intros are seen as the gold standard in private markets, but they reinforce bias and favor proximity over merit. How curated, permission-based discovery can level the playing field.",
       date: "Jul 4, 2025",
       category: "Network Effects",
       image: "/api/placeholder/400/250", 
       readTime: "8 min read"
+    },
+    {
+      title: "What Institutional Investors Really Want",
+      excerpt: "Most founders pitch vision and traction, but institutional investors evaluate risk-adjusted profiles, governance, and capital efficiency. Learn to bridge the language gap.",
+      date: "Jul 4, 2025",
+      category: "Fundraising Strategy",
+      image: "/api/placeholder/400/250", 
+      readTime: "9 min read"
     }
   ];
 

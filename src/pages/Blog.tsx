@@ -4,14 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Clock, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
-// Blog article data matching the Framer design
+// Blog article data
 const featuredArticle = {
   id: 1,
   title: "The Emergence of the Multi-Family Office",
-  excerpt: "How ultra-high-net-worth families are revolutionizing wealth management through sophisticated multi-family office structures and investment strategies.",
-  category: "INSIGHTS",
-  date: "Sep 20, 2024",
-  readTime: "8 min read",
+  excerpt: "We explore how multi-family offices (MFOs) are transforming wealth management for high-net-worth families. From their 19th-century origins to modern AI-powered platforms, MFOs provide sophisticated investment and wealth management solutions that are gaining traction in emerging markets across the Middle East and Asia.",
+  category: "WEALTH MANAGEMENT",
+  date: "Feb 26, 2025",
+  readTime: "12 min read",
   image: "/api/placeholder/600/400",
   featured: true,
 };
@@ -19,72 +19,54 @@ const featuredArticle = {
 const articles = [
   {
     id: 2,
-    title: "Portfolio Diversification Strategies for 2024",
-    excerpt: "Essential strategies for building resilient investment portfolios in today's dynamic market environment.",
-    category: "PRO TIPS",
-    date: "Sep 18, 2024",
-    readTime: "5 min read",
+    title: "The Power of Access & Why Private Markets Are Built on Exclusivity",
+    excerpt: "In private investments, success is about knowing where to place capital. The best opportunities never appear in public markets but are shared within exclusive networks, where high-caliber investments are curated and intelligently matched to serious investors.",
+    category: "MARKET INSIGHTS",
+    date: "Feb 27, 2025",
+    readTime: "6 min read",
     image: "/api/placeholder/400/250",
   },
   {
     id: 3,
-    title: "Digital Asset Integration in Family Offices",
-    excerpt: "How forward-thinking family offices are incorporating digital assets into their investment frameworks.",
-    category: "UPDATES",
-    date: "Sep 15, 2024",
-    readTime: "6 min read",
-    image: "/api/placeholder/400/250",
-  },
-  {
-    id: 4,
-    title: "ESG Investment Fundamentals",
-    excerpt: "Understanding the basics of Environmental, Social, and Governance investing for sustainable returns.",
-    category: "BASICS",
-    date: "Sep 12, 2024",
-    readTime: "4 min read",
-    image: "/api/placeholder/400/250",
-  },
-  {
-    id: 5,
-    title: "Alternative Investment Opportunities",
-    excerpt: "Exploring private equity, real estate, and other alternative assets for portfolio enhancement.",
-    category: "PRO TIPS",
-    date: "Sep 10, 2024",
+    title: "The Rise of the Anti-Marketplace",
+    excerpt: "As private capital markets grow noisier, traditional fundraising platforms are failing founders, fund managers, and LPs. We explore why volume-based marketplaces no longer work and introduce permission-based discovery as the future of capital formation.",
+    category: "INDUSTRY ANALYSIS",
+    date: "Jul 4, 2025",
     readTime: "7 min read",
     image: "/api/placeholder/400/250",
   },
   {
-    id: 6,
-    title: "Risk Management Best Practices",
-    excerpt: "Comprehensive approaches to identifying, assessing, and mitigating investment risks.",
-    category: "BASICS",
-    date: "Sep 8, 2024",
-    readTime: "6 min read",
+    id: 4,
+    title: "The False Meritocracy of Warm Intros",
+    excerpt: "Warm intros are seen as the gold standard in private markets, but they reinforce bias and favor proximity over merit. Learn how curated, permission-based discovery can level the playing field and allow excellence to surface on its own terms.",
+    category: "NETWORK EFFECTS",
+    date: "Jul 4, 2025",
+    readTime: "8 min read",
     image: "/api/placeholder/400/250",
   },
   {
-    id: 7,
-    title: "Platform Updates & New Features",
-    excerpt: "Latest enhancements to our investment platform including advanced analytics and reporting tools.",
-    category: "CMS",
-    date: "Sep 5, 2024",
-    readTime: "3 min read",
+    id: 5,
+    title: "What Institutional Investors Really Want",
+    excerpt: "Most founders pitch vision and traction, but institutional investors evaluate risk-adjusted profiles, governance, and capital efficiency. Bridge the language gap and learn to present your company through an institutional lens.",
+    category: "FUNDRAISING STRATEGY",
+    date: "Jul 4, 2025",
+    readTime: "9 min read",
     image: "/api/placeholder/400/250",
   },
 ];
 
 const getCategoryColor = (category: string) => {
   switch (category) {
-    case "INSIGHTS":
+    case "WEALTH MANAGEMENT":
       return "bg-accent text-accent-foreground";
-    case "PRO TIPS":
+    case "MARKET INSIGHTS":
       return "bg-primary text-primary-foreground";
-    case "UPDATES":
-      return "bg-success text-success-foreground";
-    case "BASICS":
+    case "INDUSTRY ANALYSIS":
       return "bg-secondary text-secondary-foreground";
-    case "CMS":
-      return "bg-muted text-muted-foreground";
+    case "NETWORK EFFECTS":
+      return "bg-accent/80 text-accent-foreground";
+    case "FUNDRAISING STRATEGY":
+      return "bg-primary/80 text-primary-foreground";
     default:
       return "bg-muted text-muted-foreground";
   }
