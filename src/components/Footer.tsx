@@ -67,7 +67,7 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: "Platform",
+      title: "Product",
       links: [
         "Curated Platform",
         "Sophia AI",
@@ -138,10 +138,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2 - Platform */}
+          {/* Column 2 - Product */}
           <div className="lg:col-span-2">
             <h4 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wider">
-              Platform
+              Product
             </h4>
             <ul className="space-y-4">
               {footerSections[0].links.map((link) => {
@@ -227,7 +227,7 @@ const Footer = () => {
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
               <Input
                 placeholder="Your email"
-                className="w-full"
+                className="w-full border-border/60 focus-visible:border-primary"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
