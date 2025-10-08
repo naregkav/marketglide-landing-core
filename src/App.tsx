@@ -15,6 +15,9 @@ import FundManagersPage from "./pages/apply/FundManagers";
 import PEVCPage from "./pages/apply/PEVC";
 import FamilyOfficesPage from "./pages/apply/FamilyOffices";
 import AdvisorsPage from "./pages/apply/Advisors";
+import CuratedPlatform from "./pages/product/CuratedPlatform";
+import SophiaAI from "./pages/product/SophiaAI";
+import Academy from "./pages/product/Academy";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +39,9 @@ const App = () => (
           <Route path="/apply/pe-vc" element={<PEVCPage />} />
           <Route path="/apply/family-offices" element={<FamilyOfficesPage />} />
           <Route path="/apply/advisors" element={<AdvisorsPage />} />
+          <Route path="/product/curated-platform" element={<CuratedPlatform />} />
+          <Route path="/product/sophia-ai" element={<SophiaAI />} />
+          <Route path="/product/academy" element={<Academy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

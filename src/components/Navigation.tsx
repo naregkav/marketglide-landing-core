@@ -28,9 +28,9 @@ const Navigation = () => {
   ];
 
   const productLinks = [
-    { label: "Curated Platform", href: "/#product" },
-    { label: "Sophia AI", href: "/#sophia" },
-    { label: "MarketGlide Academy", href: "/#academy" },
+    { label: "Curated Platform", href: "/product/curated-platform" },
+    { label: "Sophia AI", href: "/product/sophia-ai" },
+    { label: "MarketGlide Academy", href: "/product/academy" },
   ];
 
   const solutionsLinks = [
