@@ -48,7 +48,7 @@ const SophiaAI = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-4 overflow-x-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-primary/5" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" />
         
@@ -62,7 +62,7 @@ const SophiaAI = () => {
             <div className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
               <span className="text-accent font-semibold">Coming Soon</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 pb-2 bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">
               Meet Sophia — Your Fundraising AI Agent
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -206,12 +206,18 @@ const SophiaAI = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Be first to use Sophia. Join the early access program.
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-muted-foreground mb-8 pb-2">
                 Limited spots available for founding members who'll shape the future of AI-powered fundraising.
               </p>
-              <Button size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90" asChild>
-                <a href="/membership">Join Waitlist</a>
-              </Button>
+              <WaitlistDialog
+                title="Join Sophia AI Waitlist"
+                description="Be the first to experience Sophia when it launches. We'll notify you as soon as it's available."
+                source="sophia-ai-cta"
+              >
+                <Button size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90">
+                  Join Waitlist
+                </Button>
+              </WaitlistDialog>
             </Card>
           </motion.div>
         </div>
