@@ -17,7 +17,7 @@ const MeetSophia = () => {
     {
       icon: Clock,
       title: "Always Available",
-      description: "24/7 AI assistant ready to help with your investment queries.",
+      description: "24/7 AI agent ready to help with your investment queries.",
     },
     {
       icon: Target,
