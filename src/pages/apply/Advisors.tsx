@@ -223,24 +223,6 @@ const AdvisorsPage = () => {
               markets
             </p>
 
-            <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <div className="card-premium p-6">
-                <div className="text-4xl font-bold text-accent mb-2">10+</div>
-                <div className="text-sm text-muted-foreground">Active Partners</div>
-              </div>
-              <div className="card-premium p-6">
-                <div className="text-4xl font-bold text-accent mb-2">50+</div>
-                <div className="text-sm text-muted-foreground">Accelerators</div>
-              </div>
-              <div className="card-premium p-6">
-                <div className="text-4xl font-bold text-accent mb-2">200+</div>
-                <div className="text-sm text-muted-foreground">Service Providers</div>
-              </div>
-              <div className="card-premium p-6">
-                <div className="text-4xl font-bold text-accent mb-2">£800M+</div>
-                <div className="text-sm text-muted-foreground">Partner-Driven Capital</div>
-              </div>
-            </div>
 
             <div className="card-premium p-10 text-left">
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">Why Partners Choose MarketGlide</h3>
