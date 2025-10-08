@@ -227,7 +227,7 @@ const Footer = () => {
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
               <Input
                 placeholder="Your email"
-                className="w-full border-border/60 focus-visible:border-primary"
+                className="w-full border-primary/40 focus-visible:border-primary"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
