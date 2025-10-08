@@ -18,6 +18,11 @@ import AdvisorsPage from "./pages/apply/Advisors";
 import CuratedPlatform from "./pages/product/CuratedPlatform";
 import SophiaAI from "./pages/product/SophiaAI";
 import Academy from "./pages/product/Academy";
+import MultiFamilyOffice from "./pages/blog/MultiFamilyOffice";
+import PowerOfAccess from "./pages/blog/PowerOfAccess";
+import AntiMarketplace from "./pages/blog/AntiMarketplace";
+import WarmIntros from "./pages/blog/WarmIntros";
+import InstitutionalInvestors from "./pages/blog/InstitutionalInvestors";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +47,11 @@ const App = () => (
           <Route path="/product/curated-platform" element={<CuratedPlatform />} />
           <Route path="/product/sophia-ai" element={<SophiaAI />} />
           <Route path="/product/academy" element={<Academy />} />
+          <Route path="/blog/multi-family-office" element={<MultiFamilyOffice />} />
+          <Route path="/blog/power-of-access" element={<PowerOfAccess />} />
+          <Route path="/blog/anti-marketplace" element={<AntiMarketplace />} />
+          <Route path="/blog/warm-intros" element={<WarmIntros />} />
+          <Route path="/blog/institutional-investors" element={<InstitutionalInvestors />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
