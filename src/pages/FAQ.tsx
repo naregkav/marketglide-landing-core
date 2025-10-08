@@ -6,6 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ContactDialog } from "@/components/ContactDialog";
+import { Button } from "@/components/ui/button";
 
 const FAQ = () => {
   const faqSections = [
@@ -196,12 +198,11 @@ const FAQ = () => {
           <p className="text-muted-foreground mb-8">
             Our team is here to help. Get in touch and we'll respond as soon as possible.
           </p>
-          <a
-            href="mailto:concierge@marketglide.io"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all"
-          >
-            Contact Support
-          </a>
+          <ContactDialog>
+            <Button className="rounded-lg bg-primary px-8 py-3 text-sm font-semibold shadow-lg hover:bg-primary/90">
+              Contact Support
+            </Button>
+          </ContactDialog>
         </div>
       </section>
 
