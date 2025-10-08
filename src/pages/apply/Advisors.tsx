@@ -225,7 +225,7 @@ const AdvisorsPage = () => {
 
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="card-premium p-6">
-                <div className="text-4xl font-bold text-accent mb-2">120+</div>
+                <div className="text-4xl font-bold text-accent mb-2">10+</div>
                 <div className="text-sm text-muted-foreground">Active Partners</div>
               </div>
               <div className="card-premium p-6">
@@ -250,10 +250,8 @@ const AdvisorsPage = () => {
                     <span className="text-accent-foreground text-sm">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground mb-1">Curated Access</div>
-                    <div className="text-sm text-muted-foreground">
-                      Direct access to exciting, vetted opportunities.
-                    </div>
+                    <div className="font-semibold text-foreground mb-1">UK Home Office Aligned</div>
+                    <div className="text-sm text-muted-foreground">Regulatory credibility for your clients</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -261,10 +259,8 @@ const AdvisorsPage = () => {
                     <span className="text-accent-foreground text-sm">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground mb-1">Aligned Incentives</div>
-                    <div className="text-sm text-muted-foreground">
-                      MarketGlide simply powers discovery, trust, and collaboration
-                    </div>
+                    <div className="font-semibold text-foreground mb-1">BAJ Accelerator Partner</div>
+                    <div className="text-sm text-muted-foreground">Industry-leading ecosystem support</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
