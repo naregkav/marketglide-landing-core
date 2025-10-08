@@ -8,6 +8,92 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+
+interface MobileDropdownProps {
+  title: string;
+  links: { label: string; href: string }[];
+  onLinkClick: () => void;
+  isRouterLink?: boolean;
+}
+
+const MobileDropdown = ({ title, links, onLinkClick, isRouterLink = false }: MobileDropdownProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="px-2">
+      <CollapsibleTrigger className="flex items-center justify-between w-full text-muted-foreground hover:text-foreground font-medium py-2 transition-colors">
+        {title}
+        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+      </CollapsibleTrigger>
+      <CollapsibleContent className="pl-4 space-y-2 py-2">
+        {links.map((link) => 
+          isRouterLink ? (
+            <Link
+              key={link.label}
+              to={link.href}
+              className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+              onClick={onLinkClick}
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <a
+              key={link.label}
+              href={link.href}
+              className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+              onClick={onLinkClick}
+            >
+              {link.label}
+            </a>
+          )
+        )}
+      </CollapsibleContent>
+    </Collapsible>
+  );
+};
+
+interface MobileDropdownDetailedProps {
+  title: string;
+  links: { label: string; href: string; description: string }[];
+  onLinkClick: () => void;
+}
+
+const MobileDropdownDetailed = ({ title, links, onLinkClick }: MobileDropdownDetailedProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="px-2">
+      <CollapsibleTrigger className="flex items-center justify-between w-full text-muted-foreground hover:text-foreground font-medium py-2 transition-colors">
+        {title}
+        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+      </CollapsibleTrigger>
+      <CollapsibleContent className="pl-4 space-y-3 py-2">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+            onClick={onLinkClick}
+          >
+            <div className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              {link.label}
+            </div>
+            <div className="text-xs text-muted-foreground mt-1">
+              {link.description}
+            </div>
+          </a>
+        ))}
+      </CollapsibleContent>
+    </Collapsible>
+  );
+};
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -179,41 +265,13 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border py-4">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border py-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
+            <div className="flex flex-col space-y-2">
               {/* Product Dropdown Mobile */}
-              <div className="px-2">
-                <div className="text-muted-foreground font-medium mb-2">Product</div>
-                <div className="flex flex-col space-y-2 pl-4">
-                  {productLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
+              <MobileDropdown title="Product" links={productLinks} onLinkClick={() => setIsMobileMenuOpen(false)} />
               
               {/* Solutions Dropdown Mobile */}
-              <div className="px-2">
-                <div className="text-muted-foreground font-medium mb-2">Solutions</div>
-                <div className="flex flex-col space-y-2 pl-4">
-                  {solutionsLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      to={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <MobileDropdown title="Solutions" links={solutionsLinks} onLinkClick={() => setIsMobileMenuOpen(false)} isRouterLink />
 
               {navLinks.map((link) => (
                 <a
@@ -224,43 +282,27 @@ const Navigation = () => {
                     link.href === "#faq" ? "/faq" :
                     link.href
                   }
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-2 py-1"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-4 py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="flex flex-col space-y-2 pt-2">
-                <a href="https://stage.marketglide.io/app/login" target="_blank" rel="noopener noreferrer">
-                  <InteractiveHoverButton variant="ghost" size="sm" className="justify-start" showArrow={false}>
-                    Sign In
-                  </InteractiveHoverButton>
-                </a>
-                
-                {/* Apply Dropdown Mobile */}
-                <div className="px-2">
-                  <div className="text-muted-foreground font-medium mb-2">Apply</div>
-                  <div className="flex flex-col space-y-3 pl-2">
-                    {applyLinks.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col gap-1"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <div className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                          {link.label}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {link.description}
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              
+              <div className="border-t border-border my-2"></div>
+              
+              <a href="https://stage.marketglide.io/app/login" target="_blank" rel="noopener noreferrer" className="px-2">
+                <InteractiveHoverButton variant="ghost" size="sm" className="w-full justify-start" showArrow={false}>
+                  Sign In
+                </InteractiveHoverButton>
+              </a>
+              
+              {/* Apply Dropdown Mobile */}
+              <MobileDropdownDetailed 
+                title="Apply" 
+                links={applyLinks} 
+                onLinkClick={() => setIsMobileMenuOpen(false)} 
+              />
             </div>
           </div>
         )}

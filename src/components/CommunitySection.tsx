@@ -195,31 +195,37 @@ const CommunitySection = () => {
               {events.map((event) => (
                 <div
                   key={event.id}
-                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-muted/50 transition-colors group"
+                  className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-xl hover:bg-muted/50 transition-colors group"
                 >
-                  <div className="flex-shrink-0 w-16 text-center">
+                  <div className="flex items-center gap-4 sm:gap-0 sm:flex-col flex-shrink-0 sm:w-16 sm:text-center">
                     <div className="text-sm font-medium text-primary">{format(new Date(event.event_date), "MMM")}</div>
                     <div className="text-2xl font-bold">{format(new Date(event.event_date), "dd")}</div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
-                      {event.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground flex items-center gap-2">
-                      <MapPin className="w-4 h-4" />
-                      {event.location}
+                  <div className="flex-1 min-w-0 space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="font-semibold text-base sm:text-lg group-hover:text-primary transition-colors">
+                        {event.title}
+                      </h4>
+                      <Badge variant="outline" className="capitalize flex-shrink-0">
+                        {event.type}
+                      </Badge>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 flex-shrink-0" />
+                        <span>{event.location}</span>
+                      </div>
                       {event.event_time && (
                         <>
-                          <span className="text-muted-foreground/50">•</span>
-                          <Calendar className="w-4 h-4" />
-                          {event.event_time}
+                          <span className="hidden sm:inline text-muted-foreground/50">•</span>
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-4 h-4 flex-shrink-0" />
+                            <span>{event.event_time}</span>
+                          </div>
                         </>
                       )}
-                    </p>
+                    </div>
                   </div>
-                  <Badge variant="outline" className="capitalize">
-                    {event.type}
-                  </Badge>
                 </div>
               ))}
             </div>
