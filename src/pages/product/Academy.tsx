@@ -30,7 +30,7 @@ const Academy = () => {
       feature: "Community",
       academy: "Verified industry professionals",
       others: "Open enrollment",
-      highlight: false,
+      highlight: true,
     },
     {
       feature: "Application",
@@ -118,7 +118,7 @@ const Academy = () => {
               <GraduationCap className="w-20 h-20 text-primary mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Launching Soon</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Building with experts from global investment, finance, and legal backgrounds.
+                Built with experts from global investment, finance, and legal backgrounds.
               </p>
               <p className="text-xl font-semibold text-foreground">
                 From fund structuring to investor relations, learn directly from professionals who've done it.
