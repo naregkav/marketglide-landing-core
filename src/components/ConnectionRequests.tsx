@@ -5,10 +5,10 @@ import { CheckCircle, Clock } from "lucide-react";
 
 const ConnectionRequests = () => {
   const requests = [
-    { id: 1, name: "Sarah Chen", role: "Investment Director", avatar: "/members/armen-kherlopian.webp", status: "pending" },
-    { id: 2, name: "Marcus Rodriguez", role: "Fund Manager", avatar: "/members/henrique-roloff.webp", status: "connected" },
-    { id: 3, name: "Emily Watson", role: "LP Investor", avatar: "/members/renato-chiodaro.webp", status: "pending" },
-    { id: 4, name: "David Kim", role: "Family Office", avatar: "/members/richard-lark.webp", status: "connected" },
+    { id: 1, name: "Sarah Chen", role: "Investment Director", avatar: "/members/sarah-chen.jpg", status: "pending" },
+    { id: 2, name: "Marcus Rodriguez", role: "Fund Manager", avatar: "/members/marcus-rodriguez.jpg", status: "connected" },
+    { id: 3, name: "Emily Watson", role: "LP Investor", avatar: "/members/emily-watson.jpg", status: "pending" },
+    { id: 4, name: "David Kim", role: "Family Office", avatar: "/members/david-kim.jpg", status: "connected" },
   ];
 
   return (
