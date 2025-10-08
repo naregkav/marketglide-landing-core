@@ -11,35 +11,39 @@ const StartupsPage = () => {
     {
       icon: Network,
       title: "Curated Investor Network",
-      description: "Showcase your opportunity to a growing ecosystem of certified investors who match your sector, geography, and capital needs. Not scraped contacts — selectively onboarded for relevance and value."
+      description:
+        "Showcase your opportunity to a growing ecosystem of certified investors who match your sector, geography, and capital needs. All selectively onboarded for relevance and value.",
     },
     {
       icon: TrendingUp,
       title: "Flexible Fundraising Options",
-      description: "Raise for equity, debt, SPVs, funds, or hybrids. MarketGlide allows you to configure your fundraising structure and align with investors looking for exactly what you offer."
+      description:
+        "Raise for equity, debt, SPVs, funds, or hybrids. MarketGlide allows you to configure your fundraising structure and align with investors looking for exactly what you offer.",
     },
     {
       icon: Users,
       title: "No Gatekeepers",
-      description: "No middlemen, commissions, or third-party filters. You control the narrative and communicate directly with potential investors."
+      description:
+        "No middlemen, commissions, or third-party filters. You control the narrative and communicate directly with potential investors.",
     },
     {
       icon: FileText,
       title: "Community Engagement",
-      description: "Visibility goes beyond listing — you're embedded in a curated network of dealmakers and capital allocators."
-    }
+      description:
+        "Visibility goes beyond listing — you're embedded in a curated network of dealmakers and capital allocators.",
+    },
   ];
 
   const credibility = [
-    "Signal Seriousness: Differentiate from unsolicited pitches with an institutional-grade profile in a private, curated environment.",
-    "Leverage Network Dynamics: Exposure to LPs, family offices, and advisors already active on the platform.",
-    "Share What Matters: Upload decks and financial summaries, visible only to qualified, logged-in users."
+    "Differentiate from unsolicited pitches with an institutional-grade profile in a private, curated environment.",
+    "Exposure to LPs, family offices, and advisors already active on the platform.",
+    "Upload decks and financial summaries, visible only to qualified, logged-in users.",
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section - Vibrant & Energetic */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-primary/5"></div>
@@ -52,13 +56,19 @@ const StartupsPage = () => {
               Raise Capital Smarter with MarketGlide
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-              Fundraising is harder than ever. The right investors are difficult to reach, cold outreach is exhausting, and traditional networks are saturated. MarketGlide was designed to reverse that.
+              Fundraising is harder than ever. The right investors are difficult to reach, cold outreach is exhausting,
+              and traditional networks are saturated. MarketGlide was designed to reverse that.
             </p>
             <p className="text-lg text-foreground mb-10 max-w-2xl mx-auto">
-              We give startups and companies a direct path to curated investors, plus the infrastructure to present your opportunity professionally and credibly.
+              We give startups and companies a direct path to curated investors, plus the infrastructure to present your
+              opportunity professionally and credibly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="https://stage.marketglide.io/app/registration/company?type=company" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://stage.marketglide.io/app/registration/company?type=company"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <InteractiveHoverButton variant="hero" size="xl">
                   Start Fundraising
                 </InteractiveHoverButton>
@@ -94,12 +104,8 @@ const StartupsPage = () => {
                     <benefit.icon className="w-7 h-7 text-accent-foreground" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {benefit.description}
-                    </p>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">{benefit.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
               </div>
@@ -114,7 +120,7 @@ const StartupsPage = () => {
           <div className="max-w-5xl mx-auto">
             <div className="card-premium p-12">
               <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-                Signal <span className="bg-gradient-accent bg-clip-text text-transparent">Seriousness</span>
+                MarketGlide <span className="bg-gradient-accent bg-clip-text text-transparent">Advantage</span>
               </h2>
               <div className="space-y-6">
                 {credibility.map((item, index) => (
@@ -122,9 +128,7 @@ const StartupsPage = () => {
                     <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <Check className="w-4 h-4 text-accent-foreground" />
                     </div>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      {item}
-                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -169,7 +173,8 @@ const StartupsPage = () => {
                     Your <span className="bg-gradient-accent bg-clip-text text-transparent">AI Fundraising Agent</span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Sophia guides startups through every stage of fundraising with intelligent recommendations and actionable insights.
+                    Sophia guides startups through every stage of fundraising with intelligent recommendations and
+                    actionable insights.
                   </p>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
@@ -178,7 +183,10 @@ const StartupsPage = () => {
                       </div>
                       <div>
                         <span className="font-semibold text-foreground">Investor Discovery:</span>
-                        <span className="text-muted-foreground"> Find investors perfectly aligned with your sector, stage, and geography</span>
+                        <span className="text-muted-foreground">
+                          {" "}
+                          Find investors perfectly aligned with your sector, stage, and geography
+                        </span>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -187,7 +195,10 @@ const StartupsPage = () => {
                       </div>
                       <div>
                         <span className="font-semibold text-foreground">Outreach Strategy:</span>
-                        <span className="text-muted-foreground"> Get personalized guidance on approaching and engaging with investors</span>
+                        <span className="text-muted-foreground">
+                          {" "}
+                          Get personalized guidance on approaching and engaging with investors
+                        </span>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -196,7 +207,10 @@ const StartupsPage = () => {
                       </div>
                       <div>
                         <span className="font-semibold text-foreground">Real-Time Guidance:</span>
-                        <span className="text-muted-foreground"> Receive instant answers to fundraising questions and strategic advice</span>
+                        <span className="text-muted-foreground">
+                          {" "}
+                          Receive instant answers to fundraising questions and strategic advice
+                        </span>
                       </div>
                     </li>
                   </ul>
@@ -215,11 +229,15 @@ const StartupsPage = () => {
               Join the MarketGlide <span className="bg-gradient-accent bg-clip-text text-transparent">Ecosystem</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Visibility goes beyond listing. You're embedded in a curated network of dealmakers and capital allocators, with access to events, insights, and collaboration opportunities.
+              Visibility goes beyond listing. You're embedded in a curated network of dealmakers and capital allocators,
+              with access to events, insights, and collaboration opportunities.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {["Investor Events", "Market Insights", "Deal Syndication", "Expert Network"].map((tag) => (
-                <span key={tag} className="px-4 py-2 bg-card border border-card-border rounded-full text-sm font-medium">
+                <span
+                  key={tag}
+                  className="px-4 py-2 bg-card border border-card-border rounded-full text-sm font-medium"
+                >
                   {tag}
                 </span>
               ))}
