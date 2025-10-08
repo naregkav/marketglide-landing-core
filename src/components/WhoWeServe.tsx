@@ -9,9 +9,10 @@ const WhoWeServe = () => {
     {
       icon: Rocket,
       title: "Startups",
-      subtitle: "Seed to Series C",
+      subtitle: "Pre-Seed to Series C",
       buttonText: "Raise Faster",
-      description: "Connect with VCs, angels, and strategic investors who are actively looking for deals in your sector.",
+      description:
+        "Connect with VCs, angels, and strategic investors who are actively looking for deals in your sector.",
       stat: "Average 3.2 months to close",
       link: "https://stage.marketglide.io/app/registration/company?type=company",
       bgColor: "from-primary/10 to-primary/5",
@@ -79,12 +80,8 @@ const WhoWeServe = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Who We Serve
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Five distinct communities, one powerful platform
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Who We Serve</h2>
+          <p className="text-lg text-muted-foreground">Five distinct communities, one powerful platform</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
@@ -98,7 +95,9 @@ const WhoWeServe = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className={`h-full flex flex-col relative overflow-hidden ${community.highlighted ? 'border-primary shadow-lg' : ''}`}>
+                <Card
+                  className={`h-full flex flex-col relative overflow-hidden ${community.highlighted ? "border-primary shadow-lg" : ""}`}
+                >
                   <div className={`absolute inset-0 bg-gradient-to-br ${community.bgColor} pointer-events-none`} />
                   <CardHeader className="relative pb-4">
                     <div className={`w-12 h-12 rounded-full ${community.iconBg} flex items-center justify-center mb-3`}>
@@ -117,13 +116,9 @@ const WhoWeServe = () => {
                         {community.buttonText}
                       </a>
                     </Button>
-                    <p className="text-xs text-muted-foreground mb-auto min-h-[4.5rem]">
-                      {community.description}
-                    </p>
+                    <p className="text-xs text-muted-foreground mb-auto min-h-[4.5rem]">{community.description}</p>
                     <div className="bg-background/50 backdrop-blur-sm rounded-lg px-2 py-2 border border-border/50 mt-3">
-                      <p className="text-xs text-center text-muted-foreground font-medium">
-                        {community.stat}
-                      </p>
+                      <p className="text-xs text-center text-muted-foreground font-medium">{community.stat}</p>
                     </div>
                   </CardContent>
                 </Card>
