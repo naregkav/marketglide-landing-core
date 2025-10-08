@@ -40,7 +40,7 @@ const PowerOfAccess = () => {
           </div>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:leading-relaxed prose-p:mb-6">
             <p>
               In private investments, success is about knowing where to place the capital more than just having it. The best deals never appear on public exchanges or in crowded investor circles. They emerge in quiet conversations between those with the right networks, the right insights, and, most importantly, the right access.
             </p>
@@ -51,6 +51,8 @@ const PowerOfAccess = () => {
               For decades, family offices, VCs, and institutional investors have lived in a world where information is power, and access is everything. They don't sift through thousands of generic opportunities; they are invited into rooms where high-caliber, pre-vetted investments are presented directly to them. It is in these spaces that true wealth creation happens—not by chance, but by design.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>A New Kind of Access</h2>
             <p>
               MarketGlide was born out of a simple but powerful idea: what if this level of exclusivity and intelligence could be curated into a single platform?
@@ -62,6 +64,8 @@ const PowerOfAccess = () => {
               As a MarketGlide member, you'll be sitting at the intersection of global capital and the world's most promising private market opportunities. Whether it's a pioneering startup reshaping an industry, a high-growth company seeking strategic investors, or a family office looking for the right co-investment partner—MarketGlide ensures that every connection is meaningful, every opportunity is tailored, and every investor has a seat at the table of high-impact decision-making.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Beyond the Platform: The Power of Community</h2>
             <p>
               But MarketGlide is more than just a gateway to investments—it is a network of visionaries shaping the future of private markets. It's a space where investors don't just find deals; they find like-minded peers, strategic partners, and opportunities to collaborate on a global scale.
@@ -73,6 +77,8 @@ const PowerOfAccess = () => {
               At invitation-only investor roundtables, exclusive MarketGlide-hosted summits, and curated networking events, our members don't just access opportunities—they immerse themselves in a world where the next billion-dollar investment is just one conversation away.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Join the Circle of Access</h2>
             <p>
               There is a reason why the most successful investors operate in closed circles. Not every opportunity is meant to be open to all.

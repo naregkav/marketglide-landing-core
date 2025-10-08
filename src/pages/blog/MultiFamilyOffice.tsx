@@ -39,8 +39,8 @@ const MultiFamilyOffice = () => {
           </div>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <h2>Introduction</h2>
+          <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:leading-relaxed prose-p:mb-6">
+            <h2 className="!mt-0">Introduction</h2>
             <p>
               In the 19th century, wealthy families in Europe and the United States established single-family offices to manage their substantial fortunes. Prominent examples include the Rockefeller Family Office, which was founded in 1882. With vast wealth amassing during this period, the complexity of managing these assets increased, prompting the development of more sophisticated single-family offices. By the end of the 20th century, the multi-family office model began to take shape, with financial institutions acknowledging the benefits of pooling resources to serve multiple wealthy families. This process was catalyzed through the increasing globalization of wealth, which facilitated the demand for multi-disciplinary management of family wealth. As a result, many single-family offices transitioned into multi-family offices to diversify their client base and enhance their operational efficiencies.
             </p>
@@ -48,9 +48,11 @@ const MultiFamilyOffice = () => {
               The substantial rise in global wealth during the 21st century has led to a significant increase in the number of high-net-worth individuals (HNWIs) and ultra-high-net-worth individuals (UHNWIs) globally. As a result, the demand for sophisticated wealth management services that MFOs offer has ballooned.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>The Growth of Global Wealth and Demand for MFOs</h2>
             <p>
-              Global wealth has catapulted in the 21st century, with McKinsey research showing that between 2000 and 2021, $160 trillion was added to paper wealth as asset prices surged. This primarily occurred due to low interest rates during this period, as for every $1 in investment, $1.90 of debt was generated. With this monumental rise in global wealth, we have observed a significant rise in high-net-worth individuals (HNWIs) and ultra-high-net-worth individuals (UHNWIs) entering the market for sophisticated, and personalized, financial services. As a result, family offices have emerged to embrace the increased demand; a growing amount choosing to provide services to multiple families instead of just one.
+              Global wealth has catapulted in the 21st century, with <strong>McKinsey research showing that between 2000 and 2021, $160 trillion was added to paper wealth</strong> as asset prices surged. This primarily occurred due to low interest rates during this period, as for every $1 in investment, $1.90 of debt was generated. With this monumental rise in global wealth, we have observed a significant rise in high-net-worth individuals (HNWIs) and ultra-high-net-worth individuals (UHNWIs) entering the market for sophisticated, and personalized, financial services. As a result, family offices have emerged to embrace the increased demand; a growing amount choosing to provide services to multiple families instead of just one.
             </p>
             <p>
               Family Offices have become particularly popular in the Middle East and Asia, with Family Office hubs developing in Singapore, Hong Kong, and the United Arab Emirates. Globally, the number of family offices has grown to 20,000 in 2023, showing a stark increase in their influence. With this growth, Family Offices are no longer small entities with limited functionality, but bustling financial institutions in their own right. This shift was catalyzed by various macroeconomic factors, such as COVID-19, which have transformed the organizational structures of these institutions.
@@ -59,6 +61,8 @@ const MultiFamilyOffice = () => {
               According to a survey by KPMG, different Family Offices prioritize different functionalities. For instance, whilst 67% of Family Offices claim their purpose is the administration of family wealth, 29% claim it is philanthropic initiative. Further differences are observed when we observe the continental split. We observe that 42% of Family Offices are located in the Americas, whilst 29% are in Europe, 7% are in the Middle East, and 9% are in Asia. Thus, with the shift in global wealth towards emerging markets, MarketGlide research predicts that the global distribution of Family Offices will tend further towards the Middle East and Asia.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Key Drivers for the Emergence and Growth of MFOs</h2>
             
             <h3>Rising Global Wealth</h3>
@@ -73,7 +77,7 @@ const MultiFamilyOffice = () => {
 
             <h3>Cost Efficiency</h3>
             <p>
-              Undoubtedly, the primary advantage of MFOs is their ability to deliver cost-efficient services by spreading expenses across multiple families. This model allows for significant cost savings in areas such as administrative support, technology investments, and professional services. For high-net-worth families, this means access to top-tier financial advice and management without the prohibitive costs associated with single-family offices. MFOs can negotiate better deals with service providers, invest in innovative technology, and hire specialized staff, all of which contribute to enhanced operational efficiencies and better service delivery for their clients.
+              Undoubtedly, <strong>the primary advantage of MFOs is their ability to deliver cost-efficient services by spreading expenses across multiple families.</strong> This model allows for significant cost savings in areas such as administrative support, technology investments, and professional services. For high-net-worth families, this means access to top-tier financial advice and management without the prohibitive costs associated with single-family offices. MFOs can negotiate better deals with service providers, invest in innovative technology, and hire specialized staff, all of which contribute to enhanced operational efficiencies and better service delivery for their clients.
             </p>
             <p>
               This march towards cost efficiency has also developed new models for managing wealth, with some modern family offices holding no assets under management, (AUM), instead offering advisory services to their clients. This model allows MFOs to cater to far larger numbers of clientele, and thus bringing their costs down even further.
@@ -90,6 +94,8 @@ const MultiFamilyOffice = () => {
               Data is central to MarketGlide, ensuring all members of our community possess full knowledge surrounding their potential partnerships.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Case Studies and Examples</h2>
             <p>
               A notable example of a growing Multi-Family Office, in an emerging market, is Aglaia. Stephen Hunt, Gavin Tan, and Heinrich Jessen founded Aglaia, with their primary focus on wealthy Asian families. They are based in Singapore, offering services ranging from philanthropy, investment analysis, and wealth transfer planning.
@@ -104,6 +110,8 @@ const MultiFamilyOffice = () => {
               Naturally, the rise in artificial intelligence suggests that there is significant potential for its usage by MFOs. Dan Conner from the CFA Institute claims that artificial intelligence has the potential to generate investment recommendations, analyze scenarios, run simulations, and monitor various investment factors – significantly increasing MFOs capacity to administer to family wealth effectively and securely. By leveraging AI, Family Offices can reallocate their human capital to where it brings most value – developing relationships with clients and tending to problems that artificial intelligence cannot solve (yet). Despite this, rollout of artificial intelligence software has been slow, but will be a significant variable for MFOs to monitor in the upcoming year.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Strategic Recommendations for MFOs</h2>
             
             <h3>Adopt Advanced Technology Solutions</h3>

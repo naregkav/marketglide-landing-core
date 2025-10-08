@@ -40,7 +40,7 @@ const WarmIntros = () => {
           </div>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:leading-relaxed prose-p:mb-6">
             <p>
               The warm introduction has long been seen as a proxy for credibility in private markets. It is the currency of access, a soft endorsement that opens doors and suggests a baseline of trust. For founders and fund managers alike, securing a warm intro is often viewed as the first hurdle on the path to raising capital. But the ubiquity of this practice masks a deeper issue: the warm introduction is not a marker of merit, but rather it is a function of proximity.
             </p>

@@ -40,8 +40,8 @@ const InstitutionalInvestors = () => {
           </div>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <h2>What Institutional Investors Really Want — and Why Founders Keep Missing It</h2>
+          <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:leading-relaxed prose-p:mb-6">
+            <h2 className="!mt-0">What Institutional Investors Really Want — and Why Founders Keep Missing It</h2>
             <p>
               For many founders, the fundraising process feels like a paradox. You work tirelessly on your product, refine your pitch deck, research investor lists, and land the meeting…only to walk away with vague feedback or polite (sometimes not so polite) rejection. Often, the substance of the rejection is hard to pin down. The investor said they were impressed. They thanked you for the conversation. But they passed.
             </p>
@@ -55,6 +55,8 @@ const InstitutionalInvestors = () => {
               To bridge this gap, it's not enough to sharpen your pitch. You have to understand what institutional capital actually optimizes for, and how most pitches fail to address those criteria.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>The Illusion of the Perfect Pitch</h2>
             <p>
               Founders often assume that fundraising success is a function of narrative clarity and product-market fit. Those things matter. But institutional investors don't back the best story, they back the best risk-adjusted profile.
@@ -66,6 +68,8 @@ const InstitutionalInvestors = () => {
               Founders tend to over-index on the product. Investors over-index on the structure. That's where the misalignment begins.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>The Hidden Filters: What Investors Actually Screen For</h2>
             <p>
               Most institutional investors don't explicitly list their decision-making process. But patterns emerge. Here are five of the most common (and under-communicated) filters they use:
@@ -91,6 +95,8 @@ const InstitutionalInvestors = () => {
               The common thread here is institutional readiness. And that's where most founders fall short.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Why Founders Miss the Mark</h2>
             <p>
               Part of the problem is structural. Many first-time founders haven't worked in institutional environments. They haven't sat on investment committees. They don't know how investment memos are written or what gets discussed behind closed doors. So they present the business as they see it - visionary, iterative, growing - and are surprised when that frame doesn't resonate.
@@ -99,6 +105,8 @@ const InstitutionalInvestors = () => {
               There's also a cultural dimension. Founders are often encouraged to lead with passion, disruption, and ambition. These qualities make for compelling startup narratives, but institutional investors, particularly LPs and family offices, are looking for repeatable process, downside protection, and disciplined execution. The result is two parallel conversations happening simultaneously and often missing each other entirely.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Bridging the Language Gap</h2>
             <p>
               To align more effectively with institutional capital, founders need to adjust not just the content of their pitch, but the context in which it is delivered. Here's what that looks like:
@@ -118,6 +126,8 @@ const InstitutionalInvestors = () => {
               It's not about being conservative. It's about being credible. Sophistication in how you present risk will often matter more than excitement about your opportunity.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>The Role of Discovery Infrastructure</h2>
             <p>
               This is where platforms like MarketGlide play a critical role. By structuring information in a way that aligns with how institutional investors evaluate opportunities, from governance signals to capital strategy, we help founders show up on the same wavelength.
@@ -129,6 +139,8 @@ const InstitutionalInvestors = () => {
               Through structured profiles, permission-based intros, and alignment-first discovery, MarketGlide ensures that founders are not just seen, but understood, by the right investors, in the right way.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>From Pitching to Partnering</h2>
             <p>
               Founders often believe that raising capital is about convincing investors. But the best fundraising outcomes don't emerge from persuasion, they emerge from alignment. When both sides are speaking the same language, capital becomes not just available, but strategic.

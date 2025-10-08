@@ -40,8 +40,8 @@ const AntiMarketplace = () => {
           </div>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl font-medium">
+          <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-p:leading-relaxed prose-p:mb-6">
+            <p className="text-xl font-medium !mb-6">
               In private markets, noise is abundant, and signal is scarce.
             </p>
             <p>
@@ -57,6 +57,8 @@ const AntiMarketplace = () => {
               Meanwhile, LPs and family offices are flooded with unfiltered deal flow and irrelevant fund pitches. The signal-to-noise ratio is worse than ever.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>The Myth of Volume in Fundraising Platforms</h2>
             <p>
               Many investor matching platforms are built around scale. More founders. More funds. More activity. The assumption is that volume creates outcomes. But in private capital markets, volume often means low-quality leads, poor alignment, and wasted time.
@@ -68,6 +70,8 @@ const AntiMarketplace = () => {
               Private markets depend on precision, context, and mutual alignment. In this ecosystem, curation (never quantity) is the real advantage.
             </p>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Introducing the Anti-Marketplace for Capital</h2>
             <p>
               MarketGlide is not another investor database or CRM. It's a curated discovery platform built to allow founders, emerging fund managers, and professional investors to meet through trusted and permission-based connections.
@@ -82,6 +86,8 @@ const AntiMarketplace = () => {
               <li><strong>We never, ever charge success fees</strong> on capital raised. Not to the buy-side, not to the sell-side. MarketGlide is a trusted community, not a broker.</li>
             </ul>
 
+            <hr className="my-12 border-border" />
+            
             <h2>Why Curated Capital is the Future of Fundraising</h2>
             <p>
               The best investors aren't waiting in generic marketplaces. They're waiting for signal - opportunities that speak to their mandate, values, and timing.
