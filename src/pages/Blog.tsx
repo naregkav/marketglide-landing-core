@@ -3,6 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { Link } from "react-router-dom";
+import multiFamilyOfficeImage from "@/assets/blog/multi-family-office.jpg";
+import powerOfAccessImage from "@/assets/blog/power-of-access.jpg";
+import antiMarketplaceImage from "@/assets/blog/anti-marketplace.jpg";
+import warmIntrosImage from "@/assets/blog/warm-intros.jpg";
+import institutionalInvestorsImage from "@/assets/blog/institutional-investors.jpg";
 
 // Blog article data
 const featuredArticle = {
@@ -12,8 +18,9 @@ const featuredArticle = {
   category: "WEALTH MANAGEMENT",
   date: "Feb 26, 2025",
   readTime: "12 min read",
-  image: "/api/placeholder/600/400",
+  image: multiFamilyOfficeImage,
   featured: true,
+  slug: "/blog/multi-family-office"
 };
 
 const articles = [
@@ -24,7 +31,8 @@ const articles = [
     category: "MARKET INSIGHTS",
     date: "Feb 27, 2025",
     readTime: "6 min read",
-    image: "/api/placeholder/400/250",
+    image: powerOfAccessImage,
+    slug: "/blog/power-of-access"
   },
   {
     id: 3,
@@ -33,7 +41,8 @@ const articles = [
     category: "INDUSTRY ANALYSIS",
     date: "Jul 4, 2025",
     readTime: "7 min read",
-    image: "/api/placeholder/400/250",
+    image: antiMarketplaceImage,
+    slug: "/blog/anti-marketplace"
   },
   {
     id: 4,
@@ -42,7 +51,8 @@ const articles = [
     category: "NETWORK EFFECTS",
     date: "Jul 4, 2025",
     readTime: "8 min read",
-    image: "/api/placeholder/400/250",
+    image: warmIntrosImage,
+    slug: "/blog/warm-intros"
   },
   {
     id: 5,
@@ -51,7 +61,8 @@ const articles = [
     category: "FUNDRAISING STRATEGY",
     date: "Jul 4, 2025",
     readTime: "9 min read",
-    image: "/api/placeholder/400/250",
+    image: institutionalInvestorsImage,
+    slug: "/blog/institutional-investors"
   },
 ];
 
@@ -95,15 +106,14 @@ const BlogPage = () => {
       {/* Featured Article */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
-          <Card className="max-w-6xl mx-auto overflow-hidden shadow-large hover:shadow-glow transition-all duration-300 hover-lift">
-            <CardContent className="p-0">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                {/* Featured Article Image */}
-                <div className="aspect-[4/3] lg:aspect-auto">
-                  <div className="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                    <div className="text-muted-foreground text-sm">Featured Article Image</div>
+          <Link to={featuredArticle.slug}>
+            <Card className="max-w-6xl mx-auto overflow-hidden shadow-large hover:shadow-glow transition-all duration-300 hover-lift cursor-pointer">
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Featured Article Image */}
+                  <div className="aspect-[4/3] lg:aspect-auto overflow-hidden">
+                    <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                   </div>
-                </div>
                 
                 {/* Featured Article Content */}
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
@@ -129,14 +139,15 @@ const BlogPage = () => {
                     {featuredArticle.excerpt}
                   </p>
                   
-                  <InteractiveHoverButton variant="accent" size="lg" className="w-fit">
-                    Read Article
-                    <ArrowRight className="ml-2" size={16} />
+                  <InteractiveHoverButton variant="accent" size="lg" className="w-fit font-semibold">
+                    Read Full Article
+                    <ArrowRight className="ml-2" size={18} />
                   </InteractiveHoverButton>
                 </div>
               </div>
             </CardContent>
           </Card>
+          </Link>
         </div>
       </section>
 
@@ -145,12 +156,13 @@ const BlogPage = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {articles.map((article) => (
-              <Card key={article.id} className="overflow-hidden shadow-medium hover:shadow-large transition-all duration-300 hover-lift group">
-                <CardContent className="p-0">
-                  {/* Article Image */}
-                  <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/60 flex items-center justify-center">
-                    <div className="text-muted-foreground text-sm">Article Image</div>
-                  </div>
+              <Link key={article.id} to={article.slug}>
+                <Card className="overflow-hidden shadow-medium hover:shadow-large transition-all duration-300 hover-lift group cursor-pointer h-full">
+                  <CardContent className="p-0">
+                    {/* Article Image */}
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
                   
                   {/* Article Content */}
                   <div className="p-6">
@@ -177,14 +189,15 @@ const BlogPage = () => {
                     </p>
                     
                     <div className="flex items-center justify-between">
-                      <InteractiveHoverButton variant="ghost" size="sm" showArrow={false} className="text-accent hover:text-accent/80 p-0 h-auto">
-                        Read more
-                      </InteractiveHoverButton>
+                      <span className="text-accent hover:text-accent/80 text-sm font-semibold">
+                        Read Article
+                      </span>
                       <ArrowRight size={16} className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
                     </div>
                   </div>
                 </CardContent>
               </Card>
+              </Link>
             ))}
           </div>
         </div>
