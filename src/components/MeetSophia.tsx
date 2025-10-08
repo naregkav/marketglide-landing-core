@@ -7,23 +7,23 @@ const MeetSophia = () => {
     {
       icon: Zap,
       title: "Instant Matches",
-      description: "Get matched with relevant opportunities in seconds, not weeks."
+      description: "Get matched with relevant opportunities in seconds, not weeks.",
     },
     {
       icon: BarChart3,
       title: "Smart Insights",
-      description: "Receive data-driven insights to make better investment decisions."
+      description: "Receive data-driven insights to make better investment decisions.",
     },
     {
       icon: Clock,
       title: "Always Available",
-      description: "24/7 AI assistant ready to help with your investment queries."
+      description: "24/7 AI assistant ready to help with your investment queries.",
     },
     {
       icon: Target,
       title: "Action Oriented",
-      description: "Not just information - get actionable steps for every opportunity."
-    }
+      description: "Not just information - get actionable steps for every opportunity.",
+    },
   ];
 
   const containerVariants = {
@@ -31,9 +31,9 @@ const MeetSophia = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -42,9 +42,9 @@ const MeetSophia = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
@@ -68,7 +68,7 @@ const MeetSophia = () => {
             viewport={{ once: true }}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            Your AI-powered investment assistant that never sleeps
+            Your fundraising AI agent that never sleeps
           </motion.p>
         </div>
 
@@ -92,12 +92,8 @@ const MeetSophia = () => {
                           <IconComponent className="h-6 w-6 text-white" />
                         </div>
                       </div>
-                      <h3 className="text-white font-semibold text-lg mb-3">
-                        {feature.title}
-                      </h3>
-                      <p className="text-white/80 text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
+                      <h3 className="text-white font-semibold text-lg mb-3">{feature.title}</h3>
+                      <p className="text-white/80 text-sm leading-relaxed">{feature.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -163,7 +159,7 @@ const MeetSophia = () => {
                   { value: "85%", label: "Match Accuracy" },
                   { value: "2.3x", label: "Deal Flow" },
                   { value: "48h", label: "Response Time" },
-                  { value: "95%", label: "User Satisfaction" }
+                  { value: "95%", label: "User Satisfaction" },
                 ].map((metric, index) => (
                   <motion.div
                     key={index}
@@ -183,40 +179,40 @@ const MeetSophia = () => {
             {/* Floating Decorative Elements */}
             <motion.div
               className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl backdrop-blur-sm border border-white/30"
-              animate={{ 
+              animate={{
                 y: [0, -15, 0],
-                rotate: [0, 5, 0] 
+                rotate: [0, 5, 0],
               }}
-              transition={{ 
-                duration: 4, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
               }}
             />
             <motion.div
               className="absolute bottom-8 -left-6 w-16 h-16 bg-gradient-to-r from-white/15 to-white/5 rounded-xl backdrop-blur-sm border border-white/20"
-              animate={{ 
+              animate={{
                 y: [0, 12, 0],
-                rotate: [0, -3, 0] 
+                rotate: [0, -3, 0],
               }}
-              transition={{ 
-                duration: 3.5, 
-                repeat: Infinity, 
-                ease: "easeInOut", 
-                delay: 1.5 
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.5,
               }}
             />
             <motion.div
               className="absolute top-1/3 -left-4 w-12 h-12 bg-white/10 rounded-full backdrop-blur-sm border border-white/25"
-              animate={{ 
+              animate={{
                 scale: [1, 1.1, 1],
-                opacity: [0.7, 1, 0.7] 
+                opacity: [0.7, 1, 0.7],
               }}
-              transition={{ 
-                duration: 2.8, 
-                repeat: Infinity, 
-                ease: "easeInOut", 
-                delay: 0.8 
+              transition={{
+                duration: 2.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.8,
               }}
             />
           </motion.div>
