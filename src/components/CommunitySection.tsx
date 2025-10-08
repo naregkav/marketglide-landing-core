@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { Calendar, Users, MapPin, FileText, ArrowRight, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Link } from "react-router-dom";
 import communityImage from "@/assets/community-networking.jpg";
 
 interface Event {
@@ -230,9 +231,11 @@ const CommunitySection = () => {
 
         {/* CTA */}
         <div className="text-center animate-fade-in" style={{ animationDelay: "800ms" }}>
-          <InteractiveHoverButton variant="default" size="lg" icon={ArrowRight} className="text-lg px-8 py-6">
-            Join Our Community
-          </InteractiveHoverButton>
+          <Link to="/membership">
+            <InteractiveHoverButton variant="default" size="lg" icon={ArrowRight} className="text-lg px-8 py-6">
+              Join Our Community
+            </InteractiveHoverButton>
+          </Link>
         </div>
 
         {/* Bottom Stats */}
