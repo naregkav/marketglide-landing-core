@@ -27,6 +27,12 @@ const Navigation = () => {
     { label: "FAQ", href: "#faq" },
   ];
 
+  const productLinks = [
+    { label: "Curated Platform", href: "/#product" },
+    { label: "Sophia AI", href: "/#sophia" },
+    { label: "MarketGlide Academy", href: "/#academy" },
+  ];
+
   const solutionsLinks = [
     { label: "Startups & Companies", href: "/apply/startups" },
     { label: "Emerging Fund Managers", href: "/apply/fund-managers" },
@@ -83,12 +89,21 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a
-              href="/#product"
-              className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium"
-            >
-              Product
-            </a>
+            {/* Product Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium flex items-center gap-1">
+                Product <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-[240px] p-2">
+                {productLinks.map((link) => (
+                  <DropdownMenuItem key={link.label} asChild>
+                    <a href={link.href} className="cursor-pointer">
+                      {link.label}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             {/* Solutions Dropdown */}
             <DropdownMenu>
@@ -166,13 +181,22 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border py-4">
             <div className="flex flex-col space-y-4">
-              <a
-                href="/#product"
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-2 py-1"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Product
-              </a>
+              {/* Product Dropdown Mobile */}
+              <div className="px-2">
+                <div className="text-muted-foreground font-medium mb-2">Product</div>
+                <div className="flex flex-col space-y-2 pl-4">
+                  {productLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
               
               {/* Solutions Dropdown Mobile */}
               <div className="px-2">
