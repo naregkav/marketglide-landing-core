@@ -230,9 +230,15 @@ const Academy = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Sign up for early updates and exclusive founding member benefits.
               </p>
-              <Button size="lg" className="text-lg px-8 py-6" asChild>
-                <a href="/membership">Join Waitlist</a>
+            <WaitlistDialog
+              title="Join MarketGlide Academy Waitlist"
+              description="Be the first to access our exclusive masterclass content when we launch. We'll notify you as soon as enrollment opens."
+              source="academy"
+            >
+              <Button size="lg" className="text-lg px-8 py-6">
+                Join Waitlist
               </Button>
+            </WaitlistDialog>
             </Card>
           </motion.div>
         </div>
