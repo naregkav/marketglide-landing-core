@@ -12,66 +12,69 @@ const Academy = () => {
       feature: "Focus Area",
       academy: "Exclusively private markets",
       others: "General business/tech",
-      highlight: true
+      highlight: true,
     },
     {
       feature: "Instructors",
       academy: "Active GPs, LPs, and dealmakers",
       others: "Celebrities & generalists",
-      highlight: true
+      highlight: true,
     },
     {
       feature: "Content Depth",
       academy: "Advanced, actionable insights",
       others: "Introductory overviews",
-      highlight: true
+      highlight: true,
     },
     {
       feature: "Community",
       academy: "Verified industry professionals",
       others: "Open enrollment",
-      highlight: false
+      highlight: false,
     },
     {
       feature: "Application",
       academy: "Real-world deal scenarios",
       others: "Theoretical concepts",
-      highlight: true
-    }
+      highlight: true,
+    },
   ];
 
   const topics = [
     {
       icon: BookOpen,
       title: "Fund Structuring",
-      description: "Learn the intricacies of fund formation, legal structures, and LP agreements from experienced fund managers."
+      description:
+        "Learn the intricacies of fund formation, legal structures, and LP agreements from experienced fund managers.",
     },
     {
       icon: Users,
       title: "Investor Relations",
-      description: "Master the art of LP communications, fundraising narratives, and building long-term investor relationships."
+      description:
+        "Master the art of LP communications, fundraising narratives, and building long-term investor relationships.",
     },
     {
       icon: Award,
       title: "Deal Execution",
-      description: "From sourcing to closing — understand due diligence, term sheets, and post-investment value creation."
+      description:
+        "From sourcing to closing — understand due diligence, term sheets, and post-investment value creation.",
     },
     {
       icon: GraduationCap,
       title: "Portfolio Management",
-      description: "Develop strategies for portfolio construction, risk management, and performance optimization."
-    }
+      description: "Develop strategies for portfolio construction, risk management, and performance optimization.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
-        
+
         <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +89,8 @@ const Academy = () => {
               Learn the Language of Private Markets
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              MarketGlide Academy — the world's first masterclass-style learning platform dedicated to private market investing.
+              MarketGlide Academy — the world's first masterclass-style learning platform dedicated to private market
+              investing.
             </p>
             <WaitlistDialog
               title="Join MarketGlide Academy Waitlist"
@@ -111,9 +115,7 @@ const Academy = () => {
           >
             <Card className="p-12 text-center bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20">
               <GraduationCap className="w-20 h-20 text-primary mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Launching Soon
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Launching Soon</h2>
               <p className="text-lg text-muted-foreground mb-4">
                 Built with experts from global investment, finance, and legal backgrounds.
               </p>
@@ -172,7 +174,9 @@ const Academy = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Why MarketGlide Academy?</h2>
-            <p className="text-xl text-muted-foreground">The only learning platform built for private markets professionals</p>
+            <p className="text-xl text-muted-foreground">
+              The only learning platform built for private markets professionals
+            </p>
           </motion.div>
 
           <Card className="overflow-hidden border-2">
@@ -182,7 +186,7 @@ const Academy = () => {
                   <tr className="bg-muted/50">
                     <th className="p-4 text-left font-semibold">Feature</th>
                     <th className="p-4 text-left font-semibold text-primary">MarketGlide Academy</th>
-                    <th className="p-4 text-left font-semibold text-muted-foreground">MasterClass / Coursera</th>
+                    <th className="p-4 text-left font-semibold text-muted-foreground">Other EdTech Platforms</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -221,9 +225,7 @@ const Academy = () => {
             className="text-center"
           >
             <Card className="p-12 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Be the first to access MarketGlide Academy
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Be the first to access MarketGlide Academy</h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Sign up for early updates and exclusive founding member benefits.
               </p>
