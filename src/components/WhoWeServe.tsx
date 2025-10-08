@@ -80,7 +80,7 @@ const WhoWeServe = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Who We Serve</h2>
-          <p className="text-lg text-muted-foreground">Five distinct communities, one powerful platform</p>
+          <p className="text-lg text-muted-foreground">Five distinct verticals, one powerful platform</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
@@ -94,9 +94,7 @@ const WhoWeServe = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card
-                  className="h-full flex flex-col relative overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1"
-                >
+                <Card className="h-full flex flex-col relative overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                   <div className={`absolute inset-0 bg-gradient-to-br ${community.bgColor} pointer-events-none`} />
                   <CardHeader className="relative pb-4">
                     <div className={`w-12 h-12 rounded-full ${community.iconBg} flex items-center justify-center mb-3`}>
@@ -106,11 +104,7 @@ const WhoWeServe = () => {
                     <CardDescription className="text-xs">{community.subtitle}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-1 flex flex-col relative pt-0">
-                    <Button
-                      variant="outline"
-                      className="w-full mb-3 text-sm"
-                      asChild
-                    >
+                    <Button variant="outline" className="w-full mb-3 text-sm" asChild>
                       <a href={community.link} target="_blank" rel="noopener noreferrer">
                         {community.buttonText}
                       </a>
