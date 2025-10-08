@@ -1,10 +1,62 @@
-import { Linkedin, Instagram } from "lucide-react";
+import { useState } from "react";
+import { Linkedin, Instagram, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactDialog } from "@/components/ContactDialog";
-import { WaitlistDialog } from "@/components/WaitlistDialog";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const emailSchema = z.string().trim().email({ message: "Invalid email address" }).max(255);
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      emailSchema.parse(email);
+      setIsSubmitting(true);
+
+      const { error } = await supabase
+        .from('waitlist_submissions')
+        .insert({
+          name: "Newsletter Subscriber",
+          email: email.trim(),
+          source: "footer"
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "You've been subscribed to our newsletter.",
+      });
+
+      setEmail("");
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Invalid Email",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to subscribe. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const linkRoutes: Record<string, string> = {
     "Privacy Policy": "/privacy-policy",
     "Terms of Service": "/terms-of-service",
@@ -75,14 +127,30 @@ const Footer = () => {
               <h4 className="font-semibold text-foreground mb-3">
                 Stay Updated
               </h4>
-              <p className="text-xs text-muted-foreground mb-3">
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                <Input
+                  placeholder="Enter your email"
+                  className="flex-1"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isSubmitting}
+                  required
+                />
+                <InteractiveHoverButton 
+                  type="submit" 
+                  variant="hero" 
+                  size="sm" 
+                  icon={Mail} 
+                  showArrow={false}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "" : ""}
+                </InteractiveHoverButton>
+              </form>
+              <p className="text-xs text-muted-foreground mt-2">
                 Get exclusive market insights and opportunities.
               </p>
-              <WaitlistDialog source="footer">
-                <InteractiveHoverButton variant="hero" size="default" className="w-full">
-                  Subscribe
-                </InteractiveHoverButton>
-              </WaitlistDialog>
             </div>
           </div>
 
