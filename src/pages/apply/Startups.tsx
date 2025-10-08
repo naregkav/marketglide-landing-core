@@ -132,23 +132,6 @@ const StartupsPage = () => {
                   </div>
                 ))}
               </div>
-
-              <div className="mt-10 pt-10 border-t border-border">
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <div className="text-3xl font-bold text-accent mb-2">100+</div>
-                    <div className="text-sm text-muted-foreground">Active Investors</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-accent mb-2">B+</div>
-                    <div className="text-sm text-muted-foreground">Capital Deployed</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-accent mb-2">25+</div>
-                    <div className="text-sm text-muted-foreground">Countries Covered</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
