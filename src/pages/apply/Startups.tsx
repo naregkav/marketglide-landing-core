@@ -3,6 +3,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
+import { Link } from "react-router-dom";
 
 const StartupsPage = () => {
   const benefits = [
@@ -56,14 +57,16 @@ const StartupsPage = () => {
               We give startups and companies a direct path to curated investors, plus the infrastructure to present your opportunity professionally and credibly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ScheduleCallDialog>
+              <Link to="/apply/startups">
                 <InteractiveHoverButton variant="hero" size="xl">
+                  Get Started
+                </InteractiveHoverButton>
+              </Link>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton variant="outline" size="xl">
                   Schedule a Call
                 </InteractiveHoverButton>
               </ScheduleCallDialog>
-              <InteractiveHoverButton variant="outline" size="xl">
-                View Demo
-              </InteractiveHoverButton>
             </div>
           </div>
         </div>

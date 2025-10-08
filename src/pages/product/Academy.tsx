@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { GraduationCap, BookOpen, Users, Award, CheckCircle2, X } from "lucide-react";
+import { WaitlistDialog } from "@/components/WaitlistDialog";
 
 const Academy = () => {
   const comparisons = [
@@ -87,9 +88,14 @@ const Academy = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               MarketGlide Academy — the world's first masterclass-style learning platform dedicated to private market investing.
             </p>
-            <Button size="lg" className="text-lg px-8 py-6" asChild>
-              <a href="/membership">Join the Waitlist</a>
-            </Button>
+            <WaitlistDialog
+              title="Join MarketGlide Academy Waitlist"
+              description="Be the first to access our exclusive masterclass content when we launch. We'll notify you as soon as enrollment opens."
+            >
+              <Button size="lg" className="text-lg px-8 py-6">
+                Join the Waitlist
+              </Button>
+            </WaitlistDialog>
           </motion.div>
         </div>
       </section>

@@ -2,6 +2,8 @@ import { Trophy, Target, Zap, Shield, Users2, TrendingUp, Globe, Award } from "l
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
+import { Link } from "react-router-dom";
 
 const PEVCPage = () => {
   const benefits = [
@@ -65,12 +67,16 @@ const PEVCPage = () => {
               Whether you're deploying growth capital, seeking strategic buyouts, or backing next-gen founders, MarketGlide gives you access to a high-signal environment designed for top investors.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-                Access Deal Flow
-              </InteractiveHoverButton>
-              <InteractiveHoverButton variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                Schedule a Call
-              </InteractiveHoverButton>
+              <Link to="/apply/pe-vc">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                  Access Deal Flow
+                </InteractiveHoverButton>
+              </Link>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  Schedule a Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
             </div>
           </div>
         </div>
@@ -195,9 +201,18 @@ const PEVCPage = () => {
             <p className="text-xl text-primary-foreground/90 mb-10">
               Schedule a call to see how MarketGlide connects PE/VC firms with high-quality, vetted opportunities.
             </p>
-            <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-              Schedule Your Call
-            </InteractiveHoverButton>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/apply/pe-vc">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                  Get Started
+                </InteractiveHoverButton>
+              </Link>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  Schedule Your Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
+            </div>
           </div>
         </div>
       </section>

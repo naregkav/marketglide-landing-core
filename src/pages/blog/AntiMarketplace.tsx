@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import antiMarketplaceImage from "@/assets/blog/anti-marketplace.jpg";
+import { Link } from "react-router-dom";
 
 const AntiMarketplace = () => {
   return (
@@ -126,9 +127,11 @@ const AntiMarketplace = () => {
             <p className="text-muted-foreground mb-6">
               Join a curated community where quality beats quantity.
             </p>
-            <InteractiveHoverButton variant="accent" size="lg">
-              Apply for Membership
-            </InteractiveHoverButton>
+            <Link to="/membership">
+              <InteractiveHoverButton variant="accent" size="lg">
+                Apply for Membership
+              </InteractiveHoverButton>
+            </Link>
           </div>
         </div>
       </article>

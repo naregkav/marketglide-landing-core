@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import powerOfAccessImage from "@/assets/blog/power-of-access.jpg";
+import { Link } from "react-router-dom";
 
 const PowerOfAccess = () => {
   return (
@@ -97,9 +98,11 @@ const PowerOfAccess = () => {
             <p className="text-muted-foreground mb-6">
               Discover exclusive investment opportunities through our curated platform.
             </p>
-            <InteractiveHoverButton variant="accent" size="lg">
-              Apply for Membership
-            </InteractiveHoverButton>
+            <Link to="/membership">
+              <InteractiveHoverButton variant="accent" size="lg">
+                Apply for Membership
+              </InteractiveHoverButton>
+            </Link>
           </div>
         </div>
       </article>

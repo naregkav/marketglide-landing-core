@@ -3,6 +3,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
+import { Link } from "react-router-dom";
 
 const FamilyOfficesPage = () => {
   const benefits = [
@@ -45,11 +46,18 @@ const FamilyOfficesPage = () => {
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
               MarketGlide empowers family offices to seamlessly explore exciting deals, tailored to long-term wealth strategies and cross-border market access.
             </p>
-            <ScheduleCallDialog>
-              <InteractiveHoverButton variant="hero" size="xl" className="shadow-large">
-                Explore Opportunities
-              </InteractiveHoverButton>
-            </ScheduleCallDialog>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/apply/family-offices">
+                <InteractiveHoverButton variant="hero" size="xl" className="shadow-large">
+                  Get Started
+                </InteractiveHoverButton>
+              </Link>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton variant="outline" size="xl">
+                  Schedule a Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
+            </div>
           </div>
         </div>
       </section>
@@ -194,15 +202,26 @@ const FamilyOfficesPage = () => {
             <p className="text-xl text-accent-foreground/90 mb-10 font-light">
               Schedule a call to discover how MarketGlide can help your family office identify and execute high-quality investment opportunities.
             </p>
-            <ScheduleCallDialog>
-              <InteractiveHoverButton 
-                variant="cta" 
-                size="xl" 
-                className="bg-background text-foreground hover:bg-background/90 shadow-large"
-              >
-                Schedule a Confidential Call
-              </InteractiveHoverButton>
-            </ScheduleCallDialog>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/apply/family-offices">
+                <InteractiveHoverButton 
+                  variant="cta" 
+                  size="xl" 
+                  className="bg-background text-foreground hover:bg-background/90 shadow-large"
+                >
+                  Get Started
+                </InteractiveHoverButton>
+              </Link>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton 
+                  variant="outline" 
+                  size="xl" 
+                  className="border-accent-foreground/30 text-accent-foreground hover:bg-accent-foreground/10"
+                >
+                  Schedule a Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
+            </div>
           </div>
         </div>
       </section>

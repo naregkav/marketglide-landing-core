@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import institutionalInvestorsImage from "@/assets/blog/institutional-investors.jpg";
+import { Link } from "react-router-dom";
 
 const InstitutionalInvestors = () => {
   return (
@@ -165,9 +166,11 @@ const InstitutionalInvestors = () => {
             <p className="text-muted-foreground mb-6">
               Join MarketGlide to connect with investors who understand your vision.
             </p>
-            <InteractiveHoverButton variant="accent" size="lg">
-              Apply for Membership
-            </InteractiveHoverButton>
+            <Link to="/membership">
+              <InteractiveHoverButton variant="accent" size="lg">
+                Apply for Membership
+              </InteractiveHoverButton>
+            </Link>
           </div>
         </div>
       </article>

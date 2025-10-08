@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Brain, Target, Zap, MessageSquare, TrendingUp, Database } from "lucide-react";
+import { WaitlistDialog } from "@/components/WaitlistDialog";
 
 const SophiaAI = () => {
   const features = [
@@ -67,9 +68,14 @@ const SophiaAI = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Sophia transforms investor discovery into intelligent, data-driven matchmaking. Powered by MarketGlide's proprietary database and real-time market intelligence.
             </p>
-            <Button size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90" asChild>
-              <a href="/membership">Join the Waitlist</a>
-            </Button>
+            <WaitlistDialog
+              title="Join Sophia AI Waitlist"
+              description="Be the first to experience Sophia when it launches. We'll notify you as soon as it's available."
+            >
+              <Button size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90">
+                Join the Waitlist
+              </Button>
+            </WaitlistDialog>
           </motion.div>
         </div>
       </section>

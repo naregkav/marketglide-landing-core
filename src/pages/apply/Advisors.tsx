@@ -3,6 +3,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
+import { Link } from "react-router-dom";
 
 const AdvisorsPage = () => {
   const benefits = [
@@ -65,11 +66,18 @@ const AdvisorsPage = () => {
             <p className="text-lg text-foreground mb-10 max-w-3xl mx-auto">
               We offer a platform to amplify your visibility, enhance your value to clients, and scale your exposure across private markets.
             </p>
-            <ScheduleCallDialog>
-              <InteractiveHoverButton variant="hero" size="xl">
-                Become a Partner
-              </InteractiveHoverButton>
-            </ScheduleCallDialog>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/apply/advisors">
+                <InteractiveHoverButton variant="hero" size="xl">
+                  Become a Partner
+                </InteractiveHoverButton>
+              </Link>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton variant="outline" size="xl">
+                  Schedule a Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
+            </div>
           </div>
         </div>
       </section>
@@ -289,15 +297,26 @@ const AdvisorsPage = () => {
             <p className="text-xl text-accent-foreground/90 mb-10">
               Schedule a call to discover how MarketGlide can help you and your clients unlock new opportunities.
             </p>
-            <ScheduleCallDialog>
-              <InteractiveHoverButton 
-                variant="cta" 
-                size="xl" 
-                className="bg-background text-foreground hover:bg-background/90"
-              >
-                Schedule Partnership Call
-              </InteractiveHoverButton>
-            </ScheduleCallDialog>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/apply/advisors">
+                <InteractiveHoverButton 
+                  variant="cta" 
+                  size="xl" 
+                  className="bg-background text-foreground hover:bg-background/90"
+                >
+                  Get Started
+                </InteractiveHoverButton>
+              </Link>
+              <ScheduleCallDialog>
+                <InteractiveHoverButton 
+                  variant="outline" 
+                  size="xl" 
+                  className="border-accent-foreground/30 text-accent-foreground hover:bg-accent-foreground/10"
+                >
+                  Schedule a Call
+                </InteractiveHoverButton>
+              </ScheduleCallDialog>
+            </div>
           </div>
         </div>
       </section>

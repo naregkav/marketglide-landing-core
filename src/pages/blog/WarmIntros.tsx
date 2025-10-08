@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import warmIntrosImage from "@/assets/blog/warm-intros.jpg";
+import { Link } from "react-router-dom";
 
 const WarmIntros = () => {
   return (
@@ -82,9 +83,11 @@ const WarmIntros = () => {
             <p className="text-muted-foreground mb-6">
               Join a platform where opportunities are discovered based on alignment, not association.
             </p>
-            <InteractiveHoverButton variant="accent" size="lg">
-              Apply for Membership
-            </InteractiveHoverButton>
+            <Link to="/membership">
+              <InteractiveHoverButton variant="accent" size="lg">
+                Apply for Membership
+              </InteractiveHoverButton>
+            </Link>
           </div>
         </div>
       </article>
