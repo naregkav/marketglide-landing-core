@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { format } from "date-fns";
-import { Calendar, Users, MapPin, FileText, ArrowRight, Sparkles } from "lucide-react";
+import { Calendar, Users, MapPin, FileText, ArrowRight, Sparkles, ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import communityImage from "@/assets/community-networking.jpg";
 
 interface Event {
@@ -94,6 +100,34 @@ const CommunitySection = () => {
     { value: "8", label: "Global Hubs" },
   ];
 
+  const membershipLinks = [
+    { 
+      label: "Startups & Companies (Raising)", 
+      description: "Founders, developers, and operators raising capital across sectors.",
+      href: "https://stage.marketglide.io/app/registration/company?type=company" 
+    },
+    { 
+      label: "Emerging Fund Managers (Raising)", 
+      description: "First-time GPs and new strategies seeking LPs.",
+      href: "https://stage.marketglide.io/app/registration/company?type=fund" 
+    },
+    { 
+      label: "Venture Capital & Private Equity Firms", 
+      description: "Established funds sourcing deals and co-investments.",
+      href: "https://stage.marketglide.io/app/registration/investor?type=investor" 
+    },
+    { 
+      label: "Private Investors & Institutional LPs", 
+      description: "Family offices, UHNWIs, angels, syndicates, and LPs deploying capital.",
+      href: "https://stage.marketglide.io/app/registration/investor?type=investor-private" 
+    },
+    { 
+      label: "Advisors & Ecosystem Partners", 
+      description: "Lawyers, consultants, fund admins, accelerators, and others supporting transactions.",
+      href: "https://stage.marketglide.io/app/registration/investor?type=investor-advisors" 
+    },
+  ];
+
   return (
     <section
       id="community"
@@ -174,23 +208,17 @@ const CommunitySection = () => {
           </div>
         </div>
 
-        {/* Upcoming Events */}
-        <div
-          className="bg-card border border-border rounded-2xl p-8 mb-12 animate-fade-in"
-          style={{ animationDelay: "600ms" }}
-        >
-          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <Calendar className="w-6 h-6 text-primary" />
-            Upcoming Events
-          </h3>
+        {/* Upcoming Events - Only show if there are events */}
+        {!loading && events.length > 0 && (
+          <div
+            className="bg-card border border-border rounded-2xl p-8 mb-12 animate-fade-in"
+            style={{ animationDelay: "600ms" }}
+          >
+            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <Calendar className="w-6 h-6 text-primary" />
+              Upcoming Events
+            </h3>
 
-          {loading ? (
-            <div className="space-y-4">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-20 bg-muted animate-pulse rounded-lg" />
-              ))}
-            </div>
-          ) : events.length > 0 ? (
             <div className="space-y-4">
               {events.map((event) => (
                 <div
@@ -223,16 +251,28 @@ const CommunitySection = () => {
                 </div>
               ))}
             </div>
-          ) : (
-            <p className="text-muted-foreground text-center py-8">No upcoming events at the moment. Check back soon!</p>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* CTA */}
         <div className="text-center animate-fade-in" style={{ animationDelay: "800ms" }}>
-          <InteractiveHoverButton variant="default" size="lg" icon={ArrowRight} className="text-lg px-8 py-6">
-            Join Our Community
-          </InteractiveHoverButton>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-lg font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-gradient-accent text-accent-foreground hover:opacity-90 shadow-elegant px-8 py-6">
+                Join Our Community <ChevronDown className="h-5 w-5" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-[360px] p-2 bg-background z-50">
+              {membershipLinks.map((link) => (
+                <DropdownMenuItem key={link.label} asChild className="cursor-pointer p-3 flex-col items-start gap-1">
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                    <div className="font-medium text-foreground">{link.label}</div>
+                    <div className="text-xs text-muted-foreground">{link.description}</div>
+                  </a>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Bottom Stats */}
