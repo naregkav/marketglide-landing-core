@@ -80,7 +80,7 @@ const PEVCPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90 !text-black">
                   Access Deal Flow Now
                 </InteractiveHoverButton>
               </a>
@@ -227,7 +227,7 @@ const PEVCPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90 !text-black">
                   Join the Network
                 </InteractiveHoverButton>
               </a>
