@@ -67,7 +67,7 @@ const AdvisorsPage = () => {
               We offer a platform to amplify your visibility, enhance your value to clients, and scale your exposure across private markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/advisors">
+              <Link to="/membership">
                 <InteractiveHoverButton variant="hero" size="xl">
                   Become a Partner
                 </InteractiveHoverButton>
@@ -298,13 +298,13 @@ const AdvisorsPage = () => {
               Schedule a call to discover how MarketGlide can help you and your clients unlock new opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/advisors">
+              <Link to="/membership">
                 <InteractiveHoverButton 
                   variant="cta" 
                   size="xl" 
                   className="bg-background text-foreground hover:bg-background/90"
                 >
-                  Get Started
+                  Expand Your Network
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>

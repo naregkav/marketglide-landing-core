@@ -67,9 +67,9 @@ const PEVCPage = () => {
               Whether you're deploying growth capital, seeking strategic buyouts, or backing next-gen founders, MarketGlide gives you access to a high-signal environment designed for top investors.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/pe-vc">
+              <Link to="/membership">
                 <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-                  Access Deal Flow
+                  Access Deal Flow Now
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>
@@ -202,9 +202,9 @@ const PEVCPage = () => {
               Schedule a call to see how MarketGlide connects PE/VC firms with high-quality, vetted opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/pe-vc">
+              <Link to="/membership">
                 <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-                  Get Started
+                  Join the Network
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>

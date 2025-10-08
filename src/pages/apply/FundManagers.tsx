@@ -46,9 +46,9 @@ const FundManagersPage = () => {
               Raising capital as a new fund manager is notoriously difficult, especially without established track records or institutional infrastructure. MarketGlide helps emerging GPs cut through the noise and build credibility from day one.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/fund-managers">
+              <Link to="/membership">
                 <InteractiveHoverButton variant="hero" size="xl">
-                  Get Started
+                  Launch Your Fund
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>
@@ -190,9 +190,9 @@ const FundManagersPage = () => {
               Schedule a call to discover how MarketGlide can help you achieve your investment goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/fund-managers">
+              <Link to="/membership">
                 <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-                  Get Started
+                  Build Your Credibility
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>

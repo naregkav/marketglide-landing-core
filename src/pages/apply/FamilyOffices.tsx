@@ -47,9 +47,9 @@ const FamilyOfficesPage = () => {
               MarketGlide empowers family offices to seamlessly explore exciting deals, tailored to long-term wealth strategies and cross-border market access.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/family-offices">
+              <Link to="/membership">
                 <InteractiveHoverButton variant="hero" size="xl" className="shadow-large">
-                  Get Started
+                  Explore Opportunities
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>
@@ -203,13 +203,13 @@ const FamilyOfficesPage = () => {
               Schedule a call to discover how MarketGlide can help your family office identify and execute high-quality investment opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply/family-offices">
+              <Link to="/membership">
                 <InteractiveHoverButton 
                   variant="cta" 
                   size="xl" 
                   className="bg-background text-foreground hover:bg-background/90 shadow-large"
                 >
-                  Get Started
+                  Join Exclusive Network
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>

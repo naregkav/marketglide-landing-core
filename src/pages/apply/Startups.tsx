@@ -57,9 +57,9 @@ const StartupsPage = () => {
               We give startups and companies a direct path to curated investors, plus the infrastructure to present your opportunity professionally and credibly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/apply/startups">
+              <Link to="/membership">
                 <InteractiveHoverButton variant="hero" size="xl">
-                  Get Started
+                  Start Fundraising
                 </InteractiveHoverButton>
               </Link>
               <ScheduleCallDialog>
