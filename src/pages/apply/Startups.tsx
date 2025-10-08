@@ -63,7 +63,7 @@ const StartupsPage = () => {
                   Start Fundraising
                 </InteractiveHoverButton>
               </a>
-              <ScheduleCallDialog>
+              <ScheduleCallDialog source="startups">
                 <InteractiveHoverButton variant="outline" size="xl">
                   Schedule a Call
                 </InteractiveHoverButton>
@@ -238,7 +238,7 @@ const StartupsPage = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Schedule a call to see how MarketGlide can help accelerate your fundraising.
             </p>
-            <ScheduleCallDialog>
+            <ScheduleCallDialog source="startups">
               <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
                 Schedule a Call
               </InteractiveHoverButton>

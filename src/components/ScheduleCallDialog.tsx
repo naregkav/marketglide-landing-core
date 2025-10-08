@@ -20,9 +20,10 @@ const scheduleCallSchema = z.object({
 
 interface ScheduleCallDialogProps {
   children: React.ReactNode;
+  source?: string;
 }
 
-export const ScheduleCallDialog = ({ children }: ScheduleCallDialogProps) => {
+export const ScheduleCallDialog = ({ children, source = "unknown" }: ScheduleCallDialogProps) => {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -65,6 +66,7 @@ export const ScheduleCallDialog = ({ children }: ScheduleCallDialogProps) => {
           company_name: formData.companyName,
           interest: formData.interest,
           agreed_to_terms: formData.agreedToTerms,
+          source,
         });
 
       if (error) {

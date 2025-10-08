@@ -96,6 +96,7 @@ export type Database = {
           id: string
           interest: string
           last_name: string
+          source: string
         }
         Insert: {
           agreed_to_terms?: boolean
@@ -106,6 +107,7 @@ export type Database = {
           id?: string
           interest: string
           last_name: string
+          source?: string
         }
         Update: {
           agreed_to_terms?: boolean
@@ -116,6 +118,7 @@ export type Database = {
           id?: string
           interest?: string
           last_name?: string
+          source?: string
         }
         Relationships: []
       }
