@@ -28,7 +28,7 @@ const plans = [
     name: "Standard",
     description: "For active users raising or deploying capital.",
     price: 199,
-    yearlyPrice: 167, // 199 * 12 * 0.84 / 12 = 167 (16% savings)
+    yearlyPrice: 1999,
     buttonText: "Apply now",
     buttonVariant: "default" as const,
     features: [
@@ -44,7 +44,7 @@ const plans = [
     name: "Premium",
     description: "Our most popular plan for a reason.",
     price: 299,
-    yearlyPrice: 251, // 299 * 12 * 0.84 / 12 = 251 (16% savings)
+    yearlyPrice: 2999,
     buttonText: "Apply now",
     buttonVariant: "outline" as const,
     popular: true,
