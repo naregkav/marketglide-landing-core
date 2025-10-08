@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const waitlistSchema = z.object({
   name: z.string().trim().min(1, { message: "Name is required" }).max(100, { message: "Name must be less than 100 characters" }),
@@ -15,12 +16,14 @@ interface WaitlistDialogProps {
   children: ReactNode;
   title?: string;
   description?: string;
+  source?: string;
 }
 
 export function WaitlistDialog({ 
   children, 
   title = "Join the Waitlist",
-  description = "Be the first to know when we launch. Enter your details below." 
+  description = "Be the first to know when we launch. Enter your details below.",
+  source = "general"
 }: WaitlistDialogProps) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
@@ -36,9 +39,18 @@ export function WaitlistDialog({
       // Validate input
       waitlistSchema.parse({ name, email });
 
-      // Here you would typically send to your backend/database
-      // For now, just show success message
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      // Save to database
+      const { error: dbError } = await supabase
+        .from('waitlist_submissions')
+        .insert({
+          name: name.trim(),
+          email: email.trim(),
+          source
+        });
+
+      if (dbError) {
+        throw dbError;
+      }
 
       toast({
         title: "Success!",

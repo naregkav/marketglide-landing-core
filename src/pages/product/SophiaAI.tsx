@@ -71,6 +71,7 @@ const SophiaAI = () => {
             <WaitlistDialog
               title="Join Sophia AI Waitlist"
               description="Be the first to experience Sophia when it launches. We'll notify you as soon as it's available."
+              source="sophia-ai"
             >
               <Button size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90">
                 Join the Waitlist

@@ -1,8 +1,8 @@
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { Input } from "@/components/ui/input";
-import { Mail, Linkedin, Instagram } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactDialog } from "@/components/ContactDialog";
+import { WaitlistDialog } from "@/components/WaitlistDialog";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const Footer = () => {
   const linkRoutes: Record<string, string> = {
@@ -75,19 +75,14 @@ const Footer = () => {
               <h4 className="font-semibold text-foreground mb-3">
                 Stay Updated
               </h4>
-              <div className="flex gap-2">
-                <Input
-                  placeholder="Enter your email"
-                  className="flex-1"
-                  type="email"
-                />
-                <InteractiveHoverButton variant="hero" size="sm" icon={Mail} showArrow={false}>
-                  
-                </InteractiveHoverButton>
-              </div>
-              <p className="text-xs text-muted-foreground mt-2">
+              <p className="text-xs text-muted-foreground mb-3">
                 Get exclusive market insights and opportunities.
               </p>
+              <WaitlistDialog source="footer">
+                <InteractiveHoverButton variant="hero" size="default" className="w-full">
+                  Subscribe
+                </InteractiveHoverButton>
+              </WaitlistDialog>
             </div>
           </div>
 

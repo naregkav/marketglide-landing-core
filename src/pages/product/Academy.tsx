@@ -95,6 +95,7 @@ const Academy = () => {
             <WaitlistDialog
               title="Join MarketGlide Academy Waitlist"
               description="Be the first to access our exclusive masterclass content when we launch. We'll notify you as soon as enrollment opens."
+              source="academy"
             >
               <Button size="lg" className="text-lg px-8 py-6">
                 Join the Waitlist
