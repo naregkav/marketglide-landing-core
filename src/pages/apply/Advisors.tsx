@@ -10,39 +10,39 @@ const AdvisorsPage = () => {
     {
       icon: Handshake,
       title: "Introducers & Referral Partners",
-      description: "Earn referral-based incentives by introducing quality companies, funds, or investors."
+      description: "Earn referral-based incentives by introducing quality companies, funds, or investors.",
     },
     {
       icon: TrendingUp,
       title: "Accelerators & Platforms",
-      description: "Give your cohorts enhanced visibility to our investor community."
+      description: "Give your cohorts enhanced visibility to our investor community.",
     },
     {
       icon: Award,
       title: "Legal & Advisory",
-      description: "Be discoverable by funds, family offices, and portfolio companies."
+      description: "Be discoverable by funds, family offices, and portfolio companies.",
     },
     {
       icon: Star,
       title: "Premium Exposure",
-      description: "Gain profile visibility through curated lists and partnership pages."
+      description: "Gain profile visibility through curated lists and partnership pages.",
     },
     {
       icon: Network,
       title: "Value-Driven Networking",
-      description: "Provide scalable, engaging tools for your network."
+      description: "Provide scalable, engaging tools for your network.",
     },
     {
       icon: Lightbulb,
       title: "Thought Leadership Opportunities",
-      description: "Build reputation through MarketGlide Academy and content initiatives."
-    }
+      description: "Build reputation through MarketGlide Academy and content initiatives.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section - Collaborative */}
       <section className="relative pt-32 pb-24 bg-gradient-to-br from-background via-muted/10 to-background">
         <div className="container mx-auto px-6 relative z-10">
@@ -52,22 +52,25 @@ const AdvisorsPage = () => {
               <span className="text-accent font-semibold text-sm uppercase tracking-wide">For Advisors & Partners</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-              Why Partner with{" "}
-              <span className="bg-gradient-accent bg-clip-text text-transparent">
-                MarketGlide?
-              </span>
+              Why Partner with <span className="bg-gradient-accent bg-clip-text text-transparent">MarketGlide?</span>
             </h1>
             <p className="text-2xl text-muted-foreground mb-6 font-medium">
               Position Yourself at the Center of Capital Flows
             </p>
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
-              MarketGlide isn't just for dealmakers. As an advisor, consultant, accelerator, incubator, or ecosystem builder, your network plays a vital role in how capital flows and opportunities emerge.
+              MarketGlide isn't just for dealmakers. As an advisor, consultant, accelerator, incubator, or ecosystem
+              builder, your network plays a vital role in how capital flows and opportunities emerge.
             </p>
             <p className="text-lg text-foreground mb-10 max-w-3xl mx-auto">
-              We offer a platform to amplify your visibility, enhance your value to clients, and scale your exposure across private markets.
+              We offer a platform to amplify your visibility, enhance your value to clients, and scale your exposure
+              across private markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://stage.marketglide.io/app/registration/investor?type=investor-advisors" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://stage.marketglide.io/app/registration/investor?type=investor-advisors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <InteractiveHoverButton variant="hero" size="xl">
                   Become a Partner
                 </InteractiveHoverButton>
@@ -106,12 +109,8 @@ const AdvisorsPage = () => {
                     <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                       <benefit.icon className="w-7 h-7 text-accent-foreground" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed flex-grow">
-                      {benefit.description}
-                    </p>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">{benefit.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed flex-grow">{benefit.description}</p>
                   </div>
                 </div>
               ))}
@@ -220,9 +219,10 @@ const AdvisorsPage = () => {
               Growing <span className="bg-gradient-accent bg-clip-text text-transparent">Ecosystem</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-              Join a vibrant community of advisors, accelerators, and ecosystem partners creating value across private markets
+              Join a vibrant community of advisors, accelerators, and ecosystem partners creating value across private
+              markets
             </p>
-            
+
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="card-premium p-6">
                 <div className="text-4xl font-bold text-accent mb-2">120+</div>
@@ -250,8 +250,10 @@ const AdvisorsPage = () => {
                     <span className="text-accent-foreground text-sm">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground mb-1">UK Home Office Aligned</div>
-                    <div className="text-sm text-muted-foreground">Regulatory credibility for your clients</div>
+                    <div className="font-semibold text-foreground mb-1">Curated Access</div>
+                    <div className="text-sm text-muted-foreground">
+                      Direct access to exciting, vetted opportunities.
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -259,8 +261,10 @@ const AdvisorsPage = () => {
                     <span className="text-accent-foreground text-sm">✓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground mb-1">BAJ Accelerator Partner</div>
-                    <div className="text-sm text-muted-foreground">Industry-leading ecosystem support</div>
+                    <div className="font-semibold text-foreground mb-1">Aligned Incentives</div>
+                    <div className="text-sm text-muted-foreground">
+                      MarketGlide simply powers discovery, trust, and collaboration
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -298,19 +302,23 @@ const AdvisorsPage = () => {
               Schedule a call to discover how MarketGlide can help you and your clients unlock new opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://stage.marketglide.io/app/registration/investor?type=investor-advisors" target="_blank" rel="noopener noreferrer">
-                <InteractiveHoverButton 
-                  variant="cta" 
-                  size="xl" 
+              <a
+                href="https://stage.marketglide.io/app/registration/investor?type=investor-advisors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InteractiveHoverButton
+                  variant="cta"
+                  size="xl"
                   className="bg-background text-foreground hover:bg-background/90"
                 >
                   Expand Your Network
                 </InteractiveHoverButton>
               </a>
               <ScheduleCallDialog source="advisors">
-                <InteractiveHoverButton 
-                  variant="outline" 
-                  size="xl" 
+                <InteractiveHoverButton
+                  variant="outline"
+                  size="xl"
                   className="border-accent-foreground/30 text-accent-foreground hover:bg-accent-foreground/10"
                 >
                   Schedule a Call

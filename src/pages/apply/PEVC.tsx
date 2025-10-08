@@ -80,7 +80,7 @@ const PEVCPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90 !text-black">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
                   Access Deal Flow Now
                 </InteractiveHoverButton>
               </a>
@@ -150,7 +150,7 @@ const PEVCPage = () => {
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <div className="px-4 py-2 bg-primary/10 rounded-lg">
-                      <span className="text-primary font-semibold">UK Home Office Aligned</span>
+                      <span className="text-primary font-semibold">Regulatory Compliance</span>
                     </div>
                     <div className="px-4 py-2 bg-primary/10 rounded-lg">
                       <span className="text-primary font-semibold">Verified Users Only</span>
@@ -181,11 +181,11 @@ const PEVCPage = () => {
 
             <div className="grid md:grid-cols-4 gap-8 mb-12">
               <div className="card-premium p-6">
-                <div className="text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">50+</div>
+                <div className="text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">300+</div>
                 <div className="text-sm text-muted-foreground">Active PE/VC Firms</div>
               </div>
               <div className="card-premium p-6">
-                <div className="text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">£1B+</div>
+                <div className="text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">£5B+</div>
                 <div className="text-sm text-muted-foreground">AUM Represented</div>
               </div>
               <div className="card-premium p-6">
@@ -193,7 +193,7 @@ const PEVCPage = () => {
                 <div className="text-sm text-muted-foreground">Sector Verticals</div>
               </div>
               <div className="card-premium p-6">
-                <div className="text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">20+</div>
+                <div className="text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">35+</div>
                 <div className="text-sm text-muted-foreground">Countries</div>
               </div>
             </div>
@@ -227,7 +227,7 @@ const PEVCPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90 !text-black">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
                   Join the Network
                 </InteractiveHoverButton>
               </a>
