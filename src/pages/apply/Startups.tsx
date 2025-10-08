@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 import { Link } from "react-router-dom";
+import sophiaAI from "@/assets/sophia-ai.jpg";
 
 const StartupsPage = () => {
   const benefits = [
@@ -156,8 +157,8 @@ const StartupsPage = () => {
             <div className="card-premium p-12">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-shrink-0">
-                  <div className="w-48 h-48 bg-gradient-accent rounded-2xl flex items-center justify-center shadow-glow">
-                    <span className="text-6xl">🤖</span>
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-glow">
+                    <img src={sophiaAI} alt="Sophia AI" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className="flex-1">
@@ -165,7 +166,7 @@ const StartupsPage = () => {
                     <span className="text-accent font-semibold text-sm">Meet Sophia AI</span>
                   </div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">
-                    Your AI-Powered <span className="bg-gradient-accent bg-clip-text text-transparent">Fundraising Coach</span>
+                    Your <span className="bg-gradient-accent bg-clip-text text-transparent">AI Fundraising Agent</span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     Sophia guides startups through every stage of fundraising with intelligent recommendations and actionable insights.

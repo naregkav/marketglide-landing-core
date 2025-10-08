@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 import { Link } from "react-router-dom";
+import sophiaAI from "@/assets/sophia-ai.jpg";
 
 const FundManagersPage = () => {
   const benefits = [
@@ -145,7 +146,7 @@ const FundManagersPage = () => {
                     <span className="text-accent font-semibold text-sm">Meet Sophia AI</span>
                   </div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">
-                    Your AI-Powered <span className="text-primary">Fundraising Assistant</span>
+                    Your <span className="text-primary">AI Fundraising Agent</span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     Sophia helps emerging fund managers navigate the fundraising journey with intelligent guidance and real-time insights.
@@ -181,8 +182,8 @@ const FundManagersPage = () => {
                   </ul>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-48 h-48 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-glow">
-                    <span className="text-6xl">🤖</span>
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-glow">
+                    <img src={sophiaAI} alt="Sophia AI" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
