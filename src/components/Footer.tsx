@@ -58,37 +58,26 @@ const Footer = () => {
   };
 
   const linkRoutes: Record<string, string> = {
+    "Curated Platform": "/product/curated-platform",
+    "Sophia AI": "/product/sophia-ai",
+    "MarketGlide Academy": "/product/academy",
     "Privacy Policy": "/privacy-policy",
     "Terms of Service": "/terms-of-service",
-    "Blog": "/blog",
-    "FAQ": "/faq",
-    "Market Reports": "/#community",
-    "Webinars": "/#community"
   };
 
   const footerSections = [
     {
       title: "Platform",
       links: [
-        "Deal Flow",
-        "Member Network",
-        "Advisory Services"
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        "Market Reports",
-        "Webinars",
-        "Blog"
+        "Curated Platform",
+        "Sophia AI",
+        "MarketGlide Academy"
       ]
     },
     {
       title: "Company",
       links: [
-        "About Us",
-        "Careers",
-        "Press",
+        "About",
         "Partners",
         "Contact"
       ]
@@ -103,122 +92,37 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-muted/30 border-t border-border">
+    <footer className="bg-background border-t border-border/50">
       {/* Main Footer */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-6 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+          {/* Column 1 - Brand */}
+          <div className="lg:col-span-4">
             {/* Logo */}
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-sm">MG</span>
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-9 h-9 bg-gradient-accent rounded-lg flex items-center justify-center">
+                <span className="text-accent-foreground font-bold">MG</span>
               </div>
-              <span className="text-xl font-bold text-foreground">MarketGlide</span>
+              <span className="text-2xl font-bold text-foreground">MarketGlide</span>
             </div>
 
-            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-              The trusted discovery layer for global private markets. Connecting elite 
-              investors, fund managers, and dealmakers worldwide.
-            </p>
-
-            {/* Newsletter Signup */}
-            <div>
-              <h4 className="font-semibold text-foreground mb-3">
-                Stay Updated
-              </h4>
-              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                <Input
-                  placeholder="Enter your email"
-                  className="flex-1"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={isSubmitting}
-                  required
-                />
-                <InteractiveHoverButton 
-                  type="submit" 
-                  variant="hero" 
-                  size="sm" 
-                  icon={Mail} 
-                  showArrow={false}
-                  disabled={isSubmitting}
-                >
-                  Subscribe
-                </InteractiveHoverButton>
-              </form>
-              <p className="text-xs text-muted-foreground mt-2">
-                Get exclusive market insights and opportunities.
+            <div className="space-y-2 mb-8">
+              <p className="text-foreground/90 text-base leading-relaxed">
+                The trusted discovery layer for global private markets.
               </p>
-            </div>
-          </div>
-
-          {/* Footer Links */}
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h4 className="font-semibold text-foreground mb-4">
-                {section.title}
-              </h4>
-              <ul className="space-y-3">
-                {section.links.map((link) => {
-                  const route = linkRoutes[link];
-                  
-                  // Handle Contact link specially with dialog
-                  if (link === "Contact") {
-                    return (
-                      <li key={link}>
-                        <ContactDialog>
-                          <button className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
-                            {link}
-                          </button>
-                        </ContactDialog>
-                      </li>
-                    );
-                  }
-                  
-                  return (
-                    <li key={link}>
-                      {route ? (
-                        <Link
-                          to={route}
-                          className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                        >
-                          {link}
-                        </Link>
-                      ) : (
-                        <a
-                          href="#"
-                          className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                        >
-                          {link}
-                        </a>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Bottom Footer */}
-      <div className="border-t border-border">
-        <div className="container mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* Copyright */}
-            <div className="text-sm text-muted-foreground">
-              © 2025 MarketGlide. All rights reserved.
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Connecting elite investors, fund managers, and dealmakers worldwide.
+              </p>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               <a
                 href="https://www.linkedin.com/company/marketglideofficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -226,20 +130,143 @@ const Footer = () => {
                 href="https://www.instagram.com/marketglide"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200"
+                aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
+
+          {/* Column 2 - Platform */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wider">
+              Platform
+            </h4>
+            <ul className="space-y-4">
+              {footerSections[0].links.map((link) => {
+                const route = linkRoutes[link];
+                return (
+                  <li key={link}>
+                    <Link
+                      to={route}
+                      className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Column 3 - Company */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wider">
+              Company
+            </h4>
+            <ul className="space-y-4">
+              {footerSections[1].links.map((link) => {
+                // Handle Contact link specially with dialog
+                if (link === "Contact") {
+                  return (
+                    <li key={link}>
+                      <ContactDialog>
+                        <button className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base">
+                          {link}
+                        </button>
+                      </ContactDialog>
+                    </li>
+                  );
+                }
+                
+                return (
+                  <li key={link}>
+                    <a
+                      href="#"
+                      className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Column 4 - Legal */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wider">
+              Legal
+            </h4>
+            <ul className="space-y-4">
+              {footerSections[2].links.map((link) => {
+                const route = linkRoutes[link];
+                return (
+                  <li key={link}>
+                    <Link
+                      to={route}
+                      className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Newsletter Section */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wider">
+              Stay in the Loop
+            </h4>
+            <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+              Get early access to investor insights, new features, and exclusive MarketGlide updates.
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+              <Input
+                placeholder="Your email"
+                className="w-full"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
+                required
+              />
+              <InteractiveHoverButton 
+                type="submit" 
+                variant="hero" 
+                size="sm" 
+                icon={Mail} 
+                showArrow={false}
+                disabled={isSubmitting}
+                className="w-full"
+              >
+                Subscribe
+              </InteractiveHoverButton>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/50" />
+
+      {/* Bottom Section */}
+      <div className="container mx-auto px-6 py-6">
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground">
+            © 2025 MarketGlide. All rights reserved.
+          </p>
         </div>
       </div>
 
       {/* Regulatory Disclaimer */}
-      <div className="bg-muted/50 border-t border-border">
+      <div className="bg-muted/30 border-t border-border/50">
         <div className="container mx-auto px-6 py-4">
           <p className="text-xs text-muted-foreground text-center leading-relaxed">
-            <strong>Important:</strong> MarketGlide is a trading name of Ventures Without Borders Limited (UK Reg. 15397290). “MarketGlide” and “Ventures Without Borders” are registered trademarks in the United Kingdom. Any financial promotions made through the platform are directed only at persons who are exempt under the UK Financial Services and Markets Act 2000 (Financial Promotion) Order 2005. All other content is provided for general information only and does not constitute investment advice.
+            <strong>Important:</strong> MarketGlide is a trading name of Ventures Without Borders Limited (UK Reg. 15397290). "MarketGlide" and "Ventures Without Borders" are registered trademarks in the United Kingdom. Any financial promotions made through the platform are directed only at persons who are exempt under the UK Financial Services and Markets Act 2000 (Financial Promotion) Order 2005. All other content is provided for general information only and does not constitute investment advice.
           </p>
         </div>
       </div>
