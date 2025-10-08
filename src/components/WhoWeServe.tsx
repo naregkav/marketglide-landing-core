@@ -49,7 +49,7 @@ const WhoWeServe = () => {
       subtitle: "Angels to Institutions",
       buttonText: "Access Vetted Dealflow",
       description: "Discover curated investment opportunities across all asset classes and geographies.",
-      stat: "500+ verified deals monthly",
+      stat: "Received verified deals weekly",
       link: "https://stage.marketglide.io/app/registration/investor?type=investor-private",
       bgColor: "from-primary-glow/10 to-primary-glow/5",
       iconBg: "bg-primary-glow/10",
@@ -80,7 +80,7 @@ const WhoWeServe = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Who We Serve</h2>
-          <p className="text-lg text-muted-foreground">Five distinct verticals, one powerful platform</p>
+          <p className="text-lg text-muted-foreground">Five distinct communities, one powerful platform</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
