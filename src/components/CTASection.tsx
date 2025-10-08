@@ -30,18 +30,18 @@ const CTASection = () => {
 
           {/* Subheading */}
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of investors, fund managers, and advisors who trust 
-            MarketGlide for their private market opportunities.
+            Join thousands of investors, fund managers, and advisors who trust MarketGlide for their private market
+            opportunities.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">$2.5B+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">$200M+</div>
               <div className="text-white/70">Deal Flow Volume</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">100+</div>
               <div className="text-white/70">Active Members</div>
             </div>
             <div className="text-center">
@@ -141,9 +141,8 @@ const CTASection = () => {
           {/* Trust Message */}
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 max-w-2xl mx-auto">
             <p className="text-white/80 text-sm">
-              <strong className="text-white">Exclusive Access:</strong> Our membership is by invitation 
-              and application only. We maintain high standards to ensure quality deal flow 
-              and trusted network connections.
+              <strong className="text-white">Exclusive Access:</strong> Our membership is by invitation and application
+              only. We maintain high standards to ensure quality deal flow and trusted network connections.
             </p>
           </div>
         </div>
