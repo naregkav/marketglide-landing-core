@@ -54,7 +54,6 @@ const WhoWeServe = () => {
       bgColor: "from-primary-glow/10 to-primary-glow/5",
       iconBg: "bg-primary-glow/10",
       iconColor: "text-primary-glow",
-      highlighted: true,
     },
     {
       icon: Users,
@@ -96,7 +95,7 @@ const WhoWeServe = () => {
                 viewport={{ once: true }}
               >
                 <Card
-                  className={`h-full flex flex-col relative overflow-hidden ${community.highlighted ? "border-primary shadow-lg" : ""}`}
+                  className="h-full flex flex-col relative overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${community.bgColor} pointer-events-none`} />
                   <CardHeader className="relative pb-4">
@@ -108,7 +107,7 @@ const WhoWeServe = () => {
                   </CardHeader>
                   <CardContent className="flex-1 flex flex-col relative pt-0">
                     <Button
-                      variant={community.highlighted ? "default" : "outline"}
+                      variant="outline"
                       className="w-full mb-3 text-sm"
                       asChild
                     >
