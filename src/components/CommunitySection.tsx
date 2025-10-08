@@ -162,7 +162,7 @@ const CommunitySection = () => {
 
               {/* Floating Stats Badges */}
               <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm rounded-xl px-6 py-4 border border-border shadow-lg">
-                <div className="text-3xl font-bold text-primary mb-1">500+</div>
+                <div className="text-3xl font-bold text-primary mb-1">100+</div>
                 <div className="text-sm text-muted-foreground">Active Members</div>
               </div>
 
