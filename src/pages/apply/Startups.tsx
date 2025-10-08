@@ -57,11 +57,11 @@ const StartupsPage = () => {
               We give startups and companies a direct path to curated investors, plus the infrastructure to present your opportunity professionally and credibly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/membership">
+              <a href="https://stage.marketglide.io/app/registration/company?type=company" target="_blank" rel="noopener noreferrer">
                 <InteractiveHoverButton variant="hero" size="xl">
                   Start Fundraising
                 </InteractiveHoverButton>
-              </Link>
+              </a>
               <ScheduleCallDialog>
                 <InteractiveHoverButton variant="outline" size="xl">
                   Schedule a Call

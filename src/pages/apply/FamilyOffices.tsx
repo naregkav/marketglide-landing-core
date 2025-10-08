@@ -47,11 +47,11 @@ const FamilyOfficesPage = () => {
               MarketGlide empowers family offices to seamlessly explore exciting deals, tailored to long-term wealth strategies and cross-border market access.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/membership">
+              <a href="https://stage.marketglide.io/app/registration/investor?type=investor-private" target="_blank" rel="noopener noreferrer">
                 <InteractiveHoverButton variant="hero" size="xl" className="shadow-large">
                   Explore Opportunities
                 </InteractiveHoverButton>
-              </Link>
+              </a>
               <ScheduleCallDialog>
                 <InteractiveHoverButton variant="outline" size="xl">
                   Schedule a Call
@@ -203,7 +203,7 @@ const FamilyOfficesPage = () => {
               Schedule a call to discover how MarketGlide can help your family office identify and execute high-quality investment opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/membership">
+              <a href="https://stage.marketglide.io/app/registration/investor?type=investor-private" target="_blank" rel="noopener noreferrer">
                 <InteractiveHoverButton 
                   variant="cta" 
                   size="xl" 
@@ -211,7 +211,7 @@ const FamilyOfficesPage = () => {
                 >
                   Join Exclusive Network
                 </InteractiveHoverButton>
-              </Link>
+              </a>
               <ScheduleCallDialog>
                 <InteractiveHoverButton 
                   variant="outline" 
