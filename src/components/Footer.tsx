@@ -145,7 +145,7 @@ const Footer = () => {
                   showArrow={false}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "" : ""}
+                  Subscribe
                 </InteractiveHoverButton>
               </form>
               <p className="text-xs text-muted-foreground mt-2">
