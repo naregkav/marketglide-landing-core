@@ -167,8 +167,8 @@ const Navigation = () => {
           : "bg-background/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+        <div className="flex items-center justify-between h-16 lg:h-20 w-full">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center">

@@ -62,12 +62,12 @@ const HeroSectionNew = () => {
             </motion.div>
           </div>
 
-          {/* Right Content - Connection Requests Widget */}
+          {/* Right Content - Connection Requests Widget (Hidden on mobile) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="flex justify-center lg:justify-end"
+            className="hidden lg:flex justify-center lg:justify-end"
           >
             <ConnectionRequests />
           </motion.div>
