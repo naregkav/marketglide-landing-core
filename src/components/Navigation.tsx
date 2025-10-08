@@ -25,33 +25,35 @@ const MobileDropdown = ({ title, links, onLinkClick, isRouterLink = false }: Mob
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="px-2">
-      <CollapsibleTrigger className="flex items-center justify-between w-full text-muted-foreground hover:text-foreground font-medium py-2 transition-colors">
-        {title}
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="border-b border-border/50">
+      <CollapsibleTrigger className="flex items-center justify-between w-full text-foreground hover:text-primary font-semibold py-3.5 px-4 transition-all duration-200 group">
+        <span className="text-base">{title}</span>
+        <ChevronDown className={`h-4 w-4 transition-all duration-300 ease-out group-hover:text-primary ${isOpen ? 'rotate-180' : ''}`} />
       </CollapsibleTrigger>
-      <CollapsibleContent className="pl-4 space-y-2 py-2">
-        {links.map((link) => 
-          isRouterLink ? (
-            <Link
-              key={link.label}
-              to={link.href}
-              className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
-              onClick={onLinkClick}
-            >
-              {link.label}
-            </Link>
-          ) : (
-            <a
-              key={link.label}
-              href={link.href}
-              className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
-              onClick={onLinkClick}
-            >
-              {link.label}
-            </a>
-          )
-        )}
+      <CollapsibleContent className="bg-muted/30">
+        <div className="py-2 px-4 space-y-1">
+          {links.map((link) => 
+            isRouterLink ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="block text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200 py-2.5 px-3 rounded-lg"
+                onClick={onLinkClick}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="block text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200 py-2.5 px-3 rounded-lg"
+                onClick={onLinkClick}
+              >
+                {link.label}
+              </a>
+            )
+          )}
+        </div>
       </CollapsibleContent>
     </Collapsible>
   );
@@ -67,29 +69,31 @@ const MobileDropdownDetailed = ({ title, links, onLinkClick }: MobileDropdownDet
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="px-2">
-      <CollapsibleTrigger className="flex items-center justify-between w-full text-muted-foreground hover:text-foreground font-medium py-2 transition-colors">
-        {title}
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="border-b border-border/50">
+      <CollapsibleTrigger className="flex items-center justify-between w-full text-foreground hover:text-primary font-semibold py-3.5 px-4 transition-all duration-200 group">
+        <span className="text-base">{title}</span>
+        <ChevronDown className={`h-4 w-4 transition-all duration-300 ease-out group-hover:text-primary ${isOpen ? 'rotate-180' : ''}`} />
       </CollapsibleTrigger>
-      <CollapsibleContent className="pl-4 space-y-3 py-2">
-        {links.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
-            onClick={onLinkClick}
-          >
-            <div className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              {link.label}
-            </div>
-            <div className="text-xs text-muted-foreground mt-1">
-              {link.description}
-            </div>
-          </a>
-        ))}
+      <CollapsibleContent className="bg-muted/30">
+        <div className="py-2 px-4 space-y-2">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-3 rounded-lg hover:bg-muted/60 transition-all duration-200 group/item"
+              onClick={onLinkClick}
+            >
+              <div className="text-sm font-semibold text-foreground group-hover/item:text-primary transition-colors">
+                {link.label}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                {link.description}
+              </div>
+            </a>
+          ))}
+        </div>
       </CollapsibleContent>
     </Collapsible>
   );
@@ -265,37 +269,41 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border py-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
-            <div className="flex flex-col space-y-2">
+          <div className="lg:hidden bg-background/98 backdrop-blur-xl border-t border-border shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto">
+            <div className="flex flex-col py-2">
               {/* Product Dropdown Mobile */}
               <MobileDropdown title="Product" links={productLinks} onLinkClick={() => setIsMobileMenuOpen(false)} />
               
               {/* Solutions Dropdown Mobile */}
               <MobileDropdown title="Solutions" links={solutionsLinks} onLinkClick={() => setIsMobileMenuOpen(false)} isRouterLink />
 
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={
-                    link.href === "#membership" ? "/membership" :
-                    link.href === "#blog" ? "/blog" :
-                    link.href === "#faq" ? "/faq" :
-                    link.href
-                  }
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium px-4 py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
+              {/* Standard Links */}
+              <div className="border-b border-border/50">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={
+                      link.href === "#membership" ? "/membership" :
+                      link.href === "#blog" ? "/blog" :
+                      link.href === "#faq" ? "/faq" :
+                      link.href
+                    }
+                    className="block text-foreground hover:text-primary hover:bg-muted/30 transition-all duration-200 font-medium px-4 py-3.5"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+              
+              {/* Sign In Button */}
+              <div className="px-4 py-3 border-b border-border/50">
+                <a href="https://stage.marketglide.io/app/login" target="_blank" rel="noopener noreferrer">
+                  <InteractiveHoverButton variant="outline" size="sm" className="w-full justify-center" showArrow={false}>
+                    Sign In
+                  </InteractiveHoverButton>
                 </a>
-              ))}
-              
-              <div className="border-t border-border my-2"></div>
-              
-              <a href="https://stage.marketglide.io/app/login" target="_blank" rel="noopener noreferrer" className="px-2">
-                <InteractiveHoverButton variant="ghost" size="sm" className="w-full justify-start" showArrow={false}>
-                  Sign In
-                </InteractiveHoverButton>
-              </a>
+              </div>
               
               {/* Apply Dropdown Mobile */}
               <MobileDropdownDetailed 
