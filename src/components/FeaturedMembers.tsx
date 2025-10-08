@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, ExternalLink } from "lucide-react";
 import { CircularGallery, GalleryItem } from "@/components/ui/circular-gallery";
-import { useRef } from 'react';
+import { useRef } from "react";
 
 const FeaturedMembers = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -12,23 +12,23 @@ const FeaturedMembers = () => {
       company: "Alpine Capital Partners",
       image: "/members/renato-chiodaro.webp",
       verified: true,
-      expertise: ["Private Equity", "Infrastructure"]
+      expertise: ["Private Equity", "Infrastructure"],
     },
     {
-      name: "Richard Lark", 
+      name: "Richard Lark",
       title: "Investment Director",
       company: "European Growth Fund",
       image: "/members/richard-lark.webp",
       verified: true,
-      expertise: ["Venture Capital", "Fintech"]
+      expertise: ["Venture Capital", "Fintech"],
     },
     {
       name: "Henrique Roloff",
       title: "Senior Advisor",
       company: "Global Asset Management",
-      image: "/members/henrique-roloff.webp", 
+      image: "/members/henrique-roloff.webp",
       verified: true,
-      expertise: ["Real Estate", "REIT"]
+      expertise: ["Real Estate", "REIT"],
     },
     {
       name: "Armen Kherlopian, Ph.D.",
@@ -36,8 +36,8 @@ const FeaturedMembers = () => {
       company: "Strategic Partners LLC",
       image: "/members/armen-kherlopian.webp",
       verified: true,
-      expertise: ["Biotech", "Healthcare"]
-    }
+      expertise: ["Biotech", "Healthcare"],
+    },
   ];
 
   // Transform members data to match GalleryItem interface
@@ -48,8 +48,8 @@ const FeaturedMembers = () => {
       url: member.image,
       text: `Professional portrait of ${member.name}, ${member.title} at ${member.company}`,
       pos: "center",
-      by: member.company
-    }
+      by: member.company,
+    },
   }));
 
   return (
@@ -60,8 +60,8 @@ const FeaturedMembers = () => {
             Featured Members
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Meet our distinguished network of investment professionals, entrepreneurs, and industry leaders 
-            who are shaping the future of global business.
+            Meet our distinguished network of investment professionals, entrepreneurs, and industry leaders who are
+            shaping the future of global business.
           </p>
         </div>
 
@@ -78,12 +78,8 @@ const FeaturedMembers = () => {
 
         {/* View More */}
         <div className="text-center mt-12">
-          <div className="text-muted-foreground text-sm mb-4">
-            Join 500+ verified investment professionals
-          </div>
-          <button className="text-accent hover:text-accent/80 font-medium transition-colors">
-            View All Members →
-          </button>
+          <div className="text-muted-foreground text-sm mb-4">Join 100+ verified investment professionals</div>
+          <button className="text-accent hover:text-accent/80 font-medium transition-colors">View All Members →</button>
         </div>
       </div>
     </section>

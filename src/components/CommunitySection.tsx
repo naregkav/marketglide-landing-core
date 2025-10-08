@@ -70,13 +70,13 @@ const CommunitySection = () => {
     {
       icon: Users,
       title: "Member Directory",
-      description: "Access to our curated community of 100+ verified investors and founders",
+      description: "Access to our curated community of 500+ verified investors and founders",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: MapPin,
       title: "Global Presence",
-      description: "Active across Europe, North America, and MENA",
+      description: "Active chapters in 12 cities across Europe, North America, and MENA",
       gradient: "from-emerald-500 to-teal-500",
     },
     {
@@ -88,10 +88,10 @@ const CommunitySection = () => {
   ];
 
   const stats = [
-    { value: "100+", label: "Verified Members" },
+    { value: "100+", label: "Community Members" },
     { value: "2", label: "Events This Year" },
-    { value: "$180M+", label: "Deals Reviewed" },
-    { value: "8", label: "Active Global Hubs" },
+    { value: "$180M+", label: "Deals Originated" },
+    { value: "8", label: "Global Hubs" },
   ];
 
   return (
