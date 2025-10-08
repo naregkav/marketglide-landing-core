@@ -157,24 +157,9 @@ const FamilyOfficesPage = () => {
               <h2 className="text-4xl font-bold text-foreground mb-6">
                 Join an Elite <span className="bg-gradient-accent bg-clip-text text-transparent">Community</span>
               </h2>
-              <p className="text-xl text-muted-foreground mb-12 leading-relaxed font-light">
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed font-light">
                 Connect with like-minded family offices, participate in curated events, and gain access to market intelligence that matters.
               </p>
-              
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div>
-                  <div className="text-4xl font-bold text-accent mb-2">80+</div>
-                  <div className="text-muted-foreground font-light">Family Offices</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-accent mb-2">£12B+</div>
-                  <div className="text-muted-foreground font-light">AUM Represented</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-accent mb-2">40+</div>
-                  <div className="text-muted-foreground font-light">Countries</div>
-                </div>
-              </div>
 
               <div className="flex flex-wrap justify-center gap-3">
                 {["Private Roundtables", "Co-Investment Forum", "Market Intelligence", "Expert Network"].map((tag) => (
