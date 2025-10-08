@@ -149,8 +149,65 @@ const StartupsPage = () => {
         </div>
       </section>
 
-      {/* Community Section */}
+      {/* Sophia AI Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="card-premium p-12">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="flex-shrink-0">
+                  <div className="w-48 h-48 bg-gradient-accent rounded-2xl flex items-center justify-center shadow-glow">
+                    <span className="text-6xl">🤖</span>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
+                    <span className="text-accent font-semibold text-sm">Meet Sophia AI</span>
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
+                    Your AI-Powered <span className="bg-gradient-accent bg-clip-text text-transparent">Fundraising Coach</span>
+                  </h2>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Sophia guides startups through every stage of fundraising with intelligent recommendations and actionable insights.
+                  </p>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-accent text-sm">✓</span>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-foreground">Investor Discovery:</span>
+                        <span className="text-muted-foreground"> Find investors perfectly aligned with your sector, stage, and geography</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-accent text-sm">✓</span>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-foreground">Outreach Strategy:</span>
+                        <span className="text-muted-foreground"> Get personalized guidance on approaching and engaging with investors</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-accent text-sm">✓</span>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-foreground">Real-Time Guidance:</span>
+                        <span className="text-muted-foreground"> Receive instant answers to fundraising questions and strategic advice</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-foreground mb-6">

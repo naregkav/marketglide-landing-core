@@ -129,21 +129,62 @@ const FundManagersPage = () => {
                   Upload pitch decks and fund materials with confidence. Access is restricted to logged-in, verified users only.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="card-premium p-8">
-                <CheckCircle2 className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-3">UK Home Office Aligned</h3>
-                <p className="text-muted-foreground">
-                  Our platform adheres to regulatory standards, providing peace of mind for international GPs.
-                </p>
-              </div>
-
-              <div className="card-premium p-8">
-                <CheckCircle2 className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-3">BAJ Accelerator Partner</h3>
-                <p className="text-muted-foreground">
-                  Backed by industry-leading programs supporting emerging managers and funds.
-                </p>
+      {/* Sophia AI Section */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="card-premium p-12">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="flex-1">
+                  <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
+                    <span className="text-accent font-semibold text-sm">Meet Sophia AI</span>
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
+                    Your AI-Powered <span className="text-primary">Fundraising Assistant</span>
+                  </h2>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Sophia helps emerging fund managers navigate the fundraising journey with intelligent guidance and real-time insights.
+                  </p>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary text-sm">✓</span>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-foreground">LP Matching:</span>
+                        <span className="text-muted-foreground"> Get personalized recommendations for investors aligned with your fund thesis</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary text-sm">✓</span>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-foreground">Pitch Refinement:</span>
+                        <span className="text-muted-foreground"> Receive AI-powered feedback to strengthen your fund positioning</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary text-sm">✓</span>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-foreground">Market Intelligence:</span>
+                        <span className="text-muted-foreground"> Access insights on LP preferences, market trends, and fundraising strategies</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="flex-shrink-0">
+                  <div className="w-48 h-48 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-glow">
+                    <span className="text-6xl">🤖</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -160,21 +201,6 @@ const FundManagersPage = () => {
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
               Access exclusive roundtables, LP introductions, and peer learning opportunities designed specifically for first-time GPs.
             </p>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div>
-                <div className="text-4xl font-bold text-primary mb-2">150+</div>
-                <div className="text-muted-foreground">Emerging Managers</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary mb-2">£500M+</div>
-                <div className="text-muted-foreground">Capital Raised</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary mb-2">40+</div>
-                <div className="text-muted-foreground">LPs Actively Seeking</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
