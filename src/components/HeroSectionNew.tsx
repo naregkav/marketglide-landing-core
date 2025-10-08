@@ -6,12 +6,12 @@ import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 
 const HeroSectionNew = () => {
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden bg-gradient-to-br from-accent/90 via-accent to-accent-secondary">
+    <section className="relative min-h-[85vh] pt-20 overflow-hidden bg-gradient-to-br from-accent/90 via-accent to-accent-secondary">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#ffffff10,transparent)]"></div>
       
       {/* Main Content Container */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 h-screen flex items-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 lg:py-20 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
           <div className="text-center lg:text-left">
