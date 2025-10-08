@@ -90,7 +90,7 @@ const CommunitySection = () => {
   const stats = [
     { value: "100+", label: "Community Members" },
     { value: "2", label: "Events This Year" },
-    { value: "$180M+", label: "Deals Originated" },
+    { value: "$180M+", label: "Deal Flow Volume" },
     { value: "8", label: "Global Hubs" },
   ];
 
