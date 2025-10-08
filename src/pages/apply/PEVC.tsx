@@ -68,7 +68,7 @@ const PEVCPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://stage.marketglide.io/app/registration/investor?type=investor" target="_blank" rel="noopener noreferrer">
-                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90 text-foreground">
                   Access Deal Flow Now
                 </InteractiveHoverButton>
               </a>
@@ -203,7 +203,7 @@ const PEVCPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://stage.marketglide.io/app/registration/investor?type=investor" target="_blank" rel="noopener noreferrer">
-                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
+                <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90 text-foreground">
                   Join the Network
                 </InteractiveHoverButton>
               </a>
