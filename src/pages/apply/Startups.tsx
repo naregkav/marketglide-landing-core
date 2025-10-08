@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Users, FileText, TrendingUp, Network } from "lucide-react";
+import { Check, Users, FileText, TrendingUp, Network } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -240,7 +240,7 @@ const StartupsPage = () => {
             </p>
             <ScheduleCallDialog>
               <InteractiveHoverButton variant="cta" size="xl" className="bg-accent hover:bg-accent/90">
-                Schedule a Call <ArrowRight className="ml-2 w-5 h-5" />
+                Schedule a Call
               </InteractiveHoverButton>
             </ScheduleCallDialog>
           </div>
